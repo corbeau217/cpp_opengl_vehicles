@@ -29,6 +29,7 @@
 [[Contents]](#contents)
 
 * yoinks the stuff from our template
+* check out [the documentationOverview.md](./documentationOverview.md) for different documentation thingies
 
 ---
 ---
