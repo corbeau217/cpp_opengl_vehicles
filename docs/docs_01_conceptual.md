@@ -13,6 +13,19 @@
 * include the context model
 * mah haps the architecture
 
+| ![early diagram](./images/projectoverviewdiagram_12062024.png) |
+| :---: |
+| *an early conceptual diagram of the project* - `12/06/2024` |
+
+---
+
+## Contents
+
+* [**[Previous conceptual information]**](#previous-conceptual-information)
+* [**[Actor Identification]**](#actor-identification)
+    * [*[Concept identification listing]*](#concept-identification-listing)
+* [**[Concept Diagrams]**]()
+
 ---
 
 ## previous conceptual information
@@ -23,7 +36,7 @@
 
 ## Actor identification
 
-### Concept listing
+### Concept identification listing
 
 * vehicle model place holder model
 * vehicle model generation
@@ -62,6 +75,29 @@
 * road bump mapping
 * reflective strips on road
 * street light models
+
+---
+
+## Concept Diagrams
+
+[**[Back to Contents]**](#contents)
+
+| ![simple architecture model](./images/simplearchitecturemodel_12062024.png) |
+| :---: |
+| *A simple model of the system somewhere between architecture and data flow models* - `12/06/2024` |
+
+---
+
+| ![abstracted diagram](./images/artisticdiagramwithnotes_12062024.png) |
+| :---: |
+| *An artistic abstraction of the lanes as conveyor belts with notes on queues and client-server model design* - `12/06/2024` |
+
+---
+
+| ![diagram of nodes](./images/lanelabeldiagram_12062024.png) |
+| :---: |
+| ![data flow diagram](./images/lanedataflowdiagram_12062024.png) |
+| *An artistic abstraction of the lanes as conveyor belts with notes on queues and client-server model design* - `12/06/2024` |
 
 ---
 
