@@ -1,5 +1,7 @@
 # [cpp_opengl_vehicles](https://github.com/corbeau217/cpp_opengl_vehicles)
 
+![wakatime](https://wakatime.com/badge/user/018b08ae-3eb8-4326-bd58-0017702d0437/project/333f6d7f-2e73-4013-8acb-32604da642ed.svg?style=for-the-badge&color=f05e16&labelColor=f05e16)
+
 ---
 ---
 
