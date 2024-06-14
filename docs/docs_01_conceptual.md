@@ -40,7 +40,39 @@
 
 ### Concept identification listing [draft]
 
-* aaa
+* car
+* traffic light
+* traffic light controller
+* road
+* lane
+* light
+* sky
+* cloud
+* building
+* wheel
+* sun
+* moon
+
+### Context model?
+
+* kinda context model of the things, rly simple flow
+
+```mermaid
+flowchart TD
+    SCENE[Scene] -->|owns| CAR[Car]
+    SCENE -->|owns| ROAD[Road]
+    SCENE -->|owns| TRAFFICLIGHT[Traffic light]
+    CAR -->|uses| LANE[Lane]
+    ROAD -->|consists of| LANE
+    LANE -->|informed by| TRAFFICLIGHT
+    CONTROLLER[Traffic light controller] -->|determines the state of| TRAFFICLIGHT
+    SCENE -->|owns| SUN[Sun]
+    SCENE -->|owns| MOON[Moon]
+    SCENE -->|owns| SKYBOX[Sky box]
+    SCENE -->|owns| BUILDING[Building]
+    SKYBOX -->|owns| CLOUDS[Clouds]
+
+```
 
 ---
 
