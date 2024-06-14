@@ -1,4 +1,4 @@
-# cpp_opengl_vehicles
+# [cpp_opengl_vehicles](https://github.com/corbeau217/cpp_opengl_vehicles)
 
 ---
 ---
@@ -6,15 +6,14 @@
 ## About
 
 * repo is for experimenting with vehicles in opengl and c++
+* [**[Documentation Overview page]**](./docs_00_overview.md)
 
 ---
 
 ## Contents
 
-| SECTION | LINK |
-| --- | --- |
-| **Notes** | [[link]](#notes) |
-| **Changes** | [[link]](#changes) |
+* [**[Notes]**](#notes)
+* [**[Changes]**](#changes)
 
 ---
 

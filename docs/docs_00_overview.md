@@ -30,38 +30,34 @@
 
 * look below, and behold that there exists things.
 
-### DOCS 01 : Concepts and some throwing around ideas
+### [DOCS 01 : Concepts and some throwing around ideas](./docs_01_conceptual.md)
 
 [**[Back to contents]**](#contents)
 
-* [the concept stuffs](./docs_01_conceptual.md)
-    * initial research and thoughtables
-    * can be actor identifying and the use case stuffs
-    * will be the use case diagrams and sequence diagrams too
-    * include the context model
-    * mah haps the architecture
+* initial research and thoughtables
+* can be actor identifying and the use case stuffs
+* will be the use case diagrams and sequence diagrams too
+* include the context model
+* mah haps the architecture
 
-### DOCS 02 : Requirements building the things and interactions
-
-[**[Back to contents]**](#contents)
-
-* [the requirements of the things together](./docs_02_requirements.md)
-    * will be the requirements side of the software design process
-    * can have the domain model
-
-### DOCS 03 : Detailed designs etc
+### [DOCS 02 : Requirements building the things and interactions](./docs_02_requirements.md)
 
 [**[Back to contents]**](#contents)
 
-* [the detailed designables](./docs_03_designables.md)
-    * should be the very detailed UML with all the interactions
+* will be the requirements side of the software design process
+* can have the domain model
 
-### DOCS 04 : Make the things
+### [DOCS 03 : Detailed designs etc](./docs_03_designables.md)
 
 [**[Back to contents]**](#contents)
 
-* [the making part](./docs_04_developments.md)
-    * include the tests and such too
+* should be the very detailed UML with all the interactions
+
+### [DOCS 04 : Make the things](./docs_04_developments.md)
+
+[**[Back to contents]**](#contents)
+
+* include the tests and such too
 
 ---
 
