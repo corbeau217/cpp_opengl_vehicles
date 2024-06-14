@@ -40,45 +40,7 @@
 
 ### Concept identification listing [draft]
 
-[**[Back to Contents]**](#contents)
-
-* vehicle model place holder model
-* vehicle model generation
-* traffic lights placeholder model
-* traffic lights model generation
-* terrain model placeholder
-* terrain model generation
-* traffic control system place holder view
-* render buffer/textures
-* traffic control system model placeholder
-* traffic control system model generation
-* traffic control system display
-* traffic light model states
-* car light models
-* car light cones/updates
-* car day shaders (excluding lights)
-* car day shaders (lights)
-* car night shaders (excluding light cones)
-* car day shaders (light cones)
-* smoke/smog particle effects
-* sun object
-* sun directional light
-* moon object
-* moon phases
-* skybox cubemap usage
-* skybox clouds (static placeholder)
-* cloud generation via perlin noise
-* cloud particle effects
-* skybox stars
-* plane flyovers
-* flickering lights
-* pedestrian crossing models
-* car sounds
-* pedestrian sounds
-* rain effects
-* road bump mapping
-* reflective strips on road
-* street light models
+* aaa
 
 ---
 
