@@ -32,6 +32,18 @@
 | ---: | :---: | :--- |
 | `NFR_M_01` | `Left-handed traffic` | because we live in australia, we drive on the left side of the road |
 | `NFR_M_02` | uses the `Concurrency` for the lights and cars | concurrency is being used to manage the car positioning and movement and the lights |
+| `NFR_M_03` | traffic control system state display | display shows the state of traffic lights for the different lanes |
+| `NFR_M_04` | day night cycles  | day night cycles exist in the scene with shaders for both  |
+
+### nonfunctional - procedural generation
+
+| requirement ID | requirement | description |
+| ---: | :---: | :--- |
+| `NFR_PG_01` | cars are procedurally generated | car models are procedurally generated through settings and from a catalogue of options |
+| `NFR_PG_02` | clouds are procedurally generated | procedurally generated clouds exist in the skybox |
+| `NFR_PG_03` | stars are procedurally generated | procedurally generated stars exist in the skybox |
+| `NFR_PG_04` | buildings are procedurally generated | procedurally generated buildings in the scene exist |
+| `NFR_PG_05` | terrain is procedurally generated | procedurally generated terrain including road/intersection generation |
 
 ---
 
@@ -45,7 +57,7 @@
 
 ---
 
-## yea
+## the requirements that are hard to place
 
 | requirement ID | requirement | description |
 | ---: | :---: | :--- |
