@@ -5,7 +5,7 @@
 
 ## About
 
-[**[return to overview]**](./docs_00_overview.md)
+[**[return to overview]**](./docs_00_overview.md#docs-01--concepts-and-some-throwing-around-ideas)
 
 * initial research and thoughtables
 * can be actor identifying and the use case stuffs
@@ -23,12 +23,14 @@
 
 * [**[Previous conceptual information]**](#previous-conceptual-information)
 * [**[Actor Identification]**](#actor-identification)
-    * [*[Concept identification listing]*](#concept-identification-listing)
-* [**[Concept Diagrams]**]()
+    * [*[Concept identification listing [draft]]*](#concept-identification-listing-draft)
+* [**[Concept Diagrams]**](#concept-diagrams)
 
 ---
 
 ## previous conceptual information
+
+[**[Back to Contents]**](#contents)
 
 * [[Suppliment 01]](./docs_01_conceptual_suppliment_01.md) - the previous conceptual documentation
 
@@ -36,7 +38,9 @@
 
 ## Actor identification
 
-### Concept identification listing
+### Concept identification listing [draft]
+
+[**[Back to Contents]**](#contents)
 
 * vehicle model place holder model
 * vehicle model generation
