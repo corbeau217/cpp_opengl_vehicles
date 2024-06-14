@@ -1,4 +1,4 @@
-# conceptual stuffs
+# docs_01_requirements
 
 * using the opengl and C++ for the things
 * probably use the stuff:

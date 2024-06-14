@@ -1,4 +1,4 @@
-# preliminary stuffs
+# requirements etc stuffs
 
 ---
 
