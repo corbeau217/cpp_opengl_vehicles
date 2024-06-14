@@ -1,6 +1,7 @@
 # DOCS 00: documentation overview and scope
 
 ---
+---
 
 ## About
 
@@ -33,18 +34,18 @@
 
 [**[Back to contents]**](#contents)
 
-* [the concept stuffs](./concept.md)
+* [the concept stuffs](./docs_01_conceptual.md)
     * initial research and thoughtables
     * can be actor identifying and the use case stuffs
     * will be the use case diagrams and sequence diagrams too
     * include the context model
     * mah haps the architecture
 
-### DOCS 02 : Preliminary building the things and interactions
+### DOCS 02 : Requirements building the things and interactions
 
 [**[Back to contents]**](#contents)
 
-* [the preliminary the things together](./preliminary.md)
+* [the requirements of the things together](./docs_02_requirements.md)
     * will be the requirements side of the software design process
     * can have the domain model
 
@@ -52,14 +53,14 @@
 
 [**[Back to contents]**](#contents)
 
-* [the detailed designables](./detailed.md)
+* [the detailed designables](./docs_03_designables.md)
     * should be the very detailed UML with all the interactions
 
 ### DOCS 04 : Make the things
 
 [**[Back to contents]**](#contents)
 
-* [the making part](./manufacturing.md)
+* [the making part](./docs_04_developments.md)
     * include the tests and such too
 
 ---
@@ -69,6 +70,8 @@
 [**[Back to contents]**](#contents)
 
 * important spookers about the development process
+* previously within the conceptual doc:
+    * *a lot of the conceptual design notes already covers a lot of this, and this stage is kinda broadly skipped so far, but inclusions/exclusions as well as dependency matrix should first be made to highlight a realistic development plan and "attempt" to avoid complexity demon ruining the [gamification](https://en.wikipedia.org/wiki/Gamification) of this art project*
 
 
 ### development iterations and conditions
