@@ -347,11 +347,16 @@ sequenceDiagram
 
 [**[Back to Contents]**](#contents)
 
-* [[`Scene` and `Sky box`]](#sequence-diagram-draft-01--sky-box)
+* will be based on [***[Concept-Domain model [draft 02]]***](#concept-domain-model-draft-02)
+* sub heading links:
+    * [***[`Sky box`]***](#sequence-diagram-draft-01--sky-box)
+    * [***[`Terrain`]***](#sequence-diagram-draft-01--terrain)
+    * [***[`Traffic Controller`]***](#sequence-diagram-draft-01--traffic-controller)
+    * [***[`Car`]***](#sequence-diagram-draft-01--car)
 
 #### Sequence diagram [draft 01] : `Sky box`
 
-* [[return to sequence diagram sub heading]](#sequence-diagram-draft-01)
+* [*[return to sequence diagram sub heading]*](#sequence-diagram-draft-01)
 
 ```mermaid
 sequenceDiagram
@@ -405,7 +410,147 @@ sequenceDiagram
     %% -------------------------------------------------
 ```
 
+#### Sequence diagram [draft 01] : `Terrain`
 
+* [*[return to sequence diagram sub heading]*](#sequence-diagram-draft-01)
+
+* todo
+```mermaid
+sequenceDiagram
+    autonumber
+    %% -------------------------------------------------
+    participant SCENE as Scene
+    participant TERRAIN as Terrain
+    participant INTERSECTION as Intersection
+    participant LANE as Lane
+    participant TRAFFICLIGHT as Traffic Light
+    participant BUILDING as Building
+    %% ...
+    %% -------------------------------------------------
+    note over SCENE,BUILDING: . . . 
+    %% -------------------------------------------------
+    critical Initialise
+    note left of SCENE: creater calls<br>scene.init()
+    activate SCENE
+    %% ...
+    deactivate SCENE
+    note left of SCENE: returns control<br>to creator
+    end
+    %% -------------------------------------------------
+    note over SCENE,BUILDING: . . . 
+    %% -------------------------------------------------
+    loop Draw
+    note left of SCENE: creator calls<br>scene.draw()
+    activate SCENE
+    %% ...
+    deactivate SCENE
+    note left of SCENE: returns control<br>to creator
+    end
+    %% -------------------------------------------------
+    note over SCENE,BUILDING: . . . 
+    %% -------------------------------------------------
+```
+ 
+#### Sequence diagram [draft 01] : `Traffic Controller`
+
+* [*[return to sequence diagram sub heading]*](#sequence-diagram-draft-01)
+
+* todo
+```mermaid
+sequenceDiagram
+    autonumber
+    %% -------------------------------------------------
+    participant SCENE as Scene
+    participant TRAFFICCONTROLLER as Traffic Controller
+    participant INTERSECTION as Intersection
+    participant LANE as Lane
+    participant TRAFFICLIGHT as Traffic Light
+    %% ...
+    %% -------------------------------------------------
+    note over SCENE,TRAFFICLIGHT: . . . 
+    %% -------------------------------------------------
+    critical Initialise
+    note left of SCENE: creater calls<br>scene.init()
+    activate SCENE
+    %% ...
+    deactivate SCENE
+    note left of SCENE: returns control<br>to creator
+    end
+    %% -------------------------------------------------
+    note over SCENE,TRAFFICLIGHT: . . . 
+    %% -------------------------------------------------
+    loop Draw
+    note left of SCENE: creator calls<br>scene.draw()
+    activate SCENE
+    %% ...
+    deactivate SCENE
+    note left of SCENE: returns control<br>to creator
+    end
+    %% -------------------------------------------------
+    note over SCENE,TRAFFICLIGHT: . . . 
+    %% -------------------------------------------------
+    loop Update lane state
+    note left of TRAFFICCONTROLLER: thread calls<br>controller.update()
+    activate TRAFFICCONTROLLER
+    %% ...
+    deactivate TRAFFICCONTROLLER
+    note left of TRAFFICCONTROLLER: returns control<br>to thread
+    end
+    %% -------------------------------------------------
+    note over SCENE,TRAFFICLIGHT: . . . 
+    %% -------------------------------------------------
+```
+ 
+#### Sequence diagram [draft 01] : `Car`
+
+* [*[return to sequence diagram sub heading]*](#sequence-diagram-draft-01)
+
+* todo
+```mermaid
+sequenceDiagram
+    autonumber
+    %% -------------------------------------------------
+    participant SCENE as Scene
+    participant LANE as Lane
+    participant CAR as Car
+    participant CARLIGHTS as Car Lights
+    participant WHEEL as Wheel
+    %% ...
+    %% -------------------------------------------------
+    note over SCENE,WHEEL: . . . 
+    %% -------------------------------------------------
+    critical Initialise
+    note left of SCENE: creater calls<br>scene.init()
+    activate SCENE
+    %% ...
+    deactivate SCENE
+    note left of SCENE: returns control<br>to creator
+    end
+    %% -------------------------------------------------
+    note over SCENE,WHEEL: . . . 
+    %% -------------------------------------------------
+    loop Draw
+    note left of SCENE: creator calls<br>scene.draw()
+    activate SCENE
+    %% ...
+    deactivate SCENE
+    note left of SCENE: returns control<br>to creator
+    end
+    %% -------------------------------------------------
+    note over SCENE,WHEEL: . . . 
+    %% -------------------------------------------------
+    loop Update lane state
+    note left of CAR: thread calls<br>car.update()
+    activate CAR
+    %% ...
+    deactivate CAR
+    note left of CAR: returns control<br>to thread
+    end
+    %% -------------------------------------------------
+    note over SCENE,WHEEL: . . . 
+    %% -------------------------------------------------
+```
+ 
 
 ---
 
