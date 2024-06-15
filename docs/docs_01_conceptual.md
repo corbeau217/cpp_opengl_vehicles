@@ -432,7 +432,20 @@ sequenceDiagram
     critical Initialise
     note left of SCENE: creater calls<br>scene.init()
     activate SCENE
-    %% ...
+    SCENE ->>+ TERRAIN: initialise
+    TERRAIN ->>+ INTERSECTION: initialise
+    loop for each lane
+    INTERSECTION ->>+ LANE: initialise
+    LANE ->>+ TRAFFICLIGHT: initialise
+    TRAFFICLIGHT -->>- LANE: done
+    LANE -->>- INTERSECTION: done
+    end
+    INTERSECTION -->>- TERRAIN: done
+    loop for each building
+    TERRAIN ->>+ BUILDING: initialise
+    BUILDING -->>- TERRAIN: done
+    end
+    TERRAIN -->>- SCENE: done
     deactivate SCENE
     note left of SCENE: returns control<br>to creator
     end
