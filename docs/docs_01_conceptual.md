@@ -69,7 +69,23 @@
 
 [**[Back to Contents]**](#contents)
 
-* todo
+* [`Scene`](#scene)
+* [`Sky day`](#sky-day)
+* [`Sky night`](#sky-night)
+* [`Sun`](#concept-identification-listing-draft-02)
+* [`Clouds`](#clouds)
+* [`Moon`](#concept-identification-listing-draft-02)
+* [`Car`](#car)
+* [`Car Lights`](#concept-identification-listing-draft-02)
+* [`Wheel`](#concept-identification-listing-draft-02)
+* [`Diagnostic Screen`](#traffic-diagnostics-screen)
+* [`Traffic Controller`](#traffic-controller)
+* [`Lane`](#lane)
+* [`Traffic Light`](#traffic-light)
+* [`Intersection`](#intersection)
+* [`Terrain`](#concept-identification-listing-draft-02)
+* [`Building`](#concept-identification-listing-draft-02)
+* [`Mesh`](#concept-identification-listing-draft-02)
 
 ## Use cases
 
@@ -302,11 +318,94 @@ flowchart TD
 
 ## Sequence diagrams
 
+* mermaid chart [[sequence diagrams syntax reference]](https://mermaid.js.org/syntax/sequenceDiagram.html)
+* will probably need to redo after we fully confirm the things with a proper domain model
+
+<!-- * stub stuffs:
+```mermaid
+sequenceDiagram
+    participant SCENE as Scene
+    participant SUN as Sun
+    participant CLOUDS as Clouds
+    participant MOON as Moon
+    participant TRAFFICCONTROLLER as Traffic Controller
+    participant TRAFFICLIGHT as Traffic Light
+    participant INTERSECTION as Intersection
+    participant DIAGNOSTICSSCREEN as Diagnostic Screen
+    participant LANE as Lane
+    participant SKYDAY as Sky day
+    participant SKYNIGHT as Sky night
+    participant CAR as Car
+    participant WHEEL as Wheel
+    participant CARLIGHTS as Car Lights
+    participant MESH as Mesh
+    participant TERRAIN as Terrain
+    participant BUILDING as Building
+``` -->
+
 ### Sequence diagram [draft 01]
 
 [**[Back to Contents]**](#contents)
 
-* todo
+* [[`Scene` and `Sky box`]](#sequence-diagram-draft-01--sky-box)
+
+#### Sequence diagram [draft 01] : `Sky box`
+
+* [[return to sequence diagram sub heading]](#sequence-diagram-draft-01)
+
+```mermaid
+sequenceDiagram
+    autonumber
+    %% -------------------------------------------------
+    participant SCENE as Scene
+    participant SKYBOX as Skybox
+    participant SKYDAY as Sky day
+    participant SKYNIGHT as Sky night
+    participant CLOUDS as Clouds
+    %% -------------------------------------------------
+    note over SCENE,CLOUDS: . . . 
+    %% -------------------------------------------------
+    critical Initialise
+    note left of SCENE: creater calls<br>scene.init()
+    activate SCENE
+    SCENE ->>+ SKYBOX: initialise sky
+    SKYBOX ->>+ SKYDAY: initialise day
+    SKYDAY -->>- SKYBOX: done
+    SKYBOX ->>+ SKYNIGHT: initialise night
+    SKYNIGHT -->>- SKYBOX: done
+    SKYBOX ->>+ CLOUDS: initialise clouds
+    CLOUDS -->>- SKYBOX: done
+    SKYBOX ->>- SCENE: finished initialisation
+    deactivate SCENE
+    note left of SCENE: returns control<br>to creator
+    end
+    %% -------------------------------------------------
+    note over SCENE,CLOUDS: . . . 
+    %% -------------------------------------------------
+    loop Draw
+    note left of SCENE: creator calls<br>scene.draw()
+    activate SCENE
+    SCENE ->>+ SKYBOX: Draw sky
+    activate SKYBOX
+    par Day sky drawing
+    SKYBOX ->>+ SKYDAY: Draw atomosphere
+    SKYDAY -->>- SKYBOX: done
+    and Night sky drawing
+    SKYBOX ->>+ SKYNIGHT: Draw stars
+    SKYNIGHT -->>- SKYBOX: done
+    end
+    SKYBOX ->>+ CLOUDS: Draw clouds
+    CLOUDS -->>- SKYBOX: done
+    SKYBOX -->>- SCENE: finished
+    deactivate SCENE
+    note left of SCENE: returns control<br>to creator
+    end
+    %% -------------------------------------------------
+    note over SCENE,CLOUDS: . . . 
+    %% -------------------------------------------------
+```
+
+
 
 ---
 
