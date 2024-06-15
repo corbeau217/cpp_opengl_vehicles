@@ -25,10 +25,13 @@
 * [**[Actor Identification]**](#actor-identification)
     * [*[Concept identification listing [draft 01]]*](#concept-identification-listing-draft-01)
     * [*[Concept identification listing [draft 02]]*](#concept-identification-listing-draft-02)
-    * [*[Context model [draft 01]]*](#context-model-draft-01)
-    * [*[Context model [draft 02]]*](#context-model-draft-02)
 * [**[Use cases]**](#use-cases)
     * [*[Simple use cases]*](#simple-use-cases)
+* [**[Concept-Domain models]**](#concept-domain-models)
+    * [*[Concept-Domain model [draft 01]]*](#concept-domain-model-draft-01)
+    * [*[Concept-Domain model [draft 02]]*](#concept-domain-model-draft-02)
+* [**[Sequence diagrams]**](#sequence-diagrams)
+    * [*[Sequence diagram [draft 01]]*](#sequence-diagram-draft-01)
 * [**[Concept Diagrams]**](#concept-diagrams)
 
 ---
@@ -67,37 +70,6 @@
 [**[Back to Contents]**](#contents)
 
 * todo
-
-### Context model [draft 01]
-
-[**[Back to Contents]**](#contents)
-
-* kinda context model of the things, rly simple flow
-
-```mermaid
-flowchart TD
-    SCENE[Scene] -->|owns| CAR[Car]
-    SCENE -->|owns| ROAD[Road]
-    SCENE -->|owns| TRAFFICLIGHT[Traffic light]
-    CAR -->|uses| LANE[Lane]
-    ROAD -->|consists of| LANE
-    LANE -->|informed by| TRAFFICLIGHT
-    CONTROLLER[Traffic light controller] -->|determines the state of| TRAFFICLIGHT
-    SCENE -->|owns| SUN[Sun]
-    SCENE -->|owns| MOON[Moon]
-    SCENE -->|owns| SKYBOX[Sky box]
-    SCENE -->|owns| BUILDING[Building]
-    SKYBOX -->|owns| CLOUDS[Clouds]
-
-```
-
-### Context model [draft 02]
-
-[**[Back to Contents]**](#contents)
-
-* todo
-
----
 
 ## Use cases
 
@@ -168,6 +140,173 @@ flowchart TD
 
 * as an `Intersection` i want to ***generate*** the `Intersection` `Mesh`
 * as an `Intersection` i want to ***generate*** the `Lane` objects
+
+---
+
+## Concept-Domain models
+
+* mermaid chart [[flow chart syntax reference]](https://mermaid.js.org/syntax/flowchart.html)
+* mermaid chart [[class diagram syntax reference]](https://mermaid.js.org/syntax/classDiagram.html)
+* the need for the model didnt really fit fully within either model so we made our own kind.
+* a proper domain model will be made later
+
+### Concept-Domain model [draft 01]
+
+[**[Back to Contents]**](#contents)
+
+* kinda context model of the things, rly simple flow
+
+```mermaid
+flowchart TD
+    SCENE[Scene] -->|owns| CAR[Car]
+    SCENE -->|owns| ROAD[Road]
+    SCENE -->|owns| TRAFFICLIGHT[Traffic light]
+    CAR -->|uses| LANE[Lane]
+    ROAD -->|consists of| LANE
+    LANE -->|informed by| TRAFFICLIGHT
+    CONTROLLER[Traffic light controller] -->|determines the state of| TRAFFICLIGHT
+    SCENE -->|owns| SUN[Sun]
+    SCENE -->|owns| MOON[Moon]
+    SCENE -->|owns| SKYBOX[Sky box]
+    SCENE -->|owns| BUILDING[Building]
+    SKYBOX -->|owns| CLOUDS[Clouds]
+
+```
+
+### Concept-Domain model [draft 02]
+
+[**[Back to Contents]**](#contents)
+
+* second attempt after doing the use cases
+* `Atmosphere` was a suggestion to deal with some wackiness for cloud access
+    * currently commented out in the diagram
+* part way through making it we discovered that this doesnt fully fall within context or domain model
+    * context loses the shapes to highlight the types of actors/objects
+    * domain loses the shapes and current structure.
+    * will need a simple domain model later to show number of items in their interactions
+* `Scene` / `Terrain` / `Lane`
+    * are controllers and high level concepts for their child nodes
+    * warehouses for information
+* `Sky day` / `Sky night` / `Car` / `Diagnostic Screen` / `Intersection`
+    * are objects that hold behaviour and child nodes
+    * these could be separate threads
+* `Sun` / `Clouds` / `Moon` / `Car Lights` / `Traffic Light` / `Building`
+    * these are mostly meshes and shaders, with some information
+* `Traffic Controller`
+    * 100% seperate thread to the rest of the system
+    * controls the `Lane` child nodes
+* `Mesh`
+    * interface / object type to hold model information
+    * will be very about the handling the model and texturing
+* after completing the diagram we found the being able to send things more layers by using `-->` / `--->` / `---->` / `----->` 
+    * will do this in next draft may haps
+
+
+```mermaid
+flowchart TD
+    %% ========================================
+
+    SCENE[(Scene)]
+    SUN{{Sun}}
+    CLOUDS{{Clouds}}
+    MOON{{Moon}}
+    TRAFFICCONTROLLER((Traffic Controller))
+    TRAFFICLIGHT{{Traffic Light}}
+    INTERSECTION[Intersection]
+    DIAGNOSTICSSCREEN[Diagnostic Screen]
+    LANE[(Lane)]
+    SKYDAY[Sky day]
+    %% ATMOSPHERE[Atmosphere]
+    SKYNIGHT[Sky night]
+    CAR[Car]
+    WHEEL(Wheel)
+    CARLIGHTS{{Car Lights}}
+    MESH[[Mesh]]
+    TERRAIN[(Terrain)]
+    BUILDING{{Building}}
+
+    %% ========================================
+
+    SKYDAY --> CLOUDS
+    %% SCENE --> ATMOSPHERE
+    %% ATMOSPHERE --> CLOUDS
+    SCENE --> CLOUDS
+    SKYNIGHT --> CLOUDS
+
+    %% ====================
+
+    CAR --> CARLIGHTS
+    CAR --> WHEEL
+    CAR --> MESH
+    CAR --> LANE
+    CAR --> TRAFFICLIGHT
+
+    %% ====================
+
+    WHEEL --> MESH
+
+    %% ====================
+
+    LANE --> TRAFFICLIGHT
+
+    %% ====================
+
+    SCENE --> SKYDAY
+    SCENE --> SKYNIGHT
+    SCENE --> CAR
+    SCENE --> INTERSECTION
+    SCENE --> TERRAIN
+    SCENE --> DIAGNOSTICSSCREEN
+
+    %% ====================
+
+    SKYDAY --> SUN
+
+    %% ====================
+    
+    SKYNIGHT --> MOON
+
+    %% ====================
+
+    TRAFFICCONTROLLER --> LANE
+
+    %% ====================
+
+    DIAGNOSTICSSCREEN --> TRAFFICCONTROLLER
+    DIAGNOSTICSSCREEN --> LANE
+
+    %% ====================
+
+    TRAFFICLIGHT --> MESH
+
+    %% ====================
+
+    INTERSECTION --> MESH
+    INTERSECTION --> LANE
+    INTERSECTION --> TRAFFICLIGHT
+
+    %% ====================
+
+    TERRAIN --> INTERSECTION
+    TERRAIN --> BUILDING
+    SCENE --> BUILDING
+
+    %% ====================
+
+    BUILDING --> MESH
+
+    %% ========================================
+```
+
+---
+
+## Sequence diagrams
+
+### Sequence diagram [draft 01]
+
+[**[Back to Contents]**](#contents)
+
+* todo
 
 ---
 

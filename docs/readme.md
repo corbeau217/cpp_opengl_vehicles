@@ -49,6 +49,9 @@
 * `15/06/2024` - fixing up the naming of some of the conceptual document headings
 * `15/06/2024` - adding use cases with some highlighting of concepts
 * `15/06/2024` - created the links for draft 2 of concept highlighting
+* `15/06/2024` - reorganised conceptual to accomodate the sequence diagrams and context model section
+* `15/06/2024` - made up our own version of the context/domain model -> "Concept-Domain model"
+* `15/06/2024` - used it to plan out some things for the stucture by creating 2nd draft of the concept modelling
 
 ---
 
