@@ -66,6 +66,7 @@
 * `15/06/2024` - sky box sequence diagram done
 * `15/06/2024` - created sequence diagram stubs for terrain / traffic controller / car
 * `15/06/2024` - finished the sequence diagram for terrain (had to correct some mistakes from work on the bus)
+* `15/06/2024` - finished traffic system sequence diagram
 
 ---
 

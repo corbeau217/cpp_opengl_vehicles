@@ -414,7 +414,6 @@ sequenceDiagram
 
 * [*[return to sequence diagram sub heading]*](#sequence-diagram-draft-01)
 
-* todo
 ```mermaid
 sequenceDiagram
     autonumber
@@ -481,11 +480,12 @@ sequenceDiagram
 
 * [*[return to sequence diagram sub heading]*](#sequence-diagram-draft-01)
 
-* todo
 ```mermaid
 sequenceDiagram
     autonumber
     %% -------------------------------------------------
+    Actor TRAFFICTHREAD as Traffic Controller<br>thread
+    Actor MAINTHREAD as Main<br>thread
     participant SCENE as Scene
     participant TRAFFICCONTROLLER as Traffic Controller
     participant INTERSECTION as Intersection
@@ -493,37 +493,61 @@ sequenceDiagram
     participant TRAFFICLIGHT as Traffic Light
     %% ...
     %% -------------------------------------------------
-    note over SCENE,TRAFFICLIGHT: . . . 
     %% -------------------------------------------------
-    critical Initialise
-    note left of SCENE: creater calls<br>scene.init()
-    activate SCENE
-    %% ...
-    deactivate SCENE
-    note left of SCENE: returns control<br>to creator
+    activate MAINTHREAD
+    note over TRAFFICTHREAD,TRAFFICLIGHT: at program start
+    %% -------------------------------------------------
+    critical Initialise scene
+    MAINTHREAD ->>+ SCENE : Initialise scene
+    SCENE -->>- MAINTHREAD : done
+    MAINTHREAD ->>+ TRAFFICCONTROLLER : Initialise traffic<br>controller data
+    TRAFFICCONTROLLER -->>- MAINTHREAD : finished initialising
     end
     %% -------------------------------------------------
-    note over SCENE,TRAFFICLIGHT: . . . 
+    critical Initialise traffic controller thread
+    MAINTHREAD ->>+ TRAFFICTHREAD : Initialise thread
+    TRAFFICTHREAD -->>- MAINTHREAD : finished initialising
+    end
+    %% -------------------------------------------------
+    critical Start Traffic controller thread
+    MAINTHREAD ->> TRAFFICTHREAD : Start traffic controller<br>thread
+    activate TRAFFICTHREAD
+    TRAFFICTHREAD -->> MAINTHREAD : thread started
+    end
     %% -------------------------------------------------
     loop Draw
-    note left of SCENE: creator calls<br>scene.draw()
-    activate SCENE
-    %% ...
-    deactivate SCENE
-    note left of SCENE: returns control<br>to creator
+    MAINTHREAD ->>+ SCENE : Draws scene
+    SCENE ->>+ TRAFFICCONTROLLER : Draws traffic controller<br>status object
+    TRAFFICCONTROLLER -->>- SCENE : done status draw
+    SCENE -->>- MAINTHREAD : done draw call
     end
     %% -------------------------------------------------
-    note over SCENE,TRAFFICLIGHT: . . . 
-    %% -------------------------------------------------
-    loop Update lane state
-    note left of TRAFFICCONTROLLER: thread calls<br>controller.update()
-    activate TRAFFICCONTROLLER
-    %% ...
-    deactivate TRAFFICCONTROLLER
-    note left of TRAFFICCONTROLLER: returns control<br>to thread
+    loop Update traffic state
+    TRAFFICTHREAD ->>+ TRAFFICCONTROLLER : update data
+    TRAFFICCONTROLLER ->>+ INTERSECTION : handle update
+    loop update each lane
+    INTERSECTION ->>+ LANE : update lane
+    LANE ->>+ TRAFFICCONTROLLER : get current state
+    TRAFFICCONTROLLER -->>- LANE : current state data
+    LANE ->>+ LANE : state change check
+    LANE ->>+ TRAFFICLIGHT : had state change,<br>update traffic light
+    TRAFFICLIGHT -->>- LANE : done light
+    LANE -->>- LANE : finish state update
+    LANE -->>- INTERSECTION : done lane
+    end
+    INTERSECTION -->>- TRAFFICCONTROLLER : done intersection
+    TRAFFICCONTROLLER -->>- TRAFFICTHREAD : done update traffic
     end
     %% -------------------------------------------------
-    note over SCENE,TRAFFICLIGHT: . . . 
+    %% -------------------------------------------------
+    note over TRAFFICTHREAD,TRAFFICLIGHT: at program end
+    %% -------------------------------------------------
+    deactivate TRAFFICTHREAD
+    MAINTHREAD ->> TRAFFICTHREAD : dispose of thread
+    TRAFFICTHREAD -->> MAINTHREAD : 
+    MAINTHREAD ->> SCENE : dispose of scene
+    SCENE -->> MAINTHREAD : 
+    deactivate MAINTHREAD
     %% -------------------------------------------------
 ```
  
