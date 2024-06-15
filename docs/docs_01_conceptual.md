@@ -456,6 +456,19 @@ sequenceDiagram
     note left of SCENE: creator calls<br>scene.draw()
     activate SCENE
     %% ...
+    SCENE ->> TERRAIN : Draw
+    TERRAIN ->>+ INTERSECTION : Draw
+    loop for each traffic light object
+    INTERSECTION ->>+ TRAFFICLIGHT : Draw
+    TRAFFICLIGHT ->>- INTERSECTION : Done
+    end
+    INTERSECTION ->>- TERRAIN : done
+    loop for each building object
+    TERRAIN ->>+ BUILDING : Draw
+    BUILDING ->>- TERRAIN : Done
+    end
+    TERRAIN ->> SCENE : done
+    %% ...
     deactivate SCENE
     note left of SCENE: returns control<br>to creator
     end
