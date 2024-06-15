@@ -5,17 +5,21 @@
 ---
 ---
 
-## About
+## Contents
 
-* repo is for experimenting with vehicles in opengl and c++
-* [**[Documentation Overview page]**](./docs_00_overview.md)
+* [**[About]**](#about)
+* [**[Notes]**](#notes)
+* [**[Changes]**](#changes)
 
 ---
 
-## Contents
+## About
 
-* [**[Notes]**](#notes)
-* [**[Changes]**](#changes)
+[[Contents]](#contents)
+
+* repo is for experimenting with vehicles in opengl and c++
+* [**[Documentation Overview page]**](./docs_00_overview.md)
+* in part this project is an attempt at exploring and experimenting with what a term like `Computer Graphics Engineering` would mean
 
 ---
 
@@ -25,6 +29,9 @@
 
 * yoinks the stuff from our template
 * check out [the documentation overview](./docs_00_overview.md) for different documentation thingies
+* please know that the main creater of this documentation forgets the names of the things
+    * some of the names of the things in documentation may be incorrectly used
+    * as this project is for fun, as revision, and for the practice of the tools, there is less emphasis on documentation being 100% correct it in use, and more emphasis on the practicallity of the documentation in a software design and engineering basis for graphical art.
 
 ---
 
@@ -35,7 +42,13 @@
 * `12/06/2024` - initial creation of repo
 * `12/06/2024` - documentation setup
 * `13/06/2024` - some light documentation between the things
-* `14/06/2024` - cleaning the documentation and fixups
+* `14/06/2024` - cleaning the documentation and fixups of lings
+* `14/06/2024` - added the existing diagrams from research/exploration phase
+* `14/06/2024` - adding some simple actors/concept/object identification
+* `14/06/2024` - better linking and created simple context diagram
+* `15/06/2024` - fixing up the naming of some of the conceptual document headings
+* `15/06/2024` - adding use cases with some highlighting of concepts
+* `15/06/2024` - created the links for draft 2 of concept highlighting
 
 ---
 
