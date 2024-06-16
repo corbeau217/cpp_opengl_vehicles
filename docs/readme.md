@@ -68,5 +68,11 @@
 * `15/06/2024` - finished the sequence diagram for terrain (had to correct some mistakes from work on the bus)
 * `15/06/2024` - finished traffic system sequence diagram
 
+#### `16/06/2024`
+
+* `16/06/2024` - car/car thread init sequence done
+* `16/06/2024` - car/car thread update/draw sequence stubs done
+
+
 ---
 

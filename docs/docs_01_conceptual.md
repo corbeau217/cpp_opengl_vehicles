@@ -575,8 +575,10 @@ sequenceDiagram
     %% -------------------------------------------------
     note left of MAINTHREAD : MAIN THREAD<br>[starting]
     activate MAINTHREAD
+    MAINTHREAD ->> MAINTHREAD : initialise app
+    activate MAINTHREAD
     %% -------------------------------------------------
-    critical Initialise main thead
+    critical Initialise main
     MAINTHREAD ->>+ SCENE : init scene
     activate MAINTHREAD
     critical init scene
@@ -623,7 +625,6 @@ sequenceDiagram
     deactivate CARTHREAD
     end
     CARTHREAD -->>- SCENE : done car thread
-    SCENE -->> SCENE : prepare for next car
     deactivate SCENE
     %% ---------------------------------
     end
@@ -631,19 +632,22 @@ sequenceDiagram
     %% ---------------------------------
     end
     SCENE -->>- MAINTHREAD : done scene init
+    deactivate MAINTHREAD
     %% ---------------------------------
     note right of MAINTHREAD : when everything<br>else initialised
+    MAINTHREAD ->> MAINTHREAD : start car threads
     activate MAINTHREAD
     loop for all car threads
     MAINTHREAD ->>+ CARTHREAD : start car thread
     note left of CARTHREAD : CAR THREAD<br>[starting]
     CARTHREAD -->> MAINTHREAD : started
-    MAINTHREAD -->> MAINTHREAD : prepare for<br>next thread start
     end
     deactivate MAINTHREAD
+    MAINTHREAD -->> MAINTHREAD : done car threads
     %% ---------------------------------
     end
     deactivate MAINTHREAD
+    MAINTHREAD -->> MAINTHREAD : done app<br>initialisation
     %% -------------------------------------------------
     note over CARTHREAD,WHEEL : . . .
     note over CARTHREAD,WHEEL : . . .
@@ -669,44 +673,62 @@ sequenceDiagram
 sequenceDiagram
     autonumber
     %% -------------------------------------------------
+    Actor CARTHREAD as Car thread
+    Actor MAINTHREAD as Main thread
+    %% ---------------------------------
     participant SCENE as Scene
     participant LANE as Lane
     participant CAR as Car
     participant CARLIGHTS as Car Lights
     participant WHEEL as Wheel
-    %% ...
     %% -------------------------------------------------
-    note over SCENE,WHEEL: . . . 
     %% -------------------------------------------------
-    critical Initialise
-    note left of SCENE: creater calls<br>scene.init()
-    activate SCENE
-    %% ...
-    deactivate SCENE
-    note left of SCENE: returns control<br>to creator
+    note left of MAINTHREAD : MAIN THREAD<br>[starting]
+    activate MAINTHREAD
+    %% -------------------------------------------------
+    note right of MAINTHREAD : . . .
+    note over MAINTHREAD,LANE : init scene
+    note over CARTHREAD,MAINTHREAD : init car thread
+    note over CARTHREAD,WHEEL : init car
+    note right of MAINTHREAD : . . .
+    %% -------------------------------------------------
+    %% -------------------------------------------------
+    note left of CARTHREAD : CAR THREAD<br>[starting]
+    activate CARTHREAD
+    note over CARTHREAD,MAINTHREAD : start car thread
+    %% -------------------------------------------------
+    %% -------------------------------------------------
+    note right of MAINTHREAD : . . .
+    %% ---------------------------------
+    par MAIN THREAD
+    note over SCENE : update
+    note over SCENE,WHEEL : draw
+    %% ---------------------------------
+    %% ---------------------------------
+    and TRAFFIC CONTROL THREAD
+    note over LANE : [suggestion]<br>sensor update
+    note over LANE : update
+    %% ---------------------------------
+    %% ---------------------------------
+    and CAR THREAD
+    %% ---------------------------------
+    %% ---------------------------------
+    note over CAR,WHEEL : [suggestion]<br>sensor update
+    note over CAR,WHEEL : update
+    %% ---------------------------------
+    %% ---------------------------------
     end
     %% -------------------------------------------------
-    note over SCENE,WHEEL: . . . 
     %% -------------------------------------------------
-    loop Draw
-    note left of SCENE: creator calls<br>scene.draw()
-    activate SCENE
-    %% ...
-    deactivate SCENE
-    note left of SCENE: returns control<br>to creator
-    end
+    note left of CARTHREAD : CAR THREAD<br>[ending]
+    deactivate CARTHREAD
+    note right of MAINTHREAD : . . .
     %% -------------------------------------------------
-    note over SCENE,WHEEL: . . . 
+    note over MAINTHREAD,WHEEL : app cleanup
     %% -------------------------------------------------
-    loop Update lane state
-    note left of CAR: thread calls<br>car.update()
-    activate CAR
-    %% ...
-    deactivate CAR
-    note left of CAR: returns control<br>to thread
-    end
+    note left of MAINTHREAD : MAIN THREAD<br>[ending]
+    deactivate MAINTHREAD
     %% -------------------------------------------------
-    note over SCENE,WHEEL: . . . 
     %% -------------------------------------------------
 ```
 
@@ -719,44 +741,62 @@ sequenceDiagram
 sequenceDiagram
     autonumber
     %% -------------------------------------------------
+    Actor CARTHREAD as Car thread
+    Actor MAINTHREAD as Main thread
+    %% ---------------------------------
     participant SCENE as Scene
     participant LANE as Lane
     participant CAR as Car
     participant CARLIGHTS as Car Lights
     participant WHEEL as Wheel
-    %% ...
     %% -------------------------------------------------
-    note over SCENE,WHEEL: . . . 
     %% -------------------------------------------------
-    critical Initialise
-    note left of SCENE: creater calls<br>scene.init()
-    activate SCENE
-    %% ...
-    deactivate SCENE
-    note left of SCENE: returns control<br>to creator
+    note left of MAINTHREAD : MAIN THREAD<br>[starting]
+    activate MAINTHREAD
+    %% -------------------------------------------------
+    note right of MAINTHREAD : . . .
+    note over MAINTHREAD,LANE : init scene
+    note over CARTHREAD,MAINTHREAD : init car thread
+    note over CARTHREAD,WHEEL : init car
+    note right of MAINTHREAD : . . .
+    %% -------------------------------------------------
+    %% -------------------------------------------------
+    note left of CARTHREAD : CAR THREAD<br>[starting]
+    activate CARTHREAD
+    note over CARTHREAD,MAINTHREAD : start car thread
+    %% -------------------------------------------------
+    %% -------------------------------------------------
+    note right of MAINTHREAD : . . .
+    %% ---------------------------------
+    par MAIN THREAD
+    note over SCENE : update
+    note over SCENE,WHEEL : draw
+    %% ---------------------------------
+    %% ---------------------------------
+    and TRAFFIC CONTROL THREAD
+    note over LANE : [suggestion]<br>sensor update
+    note over LANE : update
+    %% ---------------------------------
+    %% ---------------------------------
+    and CAR THREAD
+    %% ---------------------------------
+    %% ---------------------------------
+    note over CAR,WHEEL : [suggestion]<br>sensor update
+    note over CAR,WHEEL : update
+    %% ---------------------------------
+    %% ---------------------------------
     end
     %% -------------------------------------------------
-    note over SCENE,WHEEL: . . . 
     %% -------------------------------------------------
-    loop Draw
-    note left of SCENE: creator calls<br>scene.draw()
-    activate SCENE
-    %% ...
-    deactivate SCENE
-    note left of SCENE: returns control<br>to creator
-    end
+    note left of CARTHREAD : CAR THREAD<br>[ending]
+    deactivate CARTHREAD
+    note right of MAINTHREAD : . . .
     %% -------------------------------------------------
-    note over SCENE,WHEEL: . . . 
+    note over MAINTHREAD,WHEEL : app cleanup
     %% -------------------------------------------------
-    loop Update lane state
-    note left of CAR: thread calls<br>car.update()
-    activate CAR
-    %% ...
-    deactivate CAR
-    note left of CAR: returns control<br>to thread
-    end
+    note left of MAINTHREAD : MAIN THREAD<br>[ending]
+    deactivate MAINTHREAD
     %% -------------------------------------------------
-    note over SCENE,WHEEL: . . . 
     %% -------------------------------------------------
 ```
  
