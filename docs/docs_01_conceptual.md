@@ -30,8 +30,15 @@
 * [**[Concept-Domain models]**](#concept-domain-models)
     * [*[Concept-Domain model [draft 01]]*](#concept-domain-model-draft-01)
     * [*[Concept-Domain model [draft 02]]*](#concept-domain-model-draft-02)
+    * [*[Concept-Domain model [draft 03]]*](#concept-domain-model-draft-03)
 * [**[Sequence diagrams]**](#sequence-diagrams)
     * [*[Sequence diagram [draft 01]]*](#sequence-diagram-draft-01)
+        * [*Sequence diagram [draft 01] : `Sky box`*](#sequence-diagram-draft-01--sky-box)
+        * [*Sequence diagram [draft 01] : `Terrain`*](#sequence-diagram-draft-01--terrain)
+        * [*Sequence diagram [draft 01] : `Traffic Controller`*](#sequence-diagram-draft-01--traffic-controller)
+        * [*Sequence diagram [draft 01] : `Car`*](#sequence-diagram-draft-01--car)
+            * [*Sequence diagram [draft 01] : `Car.init()`*](#sequence-diagram-draft-01--carinit)
+            * [*Sequence diagram [draft 01] : `Car.update()` and `Car.draw()`*](#sequence-diagram-draft-01--carupdate-and-cardraw)
 * [**[Concept Diagrams]**](#concept-diagrams)
 
 ---
@@ -310,6 +317,125 @@ flowchart TD
     %% ====================
 
     BUILDING --> MESH
+
+    %% ========================================
+```
+
+### Concept-Domain model [draft 03]
+
+[**[Back to Contents]**](#contents)
+
+* mild changes to reflect discoveries in the sequence diagram draft 1
+
+```mermaid
+flowchart TD
+    %% ========================================
+
+    MAINTHREAD((Main Thread))
+    SKYBOX[(Sky box)]
+    SCENE[(Scene)]
+    SUN{{Sun}}
+    MOON{{Moon}}
+    TRAFFICLIGHT{{Traffic Light}}
+    INTERSECTION[Intersection]
+    DIAGNOSTICSSCREEN[Diagnostic Screen]
+    LANE[(Lane)]
+    SKYDAY[Sky day]
+    SKYNIGHT[Sky night]
+    CLOUDS{{Clouds}}
+    CAR[Car]
+    WHEEL(Wheel)
+    CARLIGHTS{{Car Lights}}
+    MESH[[Mesh]]
+    TERRAIN[(Terrain)]
+    BUILDING{{Building}}
+    TRAFFICTHREAD((Traffic Thread))
+    CARTHREAD((Car Thread))
+
+    %% ========================================
+
+
+    MAINTHREAD --- SCENE
+    MAINTHREAD -...- CARTHREAD
+    MAINTHREAD -..- TRAFFICTHREAD
+
+    %% ====================
+
+    SCENE ==> SKYBOX
+
+    %% ====================
+
+    SKYBOX ==> SKYDAY
+    SKYBOX ==> CLOUDS
+    SKYBOX ==> SKYNIGHT
+
+    %% ====================
+
+    CAR ==> CARLIGHTS
+    CAR ==> WHEEL
+    CAR ==> MESH
+    CAR -.- LANE
+    CAR -..- TRAFFICLIGHT
+
+    %% ====================
+
+    WHEEL ==> MESH
+
+    %% ====================
+
+    LANE --- TRAFFICLIGHT
+
+    %% ====================
+
+    SCENE ==> CAR
+    SCENE ==> TERRAIN
+    SCENE ==> DIAGNOSTICSSCREEN
+
+    %% ====================
+
+    SKYDAY ==> SUN
+
+    %% ====================
+    
+    SKYNIGHT ==> MOON
+
+    %% ====================
+
+    CARTHREAD --- CAR
+    CARTHREAD -.- INTERSECTION
+    
+
+    %% ====================
+
+    TRAFFICTHREAD --- INTERSECTION
+
+    %% ====================
+
+    DIAGNOSTICSSCREEN -..- INTERSECTION
+
+    
+    %% ====================
+
+    TRAFFICLIGHT ==> MESH
+
+    %% ====================
+
+    INTERSECTION ==> MESH
+    INTERSECTION ==> LANE
+    INTERSECTION ==> TRAFFICLIGHT
+
+    %% ====================
+
+    TERRAIN ==> INTERSECTION
+    TERRAIN ==> BUILDING
+
+    %% ====================
+    
+    SCENE -.- BUILDING
+
+    %% ====================
+
+    BUILDING ==> MESH
 
     %% ========================================
 ```
