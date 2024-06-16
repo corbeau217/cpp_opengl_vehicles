@@ -554,8 +554,152 @@ sequenceDiagram
 #### Sequence diagram [draft 01] : `Car`
 
 * [*[return to sequence diagram sub heading]*](#sequence-diagram-draft-01)
+* [`init()`](#sequence-diagram-draft-01--carinit)
+* [`draw()`](#sequence-diagram-draft-01--cardraw)
+* [`update()`](#sequence-diagram-draft-01--carupdate)
+
+##### Sequence diagram [draft 01] : `Car.init()`
+
+```mermaid
+sequenceDiagram
+    autonumber
+    %% -------------------------------------------------
+    Actor CARTHREAD as Car thread
+    Actor MAINTHREAD as Main thread
+    %% ---------------------------------
+    participant SCENE as Scene
+    participant LANE as Lane
+    participant CAR as Car
+    participant CARLIGHTS as Car Lights
+    participant WHEEL as Wheel
+    %% -------------------------------------------------
+    note left of MAINTHREAD : MAIN THREAD<br>[starting]
+    activate MAINTHREAD
+    %% -------------------------------------------------
+    critical Initialise
+    MAINTHREAD ->>+ SCENE : init scene
+    activate MAINTHREAD
+    %% ---------------------------------
+    loop All lanes
+    activate SCENE
+    SCENE ->>+ LANE : init lane
+    LANE -->>- SCENE : done lane
+    deactivate SCENE
+    end
+    %% ---------------------------------
+    note right of MAINTHREAD: when fixed car count
+    loop All initial cars
+    activate SCENE
+    SCENE ->>+ CARTHREAD : init car thread
+    CARTHREAD ->>+ CAR : init car
+    activate CARTHREAD
+    %% ..........................
+    CAR ->>+ CARLIGHTS : init lights object
+    activate CAR
+    CARLIGHTS -->>- CAR : done lights
+    deactivate CAR
+    loop All wheels
+    CAR ->>+ WHEEL : init wheel object
+    activate CAR
+    WHEEL -->>- CAR : done wheel
+    CAR ->>+ LANE : get lane to associate
+    activate CAR
+    note left of LANE : associate with lane retreived<br>through `Intersection`
+    LANE -->>- CAR : 
+    deactivate CAR
+    deactivate CAR
+    end
+    %% ..........................
+    CAR -->>- CARTHREAD : done car object
+    CARTHREAD ->>+ SCENE : attach car to scene
+    SCENE -->>- CARTHREAD : attached to scene
+    deactivate CARTHREAD
+    CARTHREAD -->>- SCENE : done car thread
+    deactivate SCENE
+    end
+    %% ---------------------------------
+    SCENE -->>- MAINTHREAD : done scene init
+    %% ---------------------------------
+    note right of MAINTHREAD : when everything<br>else initialised
+    loop for all car threads
+    MAINTHREAD ->>+ CARTHREAD : start car thread
+    note left of CARTHREAD : CAR THREAD<br>[starting]
+    CARTHREAD -->> MAINTHREAD : started
+    end
+    deactivate MAINTHREAD
+    %% ---------------------------------
+    end
+    %% -------------------------------------------------
+    note over CARTHREAD,WHEEL : . . .
+    note over CARTHREAD,WHEEL : . . .
+    %% -------------------------------------------------
+    note left of CARTHREAD : CAR THREAD<br>[ending]
+    %% -------------------------------------------------
+    deactivate CARTHREAD
+    %% -------------------------------------------------
+    note over MAINTHREAD,WHEEL : . . .
+    note over MAINTHREAD,WHEEL : . . .
+    %% ---------------------------------
+    note left of MAINTHREAD : MAIN THREAD<br>[ending]
+    %% ---------------------------------
+    deactivate MAINTHREAD
+```
+
+##### Sequence diagram [draft 01] : `Car.draw()`
 
 * todo
+* [***return to `Car`***](#sequence-diagram-draft-01--car)
+
+```mermaid
+sequenceDiagram
+    autonumber
+    %% -------------------------------------------------
+    participant SCENE as Scene
+    participant LANE as Lane
+    participant CAR as Car
+    participant CARLIGHTS as Car Lights
+    participant WHEEL as Wheel
+    %% ...
+    %% -------------------------------------------------
+    note over SCENE,WHEEL: . . . 
+    %% -------------------------------------------------
+    critical Initialise
+    note left of SCENE: creater calls<br>scene.init()
+    activate SCENE
+    %% ...
+    deactivate SCENE
+    note left of SCENE: returns control<br>to creator
+    end
+    %% -------------------------------------------------
+    note over SCENE,WHEEL: . . . 
+    %% -------------------------------------------------
+    loop Draw
+    note left of SCENE: creator calls<br>scene.draw()
+    activate SCENE
+    %% ...
+    deactivate SCENE
+    note left of SCENE: returns control<br>to creator
+    end
+    %% -------------------------------------------------
+    note over SCENE,WHEEL: . . . 
+    %% -------------------------------------------------
+    loop Update lane state
+    note left of CAR: thread calls<br>car.update()
+    activate CAR
+    %% ...
+    deactivate CAR
+    note left of CAR: returns control<br>to thread
+    end
+    %% -------------------------------------------------
+    note over SCENE,WHEEL: . . . 
+    %% -------------------------------------------------
+```
+
+##### Sequence diagram [draft 01] : `Car.update()`
+
+* todo
+* [***return to `Car`***](#sequence-diagram-draft-01--car)
+
 ```mermaid
 sequenceDiagram
     autonumber
