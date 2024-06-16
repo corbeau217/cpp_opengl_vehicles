@@ -5,8 +5,8 @@
 
 ## About 
 
-[**[return to overview]**](./docs_00_overview.md#docs-01--concepts-and-some-throwing-around-ideas)
-[[Return to `DOCS 01 Conceptual` main page]](./docs_01_conceptual.md#previous-conceptual-information)
+* [***click here to return to [overview]***](./docs_00_overview.md#docs-01--concepts-and-some-throwing-around-ideas)
+    * [***click here to return to [DOCS 01 : Conceptual]***](./docs_01_conceptual.md#previous-conceptual-information)
 
 * this file will be for the previous conceptual content
 

@@ -5,7 +5,7 @@
 
 ## About
 
-[**[return to overview]**](./docs_00_overview.md#docs-01--concepts-and-some-throwing-around-ideas)
+* [***click here to return to [overview]***](./docs_00_overview.md#docs-01--concepts-and-some-throwing-around-ideas)
 
 * initial research and thoughtables
 * can be actor identifying and the use case stuffs
@@ -26,7 +26,7 @@
     * [*[Concept identification listing [draft 01]]*](#concept-identification-listing-draft-01)
     * [*[Concept identification listing [draft 02]]*](#concept-identification-listing-draft-02)
 * [**[Use cases]**](#use-cases)
-    * [*[Simple use cases]*](#simple-use-cases)
+    * [*[Use cases [draft 01]]*](#use-cases-draft-01)
 * [**[Concept-Domain models]**](#concept-domain-models)
     * [*[Concept-Domain model [draft 01]]*](#concept-domain-model-draft-01)
     * [*[Concept-Domain model [draft 02]]*](#concept-domain-model-draft-02)
@@ -39,6 +39,8 @@
         * [*Sequence diagram [draft 01] : `Car`*](#sequence-diagram-draft-01--car)
             * [*Sequence diagram [draft 01] : `Car.init()`*](#sequence-diagram-draft-01--carinit)
             * [*Sequence diagram [draft 01] : `Car.update()` and `Car.draw()`*](#sequence-diagram-draft-01--carupdate-and-cardraw)
+* [**[State Diagrams]**](#state-diagrams)
+    * [*[State diagram [draft 01]]*](#state-diagram-draft-01)
 * [**[Concept Diagrams]**](#concept-diagrams)
 
 ---
@@ -96,7 +98,7 @@
 
 ## Use cases
 
-### simple use cases
+### Use cases [draft 01]
 
 [**[Back to Contents]**](#contents)
 
@@ -918,9 +920,9 @@ sequenceDiagram
 
 ## State diagrams
 
-[**[Back to Contents]**](#contents)
-
 ### State diagram [draft 01]
+
+[**[Back to Contents]**](#contents)
 
 * simple car state diagram
 

@@ -10,22 +10,27 @@
 * [**[About]**](#about)
 * [**[Notes]**](#notes)
 * [**[Changes]**](#changes)
+    * [`12/06/2024`](#12062024)
+    * [`13/06/2024`](#13062024)
+    * [`14/06/2024`](#14062024)
+    * [`15/06/2024`](#15062024)
+    * [`16/06/2024`](#16062024)
 
 ---
 
 ## About
 
-[[Contents]](#contents)
+[**[Back to Contents]**](#contents)
 
+* [***click here to goto [Docs 00 Overview]***](./docs_00_overview.md)
 * repo is for experimenting with vehicles in opengl and c++
-* [**[Documentation Overview page]**](./docs_00_overview.md)
 * in part this project is an attempt at exploring and experimenting with what a term like `Computer Graphics Engineering` would mean
 
 ---
 
 ## Notes 
 
-[[Contents]](#contents)
+[**[Back to Contents]**](#contents)
 
 * yoinks the stuff from our template
 * check out [the documentation overview](./docs_00_overview.md) for different documentation thingies
@@ -37,7 +42,7 @@
 
 ## Changes
 
-[[Contents]](#contents)
+[**[Back to Contents]**](#contents)
 
 #### `12/06/2024`
 
@@ -76,6 +81,7 @@
 * `16/06/2024` - formatting, contents link updates, and draft 3 concept domain model (could say that conceptual is done)
 * `16/06/2024` - lazy draft 01 domain model added to docs 02
 * `16/06/2024` - added contents links to docs02
+* `16/06/2024` - documentation links and formatting changes
 
 
 ---

@@ -5,7 +5,7 @@
 
 ## About
 
-[**[return to readme]**](./readme.md)
+[***click here to return to [readme]***](./readme.md)
 
 * this is mostly an overview with details on what the different sections do, it also includes some scope overview stuffs
 
@@ -34,6 +34,7 @@
 
 [**[Back to contents]**](#contents)
 
+* [***click here to goto [DOCS 01 : Conceptual]***](./docs_01_conceptual.md)
 * initial research and thoughtables
 * can be actor identifying and the use case stuffs
 * will be the use case diagrams and sequence diagrams too
@@ -44,6 +45,7 @@
 
 [**[Back to contents]**](#contents)
 
+* [***click here to goto [DOCS 02 : Requirements]***](./docs_02_requirements.md)
 * will be the requirements side of the software design process
 * can have the domain model
 
@@ -51,12 +53,14 @@
 
 [**[Back to contents]**](#contents)
 
+* [***click here to goto [DOCS 03 : Designables]***](./docs_03_designables.md)
 * should be the very detailed UML with all the interactions
 
 ### [DOCS 04 : Make the things](./docs_04_developments.md)
 
 [**[Back to contents]**](#contents)
 
+* [***click here to goto [DOCS 04 : Developments]***](./docs_04_developments.md)
 * include the tests and such too
 
 ---
