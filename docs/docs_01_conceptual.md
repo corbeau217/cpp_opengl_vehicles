@@ -576,22 +576,28 @@ sequenceDiagram
     note left of MAINTHREAD : MAIN THREAD<br>[starting]
     activate MAINTHREAD
     %% -------------------------------------------------
-    critical Initialise
+    critical Initialise main thead
     MAINTHREAD ->>+ SCENE : init scene
     activate MAINTHREAD
+    critical init scene
     %% ---------------------------------
     loop All lanes
     activate SCENE
     SCENE ->>+ LANE : init lane
+    critical init lane
+    note over LANE : create lane<br>stuffs
+    end
     LANE -->>- SCENE : done lane
     deactivate SCENE
     end
     %% ---------------------------------
     note right of MAINTHREAD: when fixed car count
-    loop All initial cars
+    loop for all cars
     activate SCENE
     SCENE ->>+ CARTHREAD : init car thread
+    critical init car thread
     CARTHREAD ->>+ CAR : init car
+    critical init car
     activate CARTHREAD
     %% ..........................
     CAR ->>+ CARLIGHTS : init lights object
@@ -610,25 +616,34 @@ sequenceDiagram
     deactivate CAR
     end
     %% ..........................
+    end
     CAR -->>- CARTHREAD : done car object
     CARTHREAD ->>+ SCENE : attach car to scene
     SCENE -->>- CARTHREAD : attached to scene
     deactivate CARTHREAD
-    CARTHREAD -->>- SCENE : done car thread
-    deactivate SCENE
     end
+    CARTHREAD -->>- SCENE : done car thread
+    SCENE -->> SCENE : prepare for next car
+    deactivate SCENE
     %% ---------------------------------
+    end
+    note right of SCENE : other scene<br>init
+    %% ---------------------------------
+    end
     SCENE -->>- MAINTHREAD : done scene init
     %% ---------------------------------
     note right of MAINTHREAD : when everything<br>else initialised
+    activate MAINTHREAD
     loop for all car threads
     MAINTHREAD ->>+ CARTHREAD : start car thread
     note left of CARTHREAD : CAR THREAD<br>[starting]
     CARTHREAD -->> MAINTHREAD : started
+    MAINTHREAD -->> MAINTHREAD : prepare for<br>next thread start
     end
     deactivate MAINTHREAD
     %% ---------------------------------
     end
+    deactivate MAINTHREAD
     %% -------------------------------------------------
     note over CARTHREAD,WHEEL : . . .
     note over CARTHREAD,WHEEL : . . .
