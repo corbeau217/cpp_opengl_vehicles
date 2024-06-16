@@ -74,6 +74,8 @@
 * `16/06/2024` - car/car thread update/draw sequence stubs done
 * `16/06/2024` - car/car thread draft 1 sequence complete, update and draw are combined
 * `16/06/2024` - formatting, contents link updates, and draft 3 concept domain model (could say that conceptual is done)
+* `16/06/2024` - lazy draft 01 domain model added to docs 02
+* `16/06/2024` - added contents links to docs02
 
 
 ---

@@ -916,6 +916,37 @@ sequenceDiagram
 
 ---
 
+## State diagrams
+
+[**[Back to Contents]**](#contents)
+
+### State diagram [draft 01]
+
+* simple car state diagram
+
+```mermaid
+stateDiagram-v2
+    DRIVESIN : Enters scene
+    DRIVESOUT : Exits scene
+    INQUEUE : somewhere in the<br>lane queue
+    FRONTQUEUE : Front of the<br>lane queue
+    ININTERSECTION : Passing through<br>the intersection
+    PASTINTERSECTION : Past the<br>intersection
+    %%  --------------------
+    %%  --------------------
+    [*] --> DRIVESIN
+    %%  --------------------
+    DRIVESIN --> INQUEUE
+    INQUEUE --> FRONTQUEUE
+    FRONTQUEUE --> ININTERSECTION
+    ININTERSECTION --> PASTINTERSECTION
+    PASTINTERSECTION --> DRIVESOUT
+    %%  --------------------
+    DRIVESOUT --> [*]
+```
+
+---
+
 ## Concept Diagrams
 
 [**[Back to Contents]**](#contents)

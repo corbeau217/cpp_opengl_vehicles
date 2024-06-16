@@ -14,7 +14,11 @@
 
 ## Contents
 
-* aaaaa soon
+* [***[Nonfunctional requirements]***](#nonfunctional-requirements)
+* [***[Functional requirements]***](#functional-requirements)
+* [***[The requirements that are hard to place]***](#the-requirements-that-are-hard-to-place)
+* [***[Domain models]***](#domain-models)
+    * [*[Domain model [draft 01]]*](#domain-model-draft-01)
 
 ---
 
@@ -82,3 +86,178 @@
 
 ---
 
+## Domain models
+
+### Domain model [draft 01]
+
+[**[Back to Contents]**](#contents)
+
+* lazy draft, half way through we stopped putting the relationships in properly
+```mermaid
+classDiagram
+    title Domain model draft 01
+
+    class Scene {
+        SkyBox skybox
+        Car[] cars
+        Terrain terrain
+    }
+    class SkyBox {
+        SkyDay skyday
+        SkyNight skynight
+        Clouds clouds
+    }
+    class SkyDay {
+        Color skyColour
+        Sun sun
+    }
+    class SkyNight {
+        Color skyColour
+        Moon moon
+    }
+    class Sun {
+        %% ...
+    }
+    class Moon {
+        %% ...
+    }
+    class Clouds {
+        %% ...
+    }
+    class Car {
+        State state
+        CarLights carlights
+        Lane currentLane
+        Wheel[] wheels
+        Mesh mesh
+    }
+    class CarLights {
+        State state
+    }
+    class Wheel {
+        Mesh mesh
+    }
+    class Lane {
+        TrafficLight trafficlight
+    }
+    class TrafficLight {
+        State state
+        Mesh mesh
+    }
+    class Mesh {
+        Vector4f[] vertices
+    }
+    class CarThread {
+        Car car
+    }
+    class TrafficThread {
+        Intersection intersection
+    }
+    class MainThread {
+        %% ...
+    }
+    class Intersection {
+        TrafficLight[] trafficlight
+        Lane[] lane
+        Mesh mesh
+    }
+    class Building {
+        Mesh mesh
+    }
+    class Terrain {
+        Intersection intersection
+        Building[] buildings
+    }
+    class DiagnosticScreen {
+        Intersection intersection
+    }
+    class App {
+        Scene scene
+    }
+
+    %% ====================
+
+    MainThread ..|> App
+    App *--> Scene
+    MainThread .. CarThread
+    MainThread .. TrafficThread
+
+    %% ====================
+
+    Scene *--> SkyBox
+
+    %% ====================
+
+    SkyBox *--> SkyDay
+    SkyBox *--> Clouds
+    SkyBox *--> SkyNight
+
+    %% ====================
+
+    Car *--> CarLights
+    Car *--> Wheel
+    Car *--> Mesh
+    Car --> Lane
+    Car --> TrafficLight
+
+    %% ====================
+
+    Wheel --> Mesh
+
+    %% ====================
+
+    Lane --> TrafficLight
+
+    %% ====================
+
+    Scene --> Car
+    Scene --> Terrain
+    Scene --> DiagnosticScreen
+
+    %% ====================
+
+    SkyDay --> Sun
+
+    %% ====================
+    
+    SkyNight --> Moon
+
+    %% ====================
+
+    CarThread ..|> Car
+    CarThread --> Intersection
+
+    %% ====================
+
+    TrafficThread --> Intersection
+
+    %% ====================
+
+    DiagnosticScreen --> Intersection
+
+    
+    %% ====================
+
+    TrafficLight --> Mesh
+
+    %% ====================
+
+    Intersection --> Mesh
+    Intersection --> Lane
+    Intersection --> TrafficLight
+
+    %% ====================
+
+    Terrain --> Intersection
+    Terrain --> Building
+
+    %% ====================
+    
+    Scene --> Building
+
+    %% ====================
+
+    Building --> Mesh
+
+    %% ====================
+```
