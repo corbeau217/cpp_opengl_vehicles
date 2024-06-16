@@ -555,8 +555,7 @@ sequenceDiagram
 
 * [*[return to sequence diagram sub heading]*](#sequence-diagram-draft-01)
 * [`init()`](#sequence-diagram-draft-01--carinit)
-* [`draw()`](#sequence-diagram-draft-01--cardraw)
-* [`update()`](#sequence-diagram-draft-01--carupdate)
+* [`update()` and `draw()`](#sequence-diagram-draft-01--carupdate-and-cardraw)
 
 ##### Sequence diagram [draft 01] : `Car.init()`
 
@@ -664,15 +663,15 @@ sequenceDiagram
     deactivate MAINTHREAD
 ```
 
-##### Sequence diagram [draft 01] : `Car.draw()`
+##### Sequence diagram [draft 01] : `Car.update()` and `Car.draw()`
 
-* todo
 * [***return to `Car`***](#sequence-diagram-draft-01--car)
 
 ```mermaid
 sequenceDiagram
     autonumber
     %% -------------------------------------------------
+    Actor TRAFFICTHREAD as Traffic thread
     Actor CARTHREAD as Car thread
     Actor MAINTHREAD as Main thread
     %% ---------------------------------
@@ -691,6 +690,8 @@ sequenceDiagram
     note over CARTHREAD,MAINTHREAD : init car thread
     note over CARTHREAD,WHEEL : init car
     note right of MAINTHREAD : . . .
+    note over TRAFFICTHREAD,LANE : init traffic thread
+    note right of MAINTHREAD : . . .
     %% -------------------------------------------------
     %% -------------------------------------------------
     note left of CARTHREAD : CAR THREAD<br>[starting]
@@ -698,91 +699,72 @@ sequenceDiagram
     note over CARTHREAD,MAINTHREAD : start car thread
     %% -------------------------------------------------
     %% -------------------------------------------------
+    note left of TRAFFICTHREAD : TRAFFIC THREAD<br>[starting]
+    activate TRAFFICTHREAD
+    note over TRAFFICTHREAD,MAINTHREAD : start traffic thread
+    %% -------------------------------------------------
+    %% -------------------------------------------------
     note right of MAINTHREAD : . . .
     %% ---------------------------------
     par MAIN THREAD
+    %% ---------------------------------
+    %% ---------------------------------
+    MAINTHREAD ->>+ SCENE : update scene
+    activate MAINTHREAD
+    critical scene update
+    %% -------------------------------
     note over SCENE : update
-    note over SCENE,WHEEL : draw
-    %% ---------------------------------
-    %% ---------------------------------
-    and TRAFFIC CONTROL THREAD
-    note over LANE : [suggestion]<br>sensor update
-    note over LANE : update
-    %% ---------------------------------
-    %% ---------------------------------
-    and CAR THREAD
-    %% ---------------------------------
-    %% ---------------------------------
-    note over CAR,WHEEL : [suggestion]<br>sensor update
-    note over CAR,WHEEL : update
-    %% ---------------------------------
-    %% ---------------------------------
+    %% -------------------------------
     end
-    %% -------------------------------------------------
-    %% -------------------------------------------------
-    note left of CARTHREAD : CAR THREAD<br>[ending]
-    deactivate CARTHREAD
-    note right of MAINTHREAD : . . .
-    %% -------------------------------------------------
-    note over MAINTHREAD,WHEEL : app cleanup
-    %% -------------------------------------------------
-    note left of MAINTHREAD : MAIN THREAD<br>[ending]
+    SCENE -->>- MAINTHREAD : done scene update
     deactivate MAINTHREAD
-    %% -------------------------------------------------
-    %% -------------------------------------------------
-```
-
-##### Sequence diagram [draft 01] : `Car.update()`
-
-* todo
-* [***return to `Car`***](#sequence-diagram-draft-01--car)
-
-```mermaid
-sequenceDiagram
-    autonumber
-    %% -------------------------------------------------
-    Actor CARTHREAD as Car thread
-    Actor MAINTHREAD as Main thread
-    %% ---------------------------------
-    participant SCENE as Scene
-    participant LANE as Lane
-    participant CAR as Car
-    participant CARLIGHTS as Car Lights
-    participant WHEEL as Wheel
-    %% -------------------------------------------------
-    %% -------------------------------------------------
-    note left of MAINTHREAD : MAIN THREAD<br>[starting]
+    %% -------------------------------
+    MAINTHREAD ->>+ SCENE : draw scene
     activate MAINTHREAD
-    %% -------------------------------------------------
-    note right of MAINTHREAD : . . .
-    note over MAINTHREAD,LANE : init scene
-    note over CARTHREAD,MAINTHREAD : init car thread
-    note over CARTHREAD,WHEEL : init car
-    note right of MAINTHREAD : . . .
-    %% -------------------------------------------------
-    %% -------------------------------------------------
-    note left of CARTHREAD : CAR THREAD<br>[starting]
-    activate CARTHREAD
-    note over CARTHREAD,MAINTHREAD : start car thread
-    %% -------------------------------------------------
-    %% -------------------------------------------------
-    note right of MAINTHREAD : . . .
-    %% ---------------------------------
-    par MAIN THREAD
-    note over SCENE : update
+    critical scene draw
+    %% -------------------------------
     note over SCENE,WHEEL : draw
+    %% -------------------------------
+    end
+    SCENE -->>- MAINTHREAD : done scene draw
+    deactivate MAINTHREAD
+    %% -------------------------------
     %% ---------------------------------
     %% ---------------------------------
     and TRAFFIC CONTROL THREAD
+    %% ---------------------------------
+    %% ---------------------------------
     note over LANE : [suggestion]<br>sensor update
+    %% -------------------------------
+    TRAFFICTHREAD ->>+ LANE : update lane
+    activate TRAFFICTHREAD
+    critical lane update
+    %% -------------------------------
     note over LANE : update
+    %% -------------------------------
+    end
+    LANE -->>- TRAFFICTHREAD : done lane update
+    deactivate TRAFFICTHREAD
+    %% -------------------------------
+    %% ---------------------------------
+    %% ---------------------------------
     %% ---------------------------------
     %% ---------------------------------
     and CAR THREAD
     %% ---------------------------------
     %% ---------------------------------
     note over CAR,WHEEL : [suggestion]<br>sensor update
+    %% -------------------------------
+    CARTHREAD ->>+ CAR : update car
+    activate CARTHREAD
+    critical car update
+    %% -------------------------------
     note over CAR,WHEEL : update
+    %% -------------------------------
+    end
+    CAR -->>- CARTHREAD : done car update
+    deactivate CARTHREAD
+    %% -------------------------------
     %% ---------------------------------
     %% ---------------------------------
     end
@@ -790,6 +772,11 @@ sequenceDiagram
     %% -------------------------------------------------
     note left of CARTHREAD : CAR THREAD<br>[ending]
     deactivate CARTHREAD
+    note right of MAINTHREAD : . . .
+    %% -------------------------------------------------
+    %% -------------------------------------------------
+    note left of TRAFFICTHREAD : TRAFFIC THREAD<br>[ending]
+    deactivate TRAFFICTHREAD
     note right of MAINTHREAD : . . .
     %% -------------------------------------------------
     note over MAINTHREAD,WHEEL : app cleanup
