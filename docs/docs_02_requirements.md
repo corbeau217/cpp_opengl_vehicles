@@ -19,6 +19,7 @@
 * [***[The requirements that are hard to place]***](#the-requirements-that-are-hard-to-place)
 * [***[Domain models]***](#domain-models)
     * [*[Domain model [draft 01]]*](#domain-model-draft-01)
+    * [*[Domain model [draft 02]]*](#domain-model-draft-02)
 
 ---
 
@@ -49,6 +50,7 @@
 | `NFR_M_02` | uses the `Concurrency` for the lights and cars | concurrency is being used to manage the car positioning and movement and the lights |
 | `NFR_M_03` | traffic control system state display | display shows the state of traffic lights for the different lanes |
 | `NFR_M_04` | day night cycles  | day night cycles exist in the scene with shaders for both  |
+| `NFR_M_05` | moon phases  | the moon displays different phases  |
 
 ### nonfunctional - procedural generation
 
@@ -73,6 +75,7 @@
 | `FR_01` | cars only travel when their lane's light is green | that the cars check they have a green light to travel |
 | `FR_02` | cars wait to travel when their lane has a red light | that the cars wait for their turn when their lane has a red light  |
 | `FR_03` | cars queue in a line for their lane | that they dont overlap or try to occupy the same space  |
+| `FR_04` | cars move when the car in front moves in lane | that they dont overlap or try to occupy the same space  |
 
 ---
 
@@ -94,9 +97,10 @@
 
 * lazy draft, half way through we stopped putting the relationships in properly
 ```mermaid
+---
+title: Domain model draft 01
+---
 classDiagram
-    title Domain model draft 01
-
     class Scene {
         SkyBox skybox
         Car[] cars
@@ -260,4 +264,18 @@ classDiagram
     Building --> Mesh
 
     %% ====================
+```
+
+### Domain model [draft 02]
+
+[**[Back to Contents]**](#contents)
+
+* todo
+
+```mermaid
+---
+title: Domain model draft 02
+---
+classDiagram
+    class todo
 ```

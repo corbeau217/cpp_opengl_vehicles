@@ -812,6 +812,9 @@ sequenceDiagram
 * [*[return to sequence diagram sub heading]*](#sequence-diagram-draft-01)
 
 ```mermaid
+---
+title: Sky box interaction model - draft 1
+---
 sequenceDiagram
     autonumber
     %% -------------------------------------------------
@@ -868,6 +871,9 @@ sequenceDiagram
 * [*[return to sequence diagram sub heading]*](#sequence-diagram-draft-01)
 
 ```mermaid
+---
+title: Terrain interaction model - draft 1
+---
 sequenceDiagram
     autonumber
     %% -------------------------------------------------
@@ -934,6 +940,9 @@ sequenceDiagram
 * [*[return to sequence diagram sub heading]*](#sequence-diagram-draft-01)
 
 ```mermaid
+---
+title: Traffic Controller interaction model - draft 1
+---
 sequenceDiagram
     autonumber
     %% -------------------------------------------------
@@ -1013,6 +1022,9 @@ sequenceDiagram
 ##### Sequence diagram [draft 01] : `Car.init()`
 
 ```mermaid
+---
+title: Car.init() interaction model - draft 1
+---
 sequenceDiagram
     autonumber
     %% -------------------------------------------------
@@ -1121,6 +1133,9 @@ sequenceDiagram
 * [***return to `Car`***](#sequence-diagram-draft-01--car)
 
 ```mermaid
+---
+title: Car.draw() and Car.update() interaction model - draft 1
+---
 sequenceDiagram
     autonumber
     %% -------------------------------------------------
