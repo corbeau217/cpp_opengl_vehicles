@@ -43,6 +43,11 @@
             * [*Sequence diagram [draft 01] : `Car.update()` and `Car.draw()`*](#sequence-diagram-draft-01--carupdate-and-cardraw)
 * [**[State Diagrams]**](#state-diagrams)
     * [*[State diagram [draft 01]]*](#state-diagram-draft-01)
+* [**[Architecture]**](#architecture)
+    * [*Server-Client relationship [draft 01]*](#server-client-relationship-draft-01)
+    * [*Server-Client relationship [draft 02]*](#server-client-relationship-draft-02)
+* [**[Context Models]**](#context-models)
+    * [*[Context Model [draft 01]]*](#context-model-draft-01)
 * [**[Concept Diagrams]**](#concept-diagrams)
 
 ---
@@ -1293,6 +1298,8 @@ stateDiagram-v2
 
 ### Server-Client relationship [draft 01]
 
+[**[Back to Contents]**](#contents)
+
 #### Server-Client relationship [draft 01] : Table
 
 * table A
@@ -1337,6 +1344,8 @@ classDiagram
 
 ### Server-Client relationship [draft 02]
 
+[**[Back to Contents]**](#contents)
+
 #### Server-Client relationship [draft 02] : Table
 
 | client for | thread | server for | 
@@ -1359,6 +1368,150 @@ classDiagram
 
     TrafficServer "1/1" -- "0/*" TrafficLight : control connection
     TrafficLight "0/*" .. "1/*" Lane : light observation
+```
+
+## Context Models
+
+### Context Model [draft 01]
+
+[**[Back to Contents]**](#contents)
+
+```mermaid
+---
+title: context model [draft 01] - cars and light dependencies
+---
+classDiagram
+    class Intersection
+
+    class TLight_01["Traffic Light"]
+    class Lane_01["Lane"]
+    class Car_01["Car"]
+    class Car_11["Car"]
+    class Car_12["Car"]
+    class Lane_02["Lane"]
+    class Car_02["Car"]
+
+    class TLight_02["Traffic Light"]
+    class Lane_03["Lane"]
+    class Car_03["Car"]
+    class Lane_04["Lane"]
+    class Car_04["Car"]
+
+    class TLight_03["Traffic Light"]
+    class Lane_05["Lane"]
+    class Car_05["Car"]
+    class Car_10["Car"]
+    class Lane_06["Lane"]
+    class Car_06["Car"]
+    class Car_13["Car"]
+
+    class TLight_04["Traffic Light"]
+    class Lane_07["Lane"]
+    class Car_07["Car"]
+    class Lane_08["Lane"]
+    class Car_08["Car"]
+    class Car_09["Car"]
+
+    %% =============================================
+    %% =============================================
+    %% ----------------------------------------
+    %% --- UP LEFT LEFT
+
+    Car_12 ..> Lane_01 : relates to
+    Car_11 ..> Lane_01 : relates to
+    Car_01 ..> Lane_01 : relates to
+    Lane_01 ..> TLight_01 : relates to
+    Car_12 <-- Car_11 : changes state
+    Car_11 <-- Car_01 : changes state
+    Car_01 <-- TLight_01 : changes state
+    
+    %% ----------------------------------------
+    %% --- UP LEFT RIGHT
+
+    Car_02 <-- TLight_01 : changes state
+    Car_02 ..> Lane_02 : relates to
+    Lane_02 ..> TLight_01 : relates to
+
+    %% ----------------------------------------
+
+    TLight_01 ..> Intersection : drawn by
+    TLight_01 <-- Intersection : change state
+
+    %% ----------------------------------------
+    %% =============================================
+    %% =============================================
+    %% ----------------------------------------
+    %% --- UP RIGHT LEFT
+
+    Car_03 ..> Lane_03 : relates to
+    Lane_03 ..> TLight_02 : relates to
+    Car_03 <-- TLight_02 : changes state
+
+    %% ----------------------------------------
+    %% --- UP RIGHT RIGHT
+
+    Car_04 <-- TLight_02 : changes state
+    Car_04 ..> Lane_04 : relates to
+    Lane_04 ..> TLight_02 : relates to
+    
+    %% ----------------------------------------
+
+    TLight_02 <-- Intersection : change state
+    TLight_02 ..> Intersection : drawn by
+
+    %% ----------------------------------------
+    %% =============================================
+    %% =============================================
+    %% ----------------------------------------
+    %% --- DOWN LEFT LEFT
+    
+    TLight_03 <.. Lane_05 : relates to
+    Lane_05 <.. Car_05 : relates to
+    Lane_05 <.. Car_10 : relates to
+    TLight_03 --> Car_05 : change state
+    Car_05 --> Car_10 : change state
+
+    %% ----------------------------------------
+    %% --- DOWN LEFT RIGHT
+    
+    TLight_03 --> Car_06 : change state
+    Car_06 --> Car_13 : change state
+    Lane_06 <.. Car_06 : relates to
+    Lane_06 <.. Car_13 : relates to
+    TLight_03 <.. Lane_06 : relates to
+    
+    %% ----------------------------------------
+
+    Intersection <.. TLight_04 : drawn by
+    Intersection --> TLight_04 : change state
+
+    %% ----------------------------------------
+    %% =============================================
+    %% =============================================
+    %% ----------------------------------------
+    %% --- DOWN RIGHT LEFT
+    
+    TLight_04 --> Car_07 : change state
+    TLight_04 <.. Lane_07 : relates to
+    Lane_07 <.. Car_07 : relates to
+
+    %% ----------------------------------------
+    %% --- DOWN RIGHT RIGHT
+    
+    TLight_04 <.. Lane_08 : relates to
+    Lane_08 <.. Car_08 : relates to
+    Lane_08 <.. Car_09 : relates to
+    TLight_04 --> Car_08 : change state
+    Car_08 --> Car_09 : change state
+    
+    %% ----------------------------------------
+
+    Intersection --> TLight_03 : change state
+    Intersection <.. TLight_03 : drawn by
+    
+    %% ----------------------------------------
+    %% =============================================
+    %% =============================================
 ```
 
 ---

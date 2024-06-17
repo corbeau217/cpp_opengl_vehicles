@@ -89,6 +89,7 @@
 * `17/06/2024` - use cases draft 2 added
 * `17/06/2024` - some architectural diagrams
 * `17/06/2024` - identified some wackiness with the threads
+* `17/06/2024` - context model for cars in lanes
 
 
 
