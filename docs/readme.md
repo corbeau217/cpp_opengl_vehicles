@@ -84,7 +84,11 @@
 * `16/06/2024` - documentation links and formatting changes
 
 #### `17/06/2024`
+
 * `17/06/2024` - use cases being identified as draft
+* `17/06/2024` - use cases draft 2 added
+* `17/06/2024` - some architectural diagrams
+* `17/06/2024` - identified some wackiness with the threads
 
 
 

@@ -128,6 +128,45 @@
 * [`CarLights`](#use-cases-draft-02--carlights)
 * [`Mesh`](#use-cases-draft-02--mesh)
 
+### Concept identification listing [draft 04]
+
+[**[Back to Contents]**](#contents)
+
+* ***smells like complexity demon! begone foul creature!***
+
+* stakeholders
+    * [`WindowsDeveloper`]()
+    * [`MacOSDeveloper`]()
+    * [`WindowsUser`]()
+    * [`MacOSUser`]()
+* threads
+    * [`MainThread`]()
+    * [`DiagnosticsThread`]()
+    * [`ControllerThread`]()
+    * [`LightThread`]()
+    * [`CarThread`]()
+* containers
+    * [`App`]()
+    * [`Scene`]()
+    * [`Skybox`]()
+    * [`Lane`]()
+* containers with models/shaders
+    * [`SkyDay`]()
+    * [`SkyNight`]()
+    * [`Terrain`]()
+    * [`Intersection`]()
+    * [`DiagnosticScreen`]()
+    * [`Car`]()
+* models/shaders
+    * [`Clouds`]()
+    * [`Sun`]()
+    * [`Moon`]()
+    * [`Building`]()
+    * [`TrafficLight`]()
+    * [`Wheel`]()
+    * [`CarLights`]()
+    * [`Mesh`]()
+
 ## Use cases
 
 ### Use cases [draft 01]
@@ -267,6 +306,10 @@
 
 * as the traffic thread, I want to access lane information to update lane states
 * as the traffic thread, I want to stop a lane from moving so that another may start
+* as the traffic thread i want to change the traffic light object state information
+* as the traffic thread i want to connect to my traffic light objects
+    * are we server -> client model?
+    * perhaps we should
 
 #### Use cases [draft 02] : `CarThread`
 
@@ -284,109 +327,168 @@
 
 [***click to return to subheading [Use cases [draft 02]]***](#use-cases-draft-02)
 
-* todo
+* As the app, I want to create the scene
+* As the app, I want to start the draw calls
+* As the app, I want to handle input events
+* As the app, I want to handle closing the window
+* As the app, I want to handle cleaning up the objects
 
 #### Use cases [draft 02] : `Scene`
 
 [***click to return to subheading [Use cases [draft 02]]***](#use-cases-draft-02)
 
-* todo
+* as the scene i want to create the skybox
+* as the scene i want to create the terrain
+* as the scene i want to tell the skybox about the time of day
+* as the scene i want to get the clouds to move
+* as the scene i want to update the buildings
 
 #### Use cases [draft 02] : `Skybox`
 
 [***click to return to subheading [Use cases [draft 02]]***](#use-cases-draft-02)
 
-* todo
+* as the skybox i want to determine which sky do use by time of day
+* as the skybox i want to manage the clouds and their movement
+* as the skybox i want to not move in camera space
 
 #### Use cases [draft 02] : `SkyDay`
 
 [***click to return to subheading [Use cases [draft 02]]***](#use-cases-draft-02)
 
-* todo
+* as the sky day, i want to change colour with the time of day
 
 #### Use cases [draft 02] : `SkyNight`
 
 [***click to return to subheading [Use cases [draft 02]]***](#use-cases-draft-02)
 
-* todo
+* as the sky night, i want to show the stars move with the time of nights
 
 #### Use cases [draft 02] : `Clouds`
 
 [***click to return to subheading [Use cases [draft 02]]***](#use-cases-draft-02)
 
-* todo
+* as the clouds, i want to change over time using perlin noise
 
 #### Use cases [draft 02] : `Sun`
 
 [***click to return to subheading [Use cases [draft 02]]***](#use-cases-draft-02)
 
-* todo
+* as the sun i want to always face the camera
+* as the sun i want to move with the time of day
 
 #### Use cases [draft 02] : `Moon`
 
 [***click to return to subheading [Use cases [draft 02]]***](#use-cases-draft-02)
 
-* todo
+* as the moon i want to always face the camera
+* as the moon i want to move with the time of day
+* as the moon i want to show the current moon phase
 
 #### Use cases [draft 02] : `Terrain`
 
 [***click to return to subheading [Use cases [draft 02]]***](#use-cases-draft-02)
 
-* todo
+* as the terrain i want to generate a height map to use for my mesh
+* as the terrain i want to generate the road map to use for creating intersections
+* as the terrain i want to create an intersection object where roads intersect
+* as the terrain i want to generate a mesh based on the height map i made
+* as the terrain i want to generate a normal map for my mesh
+* as the terrain i want to generate a bump map for my mesh
+* as the terrain i want to generate buildings around the intersection
 
 #### Use cases [draft 02] : `Building`
 
 [***click to return to subheading [Use cases [draft 02]]***](#use-cases-draft-02)
 
-* todo
+* as a building i want to roll for the number of floors i have
+* as a building i want to generate a mesh based on how many floors i should have
+* as a building i want to generate a normal map for fragments
+* as a building i want to generate a bump map for my window distortion
+* as a building i want to reflect the scene from my windows
 
 #### Use cases [draft 02] : `Intersection`
 
 [***click to return to subheading [Use cases [draft 02]]***](#use-cases-draft-02)
 
-* todo
+* as the intersection i want to generate the lanes that exist for the intersection
+* as the intersection i want to generate the traffic light objects for the intersection
+* as the intersection i want to generate the road mesh that is used in the intersection
+* as the intersection i want to generate the generate the normal mapping for the road mesh
+* as the intersection i want to generate the generate the bump mapping for the road mesh
 
 #### Use cases [draft 02] : `DiagnosticScreen`
 
 [***click to return to subheading [Use cases [draft 02]]***](#use-cases-draft-02)
 
-* todo
+* as the diagnostic screen i want to show the status of all lanes
+* as the diagnostic screen i want to show how long before the next state change
+* as the diagnostic screen i want to show my planned change in state
+* as the diagnostic screen i want to show my sensor information
+* as the diagnostic screen i want to show my connection to traffic lights information
+* as the diagnostic screen i want to read the traffic light object state information
+* as the diagnostic screen i want to render my data to a screen
+* as the diagnostic screen i want to only render my data to the screen when in view
 
 #### Use cases [draft 02] : `TrafficLight`
 
 [***click to return to subheading [Use cases [draft 02]]***](#use-cases-draft-02)
 
-* todo
+* as a traffic light i want to generate a mesh based on the lanes i service
+* as a traffic light i want to update my state based on what the traffic controller tells me
+* as a traffic light i want to generate a normal map for my model
+* as a traffic light i want to use my state information to display the lights
 
 #### Use cases [draft 02] : `Lane`
 
 [***click to return to subheading [Use cases [draft 02]]***](#use-cases-draft-02)
 
-* todo
+* as a lane, i want to let cars queue for the intersection
+* as a lane, i want to observe the traffic lights for when my cars can move
+    * *lane threads instead of car threads?????*
+* *as a lane, i want to hold a queue of the cars currently in my lane*
+* *as a lane, i want to allow the first car to move when it is save*
+* *as a lane, i want to move the other cars when they're allowed to??*
 
 #### Use cases [draft 02] : `Car`
 
 [***click to return to subheading [Use cases [draft 02]]***](#use-cases-draft-02)
 
-* todo
+* as a car i want to update my wheel models as i move
+* as a car i want to generate a mesh to use
+* as a car i want to generate a normal map for my mesh
+* as a car i want to generate a specularity map for my mesh
+* as a car i want to know when it's safe to move
+* as a car i want to know which lane i am in
+* as a car i want to know which lane i want to travel to
 
 #### Use cases [draft 02] : `Wheel`
 
 [***click to return to subheading [Use cases [draft 02]]***](#use-cases-draft-02)
 
-* todo
+* as a wheel i want to turn when my car moves
+* as a wheel i want to generate a wheel mesh
+* as a wheel i want to generate a normal map
+* as a wheel i want to generate a specularity map to make my rims shiny
 
 #### Use cases [draft 02] : `CarLights`
 
 [***click to return to subheading [Use cases [draft 02]]***](#use-cases-draft-02)
 
-* todo
+* as car lights i want to display the behaviour state of my owner car
+* as car lights i want to create light for the scene to use
+* as car lights i want to tell the scene about my light
+* as car lights i want to update my blinkers to blink when im using them
+* as car lights i want to light up the brakelights when my owner car is slowing down or stopped
 
 #### Use cases [draft 02] : `Mesh`
 
 [***click to return to subheading [Use cases [draft 02]]***](#use-cases-draft-02)
 
-* todo
+* as a mesh i want to have vertex information for my owner object
+* as a mesh i want to have shader information for my owner
+* as a mesh i want to have uv mapping for my owner
+* as a mesh i want to be able to be drawn by my owner
+* as a mesh i want to be able to be transformed by my owner
 
 
 ---
@@ -1168,6 +1270,80 @@ stateDiagram-v2
     PASTINTERSECTION --> DRIVESOUT
     %%  --------------------
     DRIVESOUT --> [*]
+```
+
+---
+
+## Architecture
+
+### Server-Client relationship [draft 01]
+
+#### Server-Client relationship [draft 01] : Table
+
+* table A
+
+| client for | thread | server for | 
+| ---: | :---: | :--- |
+| n/a | **traffic control system** | *traffic light* |
+| *traffic control system* | **traffic light** | *car at front* |
+| *traffic light* | **car at front** | *car in queue* |
+| *car at front* | **car in queue** | *car in queue* |
+
+* table B
+
+| client for | thread | server for | 
+| ---: | :---: | :--- |
+| n/a | **traffic control system** | *traffic light* |
+| *traffic control system* | **traffic light** | *car at front* |
+| *traffic light* | **car at front** | *car* |
+| *traffic light* | **only car** | *n/a* |
+| *car* | **car in queue** | *car* |
+| *car* | **last car in queue** | *n/a* |
+
+
+#### Server-Client relationship [draft 01] : Diagram
+
+* suddenly forgotten how the cardinality works
+* ***smells like complexity demon! begone foul creature!***
+
+```mermaid
+---
+title: traffic server-client connection diagram
+---
+classDiagram
+    class TrafficServer ["Traffic Control Server"]
+    class TrafficLight ["Traffic Light"]
+    class Car
+
+    TrafficServer "1/1" -- "0/*" TrafficLight : control connection
+    TrafficLight "0/*" .. "0/*" Car : light observation
+    Car "0/1" <.. "1/1" Car : car in front
+```
+
+### Server-Client relationship [draft 02]
+
+#### Server-Client relationship [draft 02] : Table
+
+| client for | thread | server for | 
+| ---: | :---: | :--- |
+| n/a | **traffic control system** | *traffic light* |
+| *traffic control system* | **traffic light** | *lane* |
+| *traffic light* | **lane** | n/a |
+
+
+#### Server-Client relationship [draft 02] : Diagram
+
+```mermaid
+---
+title: server-client connection diagram
+---
+classDiagram
+    class TrafficServer ["Traffic Control Server"]
+    class TrafficLight ["Traffic Light"]
+    class Lane
+
+    TrafficServer "1/1" -- "0/*" TrafficLight : control connection
+    TrafficLight "0/*" .. "1/*" Lane : light observation
 ```
 
 ---
