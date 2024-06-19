@@ -21,11 +21,11 @@
 ```mermaid
 flowchart TB
     %% ==============================
-    APP[Application<br>&#40<i>Vertex specification</i>&#41]
+    APP[Application<br><i>Vertex specification</i>]
     %% ------------------------
-    VERTEXSHADER(<i>&lt;&lt;programmable&gt;&gt;</i><br>Vertex Shader)
+    VERTEXSHADER(<i>-programmable-</i><br>Vertex Shader)
     RASTERISATION{{Rasterisation}}
-    FRAGMENTSHADER(<i>&lt;&lt;programmable&gt;&gt;</i><br>Fragment Shader)
+    FRAGMENTSHADER(<i>-programmable-</i><br>Fragment Shader)
     FRAMEBUFFEROPERATIONS{{Frame buffer operations}}
     %% ------------------------
     DISPLAY[Display]
