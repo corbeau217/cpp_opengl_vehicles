@@ -195,6 +195,18 @@ flowchart LR
 
 ---
 
+## Experimentation details
+
+### Misc
+
+* `20/06/2024` - another project reminded us of the power of getting things to work with 1 instance before moving onto working with multiple.
+
+### Render textures
+
+* `19/06/2024` - managed to get render buffers to work in another repo, but still need to experiment more with vertex attributes
+
+---
+
 ## references
 
 ### Design patterns
