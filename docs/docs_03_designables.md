@@ -3,6 +3,7 @@
 ---
 ---
 
+
 ## About
 
 * [***click here to return to [overview]***](./docs_00_overview.md#docs-03--detailed-designs-etc)
@@ -12,9 +13,30 @@
 
 ---
 
+## Contents
+
+* [***[The Graphics Pipeline]***](#the-graphics-pipeline)
+    * [*[Graphics pipeline [draft 01]]*](#graphics-pipeline-draft-01)
+* [***[Project render flow]***](#project-render-flow)
+    * [*[Project render flow [draft 01]]*](#project-render-flow-draft-01)
+* [***[Base code flow]***](#base-code-flow)
+    * [*[Base code flow [draft 01]]*](#base-code-flow-draft-01)
+* [***[Design pattern ideas for Concepts]***](#design-pattern-ideas-for-concepts)
+    * [Design pattern ideas : Shaders](#design-pattern-ideas--shaders)
+    * [Design pattern ideas : Mesh](#design-pattern-ideas--mesh)
+    * [Design pattern ideas : Traffic controller](#design-pattern-ideas--traffic-controller)
+    * [Design pattern ideas : Cars](#design-pattern-ideas--cars)
+    * [Design pattern ideas : Traffic light](#design-pattern-ideas--traffic-light)
+* [***[Experimentation details]***](#experimentation-details)
+* [***[References]***](#references)
+
+---
+
 ## The Graphics Pipeline
 
 ### Graphics pipeline [draft 01]
+
+[***[back to Contents]***](#contents)
 
 * minimalist diagram to illustrate the pipeline process
 
@@ -39,6 +61,8 @@ flowchart TB
 ## project render flow
 
 ### project render flow [draft 01]
+
+[***[back to Contents]***](#contents)
 
 ```mermaid
 ---
@@ -74,6 +98,8 @@ flowchart LR
 ## Base code flow
 
 ### base code flow [draft 01]
+
+[***[back to Contents]***](#contents)
 
 ```mermaid
 ---
@@ -169,23 +195,33 @@ flowchart LR
 
 ### Design pattern ideas : Shaders
 
+[***[back to Contents]***](#contents)
+
 * [facade pattern](https://refactoring.guru/design-patterns/facade)
 
 ### Design pattern ideas : Mesh
+
+[***[back to Contents]***](#contents)
 
 * [facade pattern](https://refactoring.guru/design-patterns/facade) possibly
 
 ### Design pattern ideas : Traffic controller
 
+[***[back to Contents]***](#contents)
+
 * almost certainly [mediator pattern](https://refactoring.guru/design-patterns/mediator)
 
 ### Design pattern ideas : Cars
+
+[***[back to Contents]***](#contents)
 
 * [strategy pattern](https://refactoring.guru/design-patterns/strategy) for behaviour and travel desire
 * [adapter pattern](https://refactoring.guru/design-patterns/adapter) for the different cars?
 * [observer pattern](https://refactoring.guru/design-patterns/observer) for looking at the light from car or next car
 
 ### Design pattern ideas : Traffic light
+
+[***[back to Contents]***](#contents)
 
 * likely also [mediator pattern](https://refactoring.guru/design-patterns/mediator) with lanes
 * [state pattern](https://refactoring.guru/design-patterns/state) for the state of the lights
@@ -199,9 +235,13 @@ flowchart LR
 
 ### Misc
 
+[***[back to Contents]***](#contents)
+
 * `20/06/2024` - another project reminded us of the power of getting things to work with 1 instance before moving onto working with multiple.
 
 ### Render textures
+
+[***[back to Contents]***](#contents)
 
 * `19/06/2024` - managed to get render buffers to work in another repo, but still need to experiment more with vertex attributes
 
@@ -211,9 +251,13 @@ flowchart LR
 
 ### Design patterns
 
+[***[back to Contents]***](#contents)
+
 * [Refactoring guru design patterns catalogue](https://refactoring.guru/design-patterns/catalog)
 
 ### Graphics pipeline stuffs
+
+[***[back to Contents]***](#contents)
 
 * [khronos page for the rendering pipeline](https://www.khronos.org/opengl/wiki/Rendering_Pipeline_Overview)
 * [this github pages page seems useful](https://kenny-designs.github.io/zim-websites/opengl/Shaders_and_the_Rendering_Pipeline.html)
