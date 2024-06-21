@@ -32,6 +32,121 @@
 
 ---
 
+## Notes on design path
+
+* prone to change in order depending on how the requirements mapping goes
+    * that is if we map that
+* doesnt specify when non procedural textures happen, likely with [***[sixth-iteration : improved modes]***](#design-pathway-notes--sixth-iteration--improved-models)
+
+* [***[initial-prototype]***](#design-pathway-notes--initial-prototype)
+* [***[first-iteration : diagnostic-system]***](#design-pathway-notes--first-iteration--diagnostic-system)
+* [***[second-iteration : concurrency-system]***](#design-pathway-notes--second-iteration--concurrency-system)
+* [***[third-iteration : debugging-draw-modes-part-1]***](#design-pathway-notes--third-iteration--debugging-draw-modes-part-1)
+* [***[fourth-iteration : simple-static-models]***](#design-pathway-notes--fourth-iteration--simple-static-models)
+* [***[fifth-iteration : debugging-draw-modes-part-2]***](#design-pathway-notes--fifth-iteration--debugging-draw-modes-part-2)
+* [***[sixth-iteration : improved-models]***](#design-pathway-notes--sixth-iteration--improved-models)
+* [***[seventh-iteration : directional-sunlight]***](#design-pathway-notes--seventh-iteration--directional-sunlight)
+* [***[eighth-iteration : simple-diffuse--specular-lighting]***](#design-pathway-notes--eighth-iteration--simple-diffuse--specular-lighting)
+* [***[ninth-iteration : simple-buildings]***](#design-pathway-notes--ninth-iteration--simple-buildings)
+* [***[tenth-iteration : cube-map-sky]***](#design-pathway-notes--tenth-iteration--cube-map-sky)
+* [***[eleventh-iteration : perlin-noise-generation]***](#design-pathway-notes--eleventh-iteration--perlin-noise-generation)
+* [***[twelfth-iteration : procedural-cars]***](#design-pathway-notes--twelfth-iteration--procedural-cars)
+* [***[thirteenth-iteration : procedural-traffic-lights]***](#design-pathway-notes--thirteenth-iteration--procedural-traffic-lights)
+* [***[fourteenth-iteration : light-cones]***](#design-pathway-notes--fourteenth-iteration--light-cones)
+* [***[fifteenth-iteration : procedural-light-cones]***](#design-pathway-notes--fifteenth-iteration--procedural-light-cones)
+* [***[sixteenth-iteration : procedural-buildings]***](#design-pathway-notes--sixteenth-iteration--procedural-buildings)
+* [***[seventeenth-iteration : procedural-intersections]***](#design-pathway-notes--seventeenth-iteration--procedural-intersections)
+
+### Design pathway notes : Initial prototype
+
+* will mostly be iteratively building proof of concepts for each sub system as a rough draft, then merging into a semi-functional prototype
+* likely using a lot of hard coding which will be refactored afterwards
+
+### Design pathway notes : First iteration : Diagnostic system
+
+* will be the focus on getting the diagnostic system working at minimum using a second view port
+* once working, it'll be with a very simple model for the render texture
+
+### Design pathway notes : Second iteration : Concurrency system
+
+* once diagnostic system is working, it'll be a focus on concurrency
+
+### Design pathway notes : Third iteration : Debugging draw modes part 1
+
+* after the concurrency, we'll make the debugging draw modes so that we can start working on the models
+* keeping them as simple as possible, wire/point
+
+### Design pathway notes : Fourth iteration : simple static models
+
+* simple static models for everything, ignoring procedural generation, traffic lights can be multiple draw calls each
+* fixed height terrain
+
+### Design pathway notes : Fifth iteration : Debugging draw modes part 2
+
+* normal / uv mapping
+    * can be per mesh shader to start with and always refactor later
+* optional binding mapping, but this may not be a simple option. do not spend too much time on this, move on if it's spooky
+
+### Design pathway notes : Sixth iteration : improved models
+
+* some really basic, but medium tier models so we can start working on shaders
+    * no buildings yet, only: { cars, flat terrain, lights, diagnostic screen, sun, moon }
+* cars have very simple "lights", which do not light up their surroundings
+
+### Design pathway notes : Seventh iteration : directional sunlight
+
+* implementing the sun for light shaders
+* can also do the billboard, and the moon as well
+* hard transition between night and day
+
+### Design pathway notes : Eighth iteration : simple diffuse / specular lighting
+
+* as this is necessary before we can make models with anymore detail
+* using phong specularity
+    * can improve with blinn-phong if the regular phong isnt making sense
+* gamma correction is part of this step as well shhhh sneaky sneaky
+
+### Design pathway notes : Ninth iteration : simple buildings
+
+* simple building generation, can just be random floor count for now, all the same kind of building
+
+### Design pathway notes : Tenth iteration : Cube map sky
+
+* can just be fixed sky cubemap
+* may complete this earlier if we do textures earlier than this stage. depends if they make sense a lot earlier or not
+
+### Design pathway notes : Eleventh iteration : perlin noise generation
+
+* adding in perlin noise generation
+* and using it for clouds
+
+### Design pathway notes : Twelfth iteration : procedural cars
+
+* procedural cars
+
+### Design pathway notes : Thirteenth iteration : procedural traffic lights
+
+* procedural traffic lights
+
+### Design pathway notes : Fourteenth iteration : light cones
+
+* light cones, very simple, all fixed
+
+### Design pathway notes : fifteenth iteration : procedural light cones
+
+* light cones are generated based on car model and randomness
+* xenon etc
+
+### Design pathway notes : Sixteenth iteration : procedural buildings
+
+* procedural buildings buildings
+
+### Design pathway notes : Seventeenth iteration : procedural intersections
+
+* heightmap for terrain, procedural roads, building the intersection mesh, and the buildings
+
+---
+
 ## The Graphics Pipeline
 
 ### Graphics pipeline [draft 01]
@@ -244,6 +359,14 @@ flowchart LR
 [***[back to Contents]***](#contents)
 
 * `19/06/2024` - managed to get render buffers to work in another repo, but still need to experiment more with vertex attributes
+
+---
+
+## Model diagrams
+
+[***[back to Contents]***](#contents)
+
+* this is where we put the diagrams for building the model
 
 ---
 

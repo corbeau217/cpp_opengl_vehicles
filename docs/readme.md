@@ -94,6 +94,10 @@
 #### `21/06/2024`
 
 * `21/06/2024` - contents added to docs_03
+* `21/06/2024` - code control flow added to docs_03
+* `21/06/2024` - some more diagrams made for hypothetical ways of generating models in discussion forums
+* `21/06/2024` - pre design stage requirements
+* `21/06/2024` - pre development stage requirements
 
 
 ---

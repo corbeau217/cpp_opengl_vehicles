@@ -89,6 +89,45 @@
 
 ---
 
+## Pre-Design documentation requirements
+
+* things needed in requirements documentation before we can move on to design
+
+| requirement ID | requirement | description |
+| ---: | :---: | :--- |
+| `PDDR_01` | Required fields | Required data held by our objects |
+| `PDDR_02` | suggested design patterns for actors/objects | proposed design patterns |
+| `PDDR_03` | listing deadlock avoidance methods | a list of the deadlock avoidance methods that work for our system |
+| `PDDR_04` | simple architectural diagrams for our system | to show how the actors/object connect to each other and make sure we're not doing spooky design choices sooner rather than later |
+| `PDDR_06` | reorganise documentation | putting things in the correct documentation files |
+| `PDDR_07` | requirement dependency map | mapped out requirement dependencies |
+| `PDDR_08` | importance of requirements | importance of each requirement |
+| `PDDR_09` | risk mapping | risk assessment for work required for a thing to function (and how likely to get it working first try) in relation to importance |
+| `PDDR_10` | checklist table for all the requirements | somewhere having a checklist for our requirements so we can tick off what's complete |
+| `PDDR_11` | concept diagrams of models in documentation | adding the various model concept diagram drafts to the documentation |
+| `PDDR_12` | ... | ... |
+
+---
+
+## Design documentation required components
+
+* things needed in the design documentation to move onto development stage
+
+| requirement ID | requirement | description |
+| ---: | :---: | :--- |
+| `DDR_01` | C++ Compilation/linking | the process of compiling and linking in C++ |
+| `DDR_02` | OpenGL render pipeline | to explain the stages |
+| `DDR_03` | *[semi-optional]* Library pipeline | pipeline of the libraries we use. This is more important if we use extra libraries |
+| `DDR_04` | Base template control flow | explaination of the base project structure we're using for OpenGL |
+| `DDR_05` | Development pathway | the pathway we plan to take for iterations in development *[hopefully with predicted workload/timeframes]* |
+| `DDR_06` | Model diagrams | diagrams of proposed models and model generation |
+| `DDR_07` | Actor/Object fields and methods diagrams | listing the required data in our Actors/Objects |
+| `DDR_08` | Detailed interation diagrams | detailed interation diagrams |
+| `DDR_09` | Detailed deadlock avoidance method | details about how we'll avoid deadlock |
+| `DDR_10` | detailed combined UML diagram | for reference while we work to make sure we're not making something wonky |
+| `DDR_11` | shader behaviour diagrams | diagrams for diffuse/specularity and difference between phong/blinn-phong models |
+| `DDR_12` | ... | ... |
+
 ## Domain models
 
 ### Domain model [draft 01]
@@ -279,3 +318,8 @@ title: Domain model draft 02
 classDiagram
     class todo
 ```
+
+
+---
+
+
