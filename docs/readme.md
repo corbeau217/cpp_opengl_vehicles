@@ -111,6 +111,7 @@
     * maybe we should move this to docs_01, depends if it feels right there
 * `23/06/2024` - updated contents for docs_02 and docs_03 to include linking
 * `23/06/2024` - completed documentation refactoring to have things where they should be
+* `23/06/2024` - pre-design and pre-development requirements checklists added
 
 ---
 

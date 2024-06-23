@@ -15,6 +15,7 @@
 
 ## Contents
 
+* [***[Pre-Design stage checklist]***]()
 * [***[Project render flow]***](#project-render-flow)
     * [*[Project render flow [draft 01]]*](#project-render-flow-draft-01)
 * [***[Model diagrams]***](#model-diagrams)
@@ -22,6 +23,33 @@
     * [*[Graphics pipeline [draft 01]]*](#graphics-pipeline-draft-01)
     * [*[Base code flow [draft 01]]*](#base-code-flow-draft-01)
 * [***[References]***](#references)
+
+---
+
+## Pre-design stage checklist
+
+* [ ] - `PDDR_01` - **Required fields**
+    * *Required data held by our objects*
+* [x] - `PDDR_02` - ~~**suggested design patterns for actors/objects**~~
+    * *~~proposed design patterns~~*
+* [ ] - `PDDR_03` - **listing deadlock avoidance methods**
+    * *a list of the deadlock avoidance methods that work for our system*
+* [ ] - `PDDR_04` - **simple architectural diagrams for our system**
+    * *to show how the actors/object connect to each other and make sure we're not doing spooky design choices sooner rather than later*
+* [x] - `PDDR_06` - ~~reorganise documentation~~
+    * *~~putting things in the correct documentation files~~*
+* [ ] - `PDDR_07` - **requirement dependency map**
+    * *mapped out requirement dependencies*
+* [ ] - `PDDR_08` - **importance of requirements**
+    * *importance of each requirement*
+* [ ] - `PDDR_09` - **risk mapping**
+    * *risk assessment for work required for a thing to function (and how likely to get it working first try) in relation to importance*
+* [x] - `PDDR_10` - ~~checklist table for all the requirements~~
+    * *~~somewhere having a checklist for our requirements so we can tick off what's complete~~*
+* [ ] - `PDDR_11` - **concept diagrams of models in documentation**
+    * *adding the various model concept diagram drafts to the documentation*
+* [ ] - `PDDR_12` - **...**
+    * *...*
 
 ---
 
