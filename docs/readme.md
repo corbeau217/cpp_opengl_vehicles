@@ -15,6 +15,9 @@
     * [`14/06/2024`](#14062024)
     * [`15/06/2024`](#15062024)
     * [`16/06/2024`](#16062024)
+    * [`17/06/2024`](#17062024)
+    * [`21/06/2024`](#21062024)
+    * [`23/06/2024`](#23062024)
 
 ---
 
@@ -99,6 +102,15 @@
 * `21/06/2024` - pre design stage requirements
 * `21/06/2024` - pre development stage requirements
 
+#### `23/06/2024`
+
+* `23/06/2024` - moved experiments to docs_01
+* `23/06/2024` - moved all requirements to docs2
+* `23/06/2024` - moved design path to docs_02
+* `23/06/2024` - moved design pattern suggestions to docs_02
+    * maybe we should move this to docs_01, depends if it feels right there
+* `23/06/2024` - updated contents for docs_02 and docs_03 to include linking
+* `23/06/2024` - completed documentation refactoring to have things where they should be
 
 ---
 

@@ -49,6 +49,8 @@
 * [**[Context Models]**](#context-models)
     * [*[Context Model [draft 01]]*](#context-model-draft-01)
 * [**[Concept Diagrams]**](#concept-diagrams)
+* [**[Experimentation details]**](#experimentation-details)
+
 
 ---
 
@@ -1539,3 +1541,18 @@ classDiagram
 
 ---
 
+## Experimentation details
+
+### Misc
+
+[***[back to Contents]***](#contents)
+
+* `20/06/2024` - another project reminded us of the power of getting things to work with 1 instance before moving onto working with multiple.
+
+### Render textures
+
+[***[back to Contents]***](#contents)
+
+* `19/06/2024` - managed to get render buffers to work in another repo, but still need to experiment more with vertex attributes
+
+---
