@@ -69,6 +69,7 @@ Documentation page links:
 * [***[Requirements mapping]***](#requirement-mapping)
     * [*[Requirements mapping [draft 01]]*](#requirement-mapping-draft-01)
     * [*[Documentation requirement mapping [draft 01]]*](#documentation-requirement-mapping-draft-01)
+* [***[Requirements importance mapping]***](#requirements-importance-mapping)
 
 ---
 
@@ -1260,50 +1261,50 @@ classDiagram
 
 #### Requirement importance - mapping table
 
-| Req.<br>ID | Req.<br>Brief | Req.<br>type | Req.<br>workload<br>mapping | Req.<br>workload<br>label | ... |
-| ------- | ---------- | --------- | ----- | --- | --- |
-| NFR_DE_01 | MacOS | ENV-SYS | PWL00 |  |  |
-| NFR_DE_02 | VSCode | ENV-SYS | PWL02 |  |  |
-| NFR_DE_03 | OpenGL | ENV-ARCHITECTURAL | PWL03 | Minimal |  |
-| NFR_DE_04 | C++ | ENV-ARCHITECTURAL | PWL02 | Minimal |  |
-| NFR_DE_05 | GLAD | ENV-ARCHITECTURAL | PWL03 | N/A |  |
-| NFR_DE_06 | GLFW | ENV-ARCHITECTURAL | PWL03 | N/A |  |
-| NFR_DE_07 | GLM | ENV-ARCHITECTURAL | PWL03 | N/A |  |
-| NFR_DE_08 | opengl_project_structurings <br>template | DESIGN-ARCHITECTURAL | PWL04 | Minimal |  |
-| NFR_M_01 | LHS traffic | DESIGN-FLAVOUR | AWL02 | Miniscule |  |
-| NFR_M_02 | Concurrency | DESIGN-ARCHITECTURAL | AWL07 | Modest |  |
-| NFR_M_03 | Diagnostics screen | DESIGN-MECHANICAL | AWL08 | Moderate |  |
-| NFR_M_04 | Day night cycles | DESIGN-MECHANICAL | AWL06 | Medium |  |
-| NFR_M_05 | Moon phases | DESIGN-FLAVOUR | AWL04 | Minor |  |
-| NFR_PG_01 | procedural cars | PROCEDURAL-FLAVOUR | AWL08 | Moderate |  |
-| NFR_PG_02 | procedural clouds | PROCEDURAL-FLAVOUR | AWL07 | Modest |  |
-| NFR_PG_03 | procedural stars | PROCEDURAL-FLAVOUR | AWL06 | Medium |  |
-| NFR_PG_04 | procedural buildings | PROCEDURAL-FLAVOUR | AWL06 | Medium |  |
-| NFR_PG_05 | procedural terrain | PROCEDURAL-FLAVOUR | AWL08 | Moderate |  |
-| FR_01 | cars travel on<br>green light | DESIGN-BEHAVIOUR | AWL04 | Minor |  |
-| FR_02 | cars wait on<br>red light | DESIGN-BEHAVIOUR | AWL04 | Minor |  |
-| FR_03 | cars queue in<br>their lane | DESIGN-BEHAVIOUR | AWL04 | Minor |  |
-| FR_04 | cars watch next<br>car to move | DESIGN-BEHAVIOUR | AWL04 | Minor |  |
-| PDDR_01 | Required fields | DESIGN-REFERENCE | ... |  |  |
-| PDDR_02 | suggested design patterns | DESIGN-REFERENCE | ... |  |  |
-| PDDR_03 | deadlock avoidance options | DESIGN-REFERENCE | ... |  |  |
-| PDDR_04 | architectural diagrams | DESIGN-REFERENCE | ... |  |  |
-| PDDR_05 | reorganise documentation | DOCS-ORGANISATION | ... |  |  |
-| PDDR_06 | requirement dependency map | DOCS-REFERENCE | ... |  |  |
-| PDDR_07 | requirement importance map | DOCS-REFERENCE | ... |  |  |
-| PDDR_08 | risk mapping | DOCS-REFERENCE | ... |  |  |
-| PDDR_09 | pre-doc req. checklist | DOCS-ORGANISATION | ... |  |  |
-| PDDR_10 | model concept diagrams | DESIGN-REFERENCE | ... |  |  |
-| DDR_01 | C++ linking flowchart | DEV-REFERENCE | ... |  |  |
-| DDR_02 | OpenGL render pipeline | DEV-REFERENCE | ... |  |  |
-| DDR_03 | library pipeline | DEV-REFERENCE | ... |  |  |
-| DDR_04 | base template control flow | DEV-REFERENCE | ... |  |  |
-| DDR_05 | development pathway | DEV-PLAN | ... |  |  |
-| DDR_06 | detailed model diagrams | DEV-REFERENCE | ... |  |  |
-| DDR_07 | actor/object fields/methods | DEV-REFERENCE | ... |  |  |
-| DDR_08 | detailed iteration diagrams | DEV-PLAN | ... |  |  |
-| DDR_09 | detailed deadlock avoidance methods | DEV-REFERENCE | ... |  |  |
-| DDR_10 | detailed combined UML diagram | DEV-PLAN | ... |  |  |
-| DDR_11 | shader behaviour diagrams | DEV-REFERENCE | ... |  |  |
+|  Req. ID  | Req. Brief | Req. type | Req.<br>workload<br>mapping | Req. workload label | Project<br>integration<br>stage | importance |
+| --------- | ---------- | --------- | -------- | ------------------- | ----------- | ----- |
+| NFR_DE_01 | MacOS      | ENV-SYS   | PWL00 | No workload | Conceptual | N/A |
+| NFR_DE_02 | VSCode | ENV-SYS | PWL02 | Dev. tools | Conceptual | N/A |
+| NFR_DE_03 | OpenGL | ENV-ARCHITECTURAL | PWL03 | Dev. package | Conceptual | N/A |
+| NFR_DE_04 | C++ | ENV-ARCHITECTURAL | PWL02 | Dev. tools | Conceptual | N/A |
+| NFR_DE_05 | GLAD | ENV-ARCHITECTURAL | PWL03 | Dev. package | Conceptual | N/A |
+| NFR_DE_06 | GLFW | ENV-ARCHITECTURAL | PWL03 | Dev. package | Conceptual | N/A |
+| NFR_DE_07 | GLM | ENV-ARCHITECTURAL | PWL03 | Dev. package | Conceptual | N/A |
+| NFR_DE_08 | opengl_project_structurings <br>template | DESIGN-ARCHITECTURAL | PWL04 | Dev. template | Requirements | HIGH |
+| NFR_M_01 | LHS traffic | DESIGN-FLAVOUR | AWL02 | Miniscule | Design | MINOR |
+| NFR_M_02 | Concurrency | DESIGN-ARCHITECTURAL | AWL07 | Modest | Design | MINOR |
+| NFR_M_03 | Diagnostics screen | DESIGN-MECHANICAL | AWL08 | Moderate | Design | MAJOR |
+| NFR_M_04 | Day night cycles | DESIGN-MECHANICAL | AWL06 | Medium | Design | MINOR |
+| NFR_M_05 | Moon phases | DESIGN-FLAVOUR | AWL04 | Minor | Design | MINOR |
+| NFR_PG_01 | procedural cars | PROCEDURAL-FLAVOUR | AWL08 | Moderate | Design<br><i>and or</i><br>Development | MINOR |
+| NFR_PG_02 | procedural clouds | PROCEDURAL-FLAVOUR | AWL07 | Modest | Design<br><i>and or</i><br>Development | MINOR |
+| NFR_PG_03 | procedural stars | PROCEDURAL-FLAVOUR | AWL06 | Medium | Design<br><i>and or</i><br>Development | MINOR |
+| NFR_PG_04 | procedural buildings | PROCEDURAL-FLAVOUR | AWL06 | Medium | Design<br><i>and or</i><br>Development | MINOR |
+| NFR_PG_05 | procedural terrain | PROCEDURAL-FLAVOUR | AWL08 | Moderate | Design<br><i>and or</i><br>Development | MINOR |
+| FR_01 | cars travel on<br>green light | DESIGN-BEHAVIOUR | AWL04 | Minor | Design | CRITICAL |
+| FR_02 | cars wait on<br>red light | DESIGN-BEHAVIOUR | AWL04 | Minor | Design | CRITICAL |
+| FR_03 | cars queue in<br>their lane | DESIGN-BEHAVIOUR | AWL04 | Minor | Design | CRITICAL |
+| FR_04 | cars watch next<br>car to move | DESIGN-BEHAVIOUR | AWL04 | Minor | Design | CRITICAL |
+| PDDR_01 | Required fields | DESIGN-REFERENCE | AWL03 | Meager | Requirements | MAJOR |
+| PDDR_02 | suggested design patterns | DESIGN-REFERENCE | AWL03 | Meager | Early-Requirements | MINOR |
+| PDDR_03 | deadlock avoidance options | DESIGN-REFERENCE | AWL07 | Modest | Requirements | MAJOR |
+| PDDR_04 | architectural diagrams | DESIGN-REFERENCE | AWL07 | Modest | Requirements | HIGH |
+| PDDR_05 | reorganise documentation | DOCS-ORGANISATION | AWL06 | Medium | Early-Requirements | MINOR |
+| PDDR_06 | requirement dependency map | DOCS-REFERENCE | AWL05 | Mild | Requirements | HIGH |
+| PDDR_07 | requirement importance map | DOCS-REFERENCE | AWL08 | Moderate | Late-Requirements | MAJOR |
+| PDDR_08 | risk mapping | DOCS-REFERENCE | AWL07 | Modest | Late-Requirements | HIGH |
+| PDDR_09 | pre-doc req. checklist | DOCS-ORGANISATION | AWL04 | Minor | Requirements | MINOR |
+| PDDR_10 | model concept diagrams | DESIGN-REFERENCE | AWL05 | Mild | Late-Requirements | CRITICAL |
+| DDR_01 | C++ linking flowchart | DEV-REFERENCE | AWL07 | Modest | Early-Design | HIGH |
+| DDR_02 | OpenGL render pipeline | DEV-REFERENCE | AWL08 | Moderate | Requirements<br><i>and or</i><br>Design | HIGH |
+| DDR_03 | library pipeline | DEV-REFERENCE | AWL08 | Moderate | Design | MINOR |
+| DDR_04 | base template control flow | DEV-REFERENCE | AWL06 | Medium | Requirements<br><i>and or</i><br>Design | MEDIUM |
+| DDR_05 | development pathway | DEV-PLAN | AWL07 | Modest | Early-Design | CRITICAL |
+| DDR_06 | detailed model diagrams | DEV-REFERENCE | AWL05 | Mild | Design | CRITICAL |
+| DDR_07 | actor/object fields/methods | DEV-REFERENCE | AWL06 | Medium | Early-Design | MAJOR |
+| DDR_08 | detailed iteration diagrams | DEV-PLAN | AWL08 | Moderate | Late-Design | HIGH |
+| DDR_09 | detailed deadlock avoidance methods | DEV-REFERENCE | AWL08 | Moderate | Design | CRITICAL |
+| DDR_10 | detailed combined UML diagram | DEV-PLAN | AWL09 | Major | Design | MEDIUM |
+| DDR_11 | shader behaviour diagrams | DEV-REFERENCE | AWL06 | Medium | Design | MAJOR |
 
 ---

@@ -131,6 +131,7 @@ Documentation page links:
 * `25/06/2024` - added simple required field lists
 * `25/06/2024` - added requirement mappings
 * `25/06/2024` - cleaned up documentation linking
+* `25/06/2024` - finished mapping requirement importance/types/workload
 
 ---
 

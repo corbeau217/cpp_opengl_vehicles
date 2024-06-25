@@ -49,8 +49,8 @@ Documentation page links:
     * *~~putting things in the correct documentation files~~*
 * [x] - `PDDR_06` - ~~requirement dependency map~~
     * *~~mapped out requirement dependencies~~*
-* [ ] - `PDDR_07` - **importance of requirements**
-    * *importance of each requirement*
+* [ ] - `PDDR_07` - ~~importance of requirements~~
+    * *~~importance of each requirement~~*
 * [ ] - `PDDR_08` - **risk mapping**
     * *risk assessment for work required for a thing to function (and how likely to get it working first try) in relation to importance*
 * [x] - `PDDR_09` - ~~checklist table for all the requirements~~
