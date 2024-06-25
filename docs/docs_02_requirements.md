@@ -74,6 +74,7 @@ Documentation page links:
     * [*[Documentation requirement mapping [draft 01]]*](#documentation-requirement-mapping-draft-01)
 * [***[Requirements importance mapping]***](#requirements-importance-mapping)
 * [***[Deadlock avoidance suggestions]***](#deadlock-avoidance-suggestions)
+* [***[Model design draft diagrams]***](#model-design-draft-diagrams)
 
 ---
 
@@ -1320,6 +1321,8 @@ classDiagram
 
 ### Deadlock avoidance suggestions [draft 01]
 
+[**[Back to Contents]**](#contents)
+
 * what if we interrupts?
 * possibly preemption + all or nothing
 * have them need to ask for the permission to request
@@ -1344,6 +1347,9 @@ classDiagram
 
 ## Model design draft diagrams
 
+[**[Back to Contents]**](#contents)
+
 * [***[DOCS 02 : REQUIREMENTS : MODEL DESIGN DRAFTS SUPPLIMENT]***](./docs_02_requirements_suppliment_02.md)
+* refer to the suppliment for the diagrams
 
 ---
