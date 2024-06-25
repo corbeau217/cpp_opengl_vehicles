@@ -71,8 +71,8 @@ Documentation page links:
     * [*[Required data fields [draft 01] : `Mesh`]*](#required-data-fields-draft-01--mesh)
 * [***[Requirements mapping]***](#requirement-mapping)
     * [*[Requirements mapping [draft 01]]*](#requirement-mapping-draft-01)
-    * [*[Requirements mapping [draft 02]]*](#requirement-mapping-draft-02)
     * [*[Documentation requirement mapping [draft 01]]*](#documentation-requirement-mapping-draft-01)
+    * [*[Documentation requirement mapping [draft 02]]*](#documentation-requirement-mapping-draft-02)
 * [***[Requirements importance mapping]***](#requirements-importance-mapping)
 * [***[Deadlock avoidance suggestions]***](#deadlock-avoidance-suggestions)
 * [***[Model design draft diagrams]***](#model-design-draft-diagrams)
@@ -986,6 +986,27 @@ flowchart LR
     DDR_11[DDR_11<br><i>shader behaviour<br>diagrams</i>]
     DDR_01 --> DDR_04
     DDR_02 --> DDR_03
+    DDR_02 --> DDR_04
+    DDR_05 --> DDR_08
+    DDR_11 --> DDR_06
+    DDR_07 --> DDR_10
+    DDR_03 ---> DDR_10
+    DDR_04 ---> DDR_10
+    DDR_07 ---> DDR_09
+    DDR_09 --> DDR_10
+    DDR_10 ---> DDR_05
+    DDR_11 ---> DDR_05
+    DDR_06 --> DDR_05
+    end
+    %% ================================================================
+    %% ================================================================
+    DESIGNDOCUMENT[[Design document]]
+    DEVELOPMENTDOCUMENT[[Development document]]
+    PDDR_GROUP ==> DESIGNDOCUMENT
+    DESIGNDOCUMENT ==> DDR_GROUP ==> DEVELOPMENTDOCUMENT
+    %% ================================================================
+    %% ================================================================
+```
 
 ### Documentation requirement mapping [draft 02]
 
