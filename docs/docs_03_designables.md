@@ -6,12 +6,14 @@
 ## Doc links
 
 Documentation page links:
-* [**[readme]**](./readme.md)
-* [**[docs 00 : overview]**](./docs_00_overview.md#docs-03--detailed-designs-etc)
-* [**[docs 01 : conceptual]**](./docs_01_conceptual.md)
-* [**[docs 02 : requirements]**](./docs_02_requirements.md)
-* [***[docs 03 : designables]***](./docs_03_designables.md)
-* [**[docs 04 : developments]**](./docs_04_developments.md)
+* [**[readme]**](./readme.md#doc-links)
+* [**[docs 00 : overview]**](./docs_00_overview.md#doc-links)
+* [**[docs 01 : conceptual]**](./docs_01_conceptual.md#doc-links)
+    * [**[docs 01 : conceptual : old conceptual documentation]**](./docs_01_conceptual_suppliment_01.md#doc-links)
+* [**[docs 02 : requirements]**](./docs_02_requirements.md#doc-links)
+    * [**[docs 02 : requirements : deadlock suppliment]**](./docs_02_requirements_suppliment_01.md#doc-links)
+* [***[docs 03 : designables]***](./docs_03_designables.md#doc-links)
+* [**[docs 04 : developments]**](./docs_04_developments.md#doc-links)
 
 ---
 
