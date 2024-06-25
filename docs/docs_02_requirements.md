@@ -1417,3 +1417,60 @@ classDiagram
 | DDR_11 | shader behaviour diagrams | AWL06 | Medium | MAJOR | moderate |
 
 ---
+
+## Architectural Diagram
+
+### Architectural Diagram : [draft 01]
+
+* simple architecture with just two lanes and two lights
+* probably not quite in the spirit of what it's meant to be
+* think of it as suggesting the "repository" architecture
+* could also client-server model (later development iterations)
+    * this could then model them being run by seperate "computers"
+* mostly layered architecture for everything else (including skybox and terrain)
+
+```mermaid
+---
+title: Architectural Diagram - draft 01
+---
+classDiagram
+    namespace INTERSECTION {
+        class INTERSECTIONOBJ["Intersection"]
+        class TRAFFICLIGHT01["TrafficLight"]
+        class TRAFFICLIGHT02["TrafficLight"]
+    }
+    namespace LANE01 {
+        class LANE01OBJ["Lane"]
+        class LANE01CAR01["Car"]
+        class LANE01CAR02["Car"]
+        class LANE01CAR03["Car"]
+    }
+    namespace LANE02 {
+        class LANE02OBJ["Lane"]
+        class LANE02CAR01["Car"]
+        class LANE02CAR02["Car"]
+        class LANE02CAR03["Car"]
+    }
+    INTERSECTIONOBJ <|.. TRAFFICLIGHT01 : reports to
+    INTERSECTIONOBJ --* TRAFFICLIGHT01 : owned by
+    INTERSECTIONOBJ --o LANE01OBJ : connection of
+    LANE01OBJ o-- TRAFFICLIGHT01 : controlled by
+    LANE01OBJ <|.. LANE01CAR03 : guided by
+    LANE01OBJ <|.. LANE01CAR02 : guided by
+    LANE01OBJ <|.. LANE01CAR01 : guided by
+    TRAFFICLIGHT01 ..> LANE01CAR01 : Informs
+    LANE01CAR02 ..> LANE01CAR03 : Informs
+    LANE01CAR01 ..> LANE01CAR02 : Informs
+    LANE02CAR01 ..> LANE02CAR02 : Informs
+    LANE02CAR02 ..> LANE02CAR03 : Informs
+    TRAFFICLIGHT02 ..> LANE02CAR01 : Informs
+    LANE02OBJ <|.. LANE02CAR01 : guided by
+    LANE02OBJ <|.. LANE02CAR02 : guided by
+    LANE02OBJ <|.. LANE02CAR03 : guided by
+    LANE02OBJ o-- TRAFFICLIGHT02 : controlled by
+    INTERSECTIONOBJ --o LANE02OBJ : connection of
+    INTERSECTIONOBJ --* TRAFFICLIGHT02 : owned by
+    INTERSECTIONOBJ <|.. TRAFFICLIGHT02 : reports to
+```
+
+---

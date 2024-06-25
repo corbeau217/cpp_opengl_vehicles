@@ -46,8 +46,8 @@ Documentation page links:
     * *~~proposed design patterns~~*
 * [x] - `PDDR_03` - ~~listing deadlock avoidance methods~~
     * *~~a list of the deadlock avoidance methods that work for our system~~*
-* [ ] - `PDDR_04` - **simple architectural diagrams for our system**
-    * *to show how the actors/object connect to each other and make sure we're not doing spooky design choices sooner rather than later*
+* [x] - `PDDR_04` - ~~simple architectural diagrams for our system~~
+    * *~~to show how the actors/object connect to each other and make sure we're not doing spooky design choices sooner rather than later~~*
 * [x] - `PDDR_05` - ~~reorganise documentation~~
     * *~~putting things in the correct documentation files~~*
 * [x] - `PDDR_06` - ~~requirement dependency map~~
