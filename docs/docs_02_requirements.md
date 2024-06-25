@@ -173,7 +173,7 @@ Documentation page links:
 | `DDR_05` | Development pathway | the pathway we plan to take for iterations in development *[hopefully with predicted workload/timeframes]* |
 | `DDR_06` | Model diagrams | diagrams of proposed models and model generation |
 | `DDR_07` | Actor/Object fields and methods diagrams | listing the required data in our Actors/Objects |
-| `DDR_08` | Detailed interation diagrams | detailed interation diagrams |
+| `DDR_08` | Detailed iteration diagrams | detailed iteration diagrams |
 | `DDR_09` | Detailed deadlock avoidance method | details about how we'll avoid deadlock |
 | `DDR_10` | detailed combined UML diagram | for reference while we work to make sure we're not making something wonky |
 | `DDR_11` | shader behaviour diagrams | diagrams for diffuse/specularity and difference between phong/blinn-phong models |
@@ -1004,13 +1004,38 @@ flowchart LR
 
 ### Requirements importance [draft 01]
 
+#### Requirement - requirement types
+
 ```mermaid
 ---
 title: requirement types
 ---
 flowchart LR
-
+    subgraph ENV
+    ENVSYS[ENV-SYS]
+    ENVARCHITECTURAL[ENV-ARCHITECTURAL]
+    end
+    subgraph DOCS
+    DOCSORGANISATION[DOCS-ORGANISATION]
+    DOCSREFERENCE[DOCS-REFERENCE]
+    end
+    subgraph DESIGN
+    DESIGNFLAVOUR[DESIGN-FLAVOUR]
+    DESIGNARCHITECTURAL[DESIGN-ARCHITECTURAL]
+    DESIGNMECHANICAL[DESIGN-MECHANICAL]
+    DESIGNBEHAVIOUR[DESIGN-BEHAVIOUR]
+    DESIGNREFERENCE[DESIGN-REFERENCE]
+    end
+    subgraph PROCEDURAL
+    PROCEDURALFLAVOUR[PROCEDURAL-FLAVOUR]
+    end
+    subgraph DEV
+    DEVPLAN[DEV-PLAN]
+    DEVREFERENCE[DEV-REFERENCE]
+    end
 ```
+
+#### Requirement - workload types - mapping
 
 ```mermaid
 ---
@@ -1079,51 +1104,206 @@ flowchart
     %% ==================================================
 ```
 
-| Req. ID | Req. Brief | Req. type | Req. workload | ... | ... |
-| ------- | ---------- | --------- | ------------- | --- | --- |
+#### Requirement - workload types - documentation
+ 
+```mermaid
+---
+title: DOCUMENTATION - workload types
+---
+classDiagram
+    class AWL01["Minimal"] {
+        <<AWL01>>
+        couple lines
+        and or
+        couple values
+    }
+    class AWL02["Miniscule"] {
+        <<AWL02>>
+        few lines
+        and or
+        few values
+    }
+    class AWL03["Meager"] {
+        <<AWL03>>
+        several lines
+        and or
+        several values
+    }
+    class AWL04["Minor"] {
+        <<AWL04>>
+        couple modules
+    }
+    class AWL05["Mild"] {
+        <<AWL05>>
+        few modules
+    }
+    class AWL06["Medium"] {
+        <<AWL06>>
+        several modules
+    }
+    class AWL07["Modest"] {
+        <<AWL07>>
+        many modules
+        and or
+        minimal research
+    }
+    class AWL08["Moderate"] {
+        <<AWL08>>
+        moderate documenting
+        and or
+        moderate research
+    }
+    class AWL09["Major"] {
+        <<AWL09>>
+        major documenting
+        and or
+        major research
+    }
+    class AWL10["Massive"] {
+        <<AWL10>>
+        massive doc changes
+        and or
+        minor re-engineering
+    }
+    class AWL11["Monstrous"] {
+        <<AWL11>>
+        complexity demon henchmen
+        and or
+        major re-engineering
+    }
+    class AWL12["Maximum"] {
+        <<AWL12>>
+        documentation deus vult
+        and or
+        BBEG complexity demon
+    }
+```
+
+#### Requirement - workload types - development
+
+```mermaid
+---
+title: DEVELOPMENT - workload types
+---
+classDiagram
+    class AWL01["Minimal"] {
+        <<AWL01>>
+        couple lines
+        and or
+        couple values
+    }
+    class AWL02["Miniscule"] {
+        <<AWL02>>
+        few lines
+        and or
+        few values
+    }
+    class AWL03["Meager"] {
+        <<AWL03>>
+        couple functions
+        and or
+        couple fields
+    }
+    class AWL04["Minor"] {
+        <<AWL04>>
+        few functions
+        and or
+        few fields
+    }
+    class AWL05["Mild"] {
+        <<AWL05>>
+        couple classes
+        and or
+        couple files
+    }
+    class AWL06["Medium"] {
+        <<AWL06>>
+        few classes
+        and or
+        few files
+    }
+    class AWL07["Modest"] {
+        <<AWL07>>
+        minimal redesign
+        and or
+        minimal research
+    }
+    class AWL08["Moderate"] {
+        <<AWL08>>
+        minor redesign
+        and or
+        minor research
+    }
+    class AWL09["Major"] {
+        <<AWL09>>
+        medium redesign
+        and or
+        medium research
+    }
+    class AWL10["Massive"] {
+        <<AWL10>>
+        minor re-engineering
+    }
+    class AWL11["Monstrous"] {
+        <<AWL11>>
+        major re-engineering
+        and or
+        complexity demon henchmen
+    }
+    class AWL12["Maximum"] {
+        <<AWL12>>
+        BBEG complexity demon
+        and or
+        documentation deus vult
+    }
+```
+
+#### Requirement importance - mapping table
+
+| Req.<br>ID | Req.<br>Brief | Req.<br>type | Req.<br>workload<br>mapping | Req.<br>workload<br>label | ... |
+| ------- | ---------- | --------- | ----- | --- | --- |
 | NFR_DE_01 | MacOS | ENV-SYS | PWL00 |  |  |
-| NFR_DE_02 | VSCode | ENV-SYS | N/A |  |  |
-| NFR_DE_03 | OpenGL | ENV-ARCHITECTURAL | Minimal |  |  |
-| NFR_DE_04 | C++ | ENV-ARCHITECTURAL | Minimal |  |  |
-| NFR_DE_05 | GLAD | ENV-ARCHITECTURAL | N/A |  |  |
-| NFR_DE_06 | GLFW | ENV-ARCHITECTURAL | N/A |  |  |
-| NFR_DE_07 | GLM | ENV-ARCHITECTURAL | N/A |  |  |
-| NFR_DE_08 | opengl_project_structurings <br>template | DESIGN-ARCHITECTURAL | Minimal |  |  |
-| NFR_M_01 | LHS traffic | DESIGN-FLAVOUR | Minimal |  |  |
-| NFR_M_02 | Concurrency | DESIGN-ARCHITECTURAL | Minor |  |  |
-| NFR_M_03 | Diagnostics screen | DESIGN-MECHANICAL | Medium |  |  |
-| NFR_M_04 | Day night cycles | DESIGN-MECHANICAL | Moderate |  |  |
-| NFR_M_05 | Moon phases | DESIGN-FLAVOUR | Medium |  |  |
-| NFR_PG_01 | ... | ... | ... |  |  |
-| NFR_PG_02 | ... | ... | ... |  |  |
-| NFR_PG_03 | ... | ... | ... |  |  |
-| NFR_PG_04 | ... | ... | ... |  |  |
-| NFR_PG_05 | ... | ... | ... |  |  |
-| FR_01 | ... | ... | ... |  |  |
-| FR_02 | ... | ... | ... |  |  |
-| FR_03 | ... | ... | ... |  |  |
-| FR_04 | ... | ... | ... |  |  |
-| PDDR_01 | ... | ... | ... |  |  |
-| PDDR_02 | ... | ... | ... |  |  |
-| PDDR_03 | ... | ... | ... |  |  |
-| PDDR_04 | ... | ... | ... |  |  |
-| PDDR_05 | ... | ... | ... |  |  |
-| PDDR_06 | ... | ... | ... |  |  |
-| PDDR_07 | ... | ... | ... |  |  |
-| PDDR_08 | ... | ... | ... |  |  |
-| PDDR_09 | ... | ... | ... |  |  |
-| PDDR_10 | ... | ... | ... |  |  |
-| PDDR_11 | ... | ... | ... |  |  |
-| DDR_01 | ... | ... | ... |  |  |
-| DDR_02 | ... | ... | ... |  |  |
-| DDR_03 | ... | ... | ... |  |  |
-| DDR_04 | ... | ... | ... |  |  |
-| DDR_05 | ... | ... | ... |  |  |
-| DDR_06 | ... | ... | ... |  |  |
-| DDR_07 | ... | ... | ... |  |  |
-| DDR_08 | ... | ... | ... |  |  |
-| DDR_09 | ... | ... | ... |  |  |
-| DDR_10 | ... | ... | ... |  |  |
-| DDR_11 | ... | ... | ... |  |  |
+| NFR_DE_02 | VSCode | ENV-SYS | PWL02 |  |  |
+| NFR_DE_03 | OpenGL | ENV-ARCHITECTURAL | PWL03 | Minimal |  |
+| NFR_DE_04 | C++ | ENV-ARCHITECTURAL | PWL02 | Minimal |  |
+| NFR_DE_05 | GLAD | ENV-ARCHITECTURAL | PWL03 | N/A |  |
+| NFR_DE_06 | GLFW | ENV-ARCHITECTURAL | PWL03 | N/A |  |
+| NFR_DE_07 | GLM | ENV-ARCHITECTURAL | PWL03 | N/A |  |
+| NFR_DE_08 | opengl_project_structurings <br>template | DESIGN-ARCHITECTURAL | PWL04 | Minimal |  |
+| NFR_M_01 | LHS traffic | DESIGN-FLAVOUR | AWL02 | Miniscule |  |
+| NFR_M_02 | Concurrency | DESIGN-ARCHITECTURAL | AWL07 | Modest |  |
+| NFR_M_03 | Diagnostics screen | DESIGN-MECHANICAL | AWL08 | Moderate |  |
+| NFR_M_04 | Day night cycles | DESIGN-MECHANICAL | AWL06 | Medium |  |
+| NFR_M_05 | Moon phases | DESIGN-FLAVOUR | AWL04 | Minor |  |
+| NFR_PG_01 | procedural cars | PROCEDURAL-FLAVOUR | AWL08 | Moderate |  |
+| NFR_PG_02 | procedural clouds | PROCEDURAL-FLAVOUR | AWL07 | Modest |  |
+| NFR_PG_03 | procedural stars | PROCEDURAL-FLAVOUR | AWL06 | Medium |  |
+| NFR_PG_04 | procedural buildings | PROCEDURAL-FLAVOUR | AWL06 | Medium |  |
+| NFR_PG_05 | procedural terrain | PROCEDURAL-FLAVOUR | AWL08 | Moderate |  |
+| FR_01 | cars travel on<br>green light | DESIGN-BEHAVIOUR | AWL04 | Minor |  |
+| FR_02 | cars wait on<br>red light | DESIGN-BEHAVIOUR | AWL04 | Minor |  |
+| FR_03 | cars queue in<br>their lane | DESIGN-BEHAVIOUR | AWL04 | Minor |  |
+| FR_04 | cars watch next<br>car to move | DESIGN-BEHAVIOUR | AWL04 | Minor |  |
+| PDDR_01 | Required fields | DESIGN-REFERENCE | ... |  |  |
+| PDDR_02 | suggested design patterns | DESIGN-REFERENCE | ... |  |  |
+| PDDR_03 | deadlock avoidance options | DESIGN-REFERENCE | ... |  |  |
+| PDDR_04 | architectural diagrams | DESIGN-REFERENCE | ... |  |  |
+| PDDR_05 | reorganise documentation | DOCS-ORGANISATION | ... |  |  |
+| PDDR_06 | requirement dependency map | DOCS-REFERENCE | ... |  |  |
+| PDDR_07 | requirement importance map | DOCS-REFERENCE | ... |  |  |
+| PDDR_08 | risk mapping | DOCS-REFERENCE | ... |  |  |
+| PDDR_09 | pre-doc req. checklist | DOCS-ORGANISATION | ... |  |  |
+| PDDR_10 | model concept diagrams | DESIGN-REFERENCE | ... |  |  |
+| DDR_01 | C++ linking flowchart | DEV-REFERENCE | ... |  |  |
+| DDR_02 | OpenGL render pipeline | DEV-REFERENCE | ... |  |  |
+| DDR_03 | library pipeline | DEV-REFERENCE | ... |  |  |
+| DDR_04 | base template control flow | DEV-REFERENCE | ... |  |  |
+| DDR_05 | development pathway | DEV-PLAN | ... |  |  |
+| DDR_06 | detailed model diagrams | DEV-REFERENCE | ... |  |  |
+| DDR_07 | actor/object fields/methods | DEV-REFERENCE | ... |  |  |
+| DDR_08 | detailed iteration diagrams | DEV-PLAN | ... |  |  |
+| DDR_09 | detailed deadlock avoidance methods | DEV-REFERENCE | ... |  |  |
+| DDR_10 | detailed combined UML diagram | DEV-PLAN | ... |  |  |
+| DDR_11 | shader behaviour diagrams | DEV-REFERENCE | ... |  |  |
 
 ---
