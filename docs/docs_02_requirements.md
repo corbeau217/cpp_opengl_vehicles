@@ -999,3 +999,131 @@ flowchart LR
 ```
 
 ---
+
+## Requirements importance mapping
+
+### Requirements importance [draft 01]
+
+```mermaid
+---
+title: requirement types
+---
+flowchart LR
+
+```
+
+```mermaid
+---
+title: requirement workload
+---
+flowchart
+    %% ==================================================
+    %% ==================================================
+    subgraph PASSIVEWORKLOAD[Passive Work Load - <b>PWL</b>]
+    %% --------------------------------------------
+    subgraph PWL_NON[<b>PWL</b>Non-applicable]
+    %% PWL00 - doesnt add any work
+    PWL00[PWL 0<br><i>No workload</i>]
+    end
+    %% --------------------------------------------
+    subgraph PWL_DEV[<b>PWL</b> Development]
+    %% PWL01 - docs / tutorials
+    PWL01[PWL 1<br><i>Dev. resource</i>]
+    %% PWL02 - programs / editors / build environment
+    PWL02[PWL 2<br><i>Dev. tools</i>]
+    %% PWL03 - packages / modules / libraries
+    PWL03[PWL 3<br><i>Dev. package</i>]
+    %% PWL04 - pre-made template code
+    PWL04[PWL 4<br><i>Dev. template</i>]
+    end
+    %% --------------------------------------------
+    end
+    %% ==================================================
+    %% ==================================================
+    subgraph ACTIVEWORKLOAD[Active Work Load - <b>AWL</b>]
+    %% --------------------------------------------
+    subgraph AWL_LOWER[<b>AWL</b> Lower]
+    AWL01{{AWL 1<br><i>Minimal</i>}}
+    AWL02{{AWL 2<br><i>Miniscule</i>}}
+    AWL03{{AWL 3<br><i>Meager</i>}}
+    AWL04{{AWL 4<br><i>Minor</i>}}
+    end
+    %% --------------------------------------------
+    subgraph AWL_MID[<b>AWL</b> Mid]
+    AWL05{{AWL 5<br><i>Mild</i>}}
+    AWL06{{AWL 6<br><i>Medium</i>}}
+    AWL07{{AWL 7<br><i>Modest</i>}}
+    AWL08{{AWL 8<br><i>Moderate</i>}}
+    end
+    %% --------------------------------------------
+    subgraph AWL_UPPER[<b>AWL</b> Upper]
+    AWL09{{AWL 9<br><i>Major</i>}}
+    AWL10{{AWL 10<br><i>Massive</i>}}
+    AWL11{{AWL 11<br><i>Monstrous</i>}}
+    AWL12{{AWL 12<br><i>Maximum</i>}}
+    end
+    %% --------------------------------------------
+    end
+    %% ==================================================
+    %% ==================================================
+    PWL_NON ==> PWL_DEV
+    PWL01 --> PWL02 --> PWL03 --> PWL04
+    %% ==================================================
+    PASSIVEWORKLOAD ==> ACTIVEWORKLOAD
+    %% ==================================================
+    AWL_LOWER ==> AWL_MID ==> AWL_UPPER
+    AWL01 --> AWL02 --> AWL03 --> AWL04
+    AWL05 --> AWL06 --> AWL07 --> AWL08
+    AWL09 --> AWL10 --> AWL11 --> AWL12
+    %% ==================================================
+    %% ==================================================
+```
+
+| Req. ID | Req. Brief | Req. type | Req. workload | ... | ... |
+| ------- | ---------- | --------- | ------------- | --- | --- |
+| NFR_DE_01 | MacOS | ENV-SYS | PWL00 |  |  |
+| NFR_DE_02 | VSCode | ENV-SYS | N/A |  |  |
+| NFR_DE_03 | OpenGL | ENV-ARCHITECTURAL | Minimal |  |  |
+| NFR_DE_04 | C++ | ENV-ARCHITECTURAL | Minimal |  |  |
+| NFR_DE_05 | GLAD | ENV-ARCHITECTURAL | N/A |  |  |
+| NFR_DE_06 | GLFW | ENV-ARCHITECTURAL | N/A |  |  |
+| NFR_DE_07 | GLM | ENV-ARCHITECTURAL | N/A |  |  |
+| NFR_DE_08 | opengl_project_structurings <br>template | DESIGN-ARCHITECTURAL | Minimal |  |  |
+| NFR_M_01 | LHS traffic | DESIGN-FLAVOUR | Minimal |  |  |
+| NFR_M_02 | Concurrency | DESIGN-ARCHITECTURAL | Minor |  |  |
+| NFR_M_03 | Diagnostics screen | DESIGN-MECHANICAL | Medium |  |  |
+| NFR_M_04 | Day night cycles | DESIGN-MECHANICAL | Moderate |  |  |
+| NFR_M_05 | Moon phases | DESIGN-FLAVOUR | Medium |  |  |
+| NFR_PG_01 | ... | ... | ... |  |  |
+| NFR_PG_02 | ... | ... | ... |  |  |
+| NFR_PG_03 | ... | ... | ... |  |  |
+| NFR_PG_04 | ... | ... | ... |  |  |
+| NFR_PG_05 | ... | ... | ... |  |  |
+| FR_01 | ... | ... | ... |  |  |
+| FR_02 | ... | ... | ... |  |  |
+| FR_03 | ... | ... | ... |  |  |
+| FR_04 | ... | ... | ... |  |  |
+| PDDR_01 | ... | ... | ... |  |  |
+| PDDR_02 | ... | ... | ... |  |  |
+| PDDR_03 | ... | ... | ... |  |  |
+| PDDR_04 | ... | ... | ... |  |  |
+| PDDR_05 | ... | ... | ... |  |  |
+| PDDR_06 | ... | ... | ... |  |  |
+| PDDR_07 | ... | ... | ... |  |  |
+| PDDR_08 | ... | ... | ... |  |  |
+| PDDR_09 | ... | ... | ... |  |  |
+| PDDR_10 | ... | ... | ... |  |  |
+| PDDR_11 | ... | ... | ... |  |  |
+| DDR_01 | ... | ... | ... |  |  |
+| DDR_02 | ... | ... | ... |  |  |
+| DDR_03 | ... | ... | ... |  |  |
+| DDR_04 | ... | ... | ... |  |  |
+| DDR_05 | ... | ... | ... |  |  |
+| DDR_06 | ... | ... | ... |  |  |
+| DDR_07 | ... | ... | ... |  |  |
+| DDR_08 | ... | ... | ... |  |  |
+| DDR_09 | ... | ... | ... |  |  |
+| DDR_10 | ... | ... | ... |  |  |
+| DDR_11 | ... | ... | ... |  |  |
+
+---
