@@ -136,6 +136,7 @@ Documentation page links:
 * `25/06/2024` - finished mapping requirement importance/types/workload
 * `25/06/2024` - cleaned up the docs links more
 * `25/06/2024` - added DOCS02:SUPPLIMENT01 for deadlocking details
+* `25/06/2024` - added deadlock avoidance suggestions
 
 ---
 

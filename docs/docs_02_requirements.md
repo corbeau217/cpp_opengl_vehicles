@@ -1332,6 +1332,12 @@ classDiagram
         * use the most common in the time frame
         * may rely on collision detection
             * boids?
+* bankers algorithm with expensive process priority?
+* critical first?
+* need scheduling types?
+    * all to largest
+    * round robin
+    * first capable
 
 
 ---

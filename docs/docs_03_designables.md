@@ -43,15 +43,15 @@ Documentation page links:
     * *~~Required data held by our objects~~*
 * [x] - `PDDR_02` - ~~suggested design patterns for actors/objects~~
     * *~~proposed design patterns~~*
-* [ ] - `PDDR_03` - **listing deadlock avoidance methods**
-    * *a list of the deadlock avoidance methods that work for our system*
+* [x] - `PDDR_03` - ~~listing deadlock avoidance methods~~
+    * *~~a list of the deadlock avoidance methods that work for our system~~*
 * [ ] - `PDDR_04` - **simple architectural diagrams for our system**
     * *to show how the actors/object connect to each other and make sure we're not doing spooky design choices sooner rather than later*
 * [x] - `PDDR_05` - ~~reorganise documentation~~
     * *~~putting things in the correct documentation files~~*
 * [x] - `PDDR_06` - ~~requirement dependency map~~
     * *~~mapped out requirement dependencies~~*
-* [ ] - `PDDR_07` - ~~importance of requirements~~
+* [x] - `PDDR_07` - ~~importance of requirements~~
     * *~~importance of each requirement~~*
 * [ ] - `PDDR_08` - **risk mapping**
     * *risk assessment for work required for a thing to function (and how likely to get it working first try) in relation to importance*
