@@ -558,7 +558,6 @@ flowchart TD
 * after completing the diagram we found the being able to send things more layers by using `-->` / `--->` / `---->` / `----->` 
     * will do this in next draft may haps
 
-
 ```mermaid
 flowchart TD
     %% ========================================
@@ -780,28 +779,6 @@ flowchart TD
 
 * mermaid chart [[sequence diagrams syntax reference]](https://mermaid.js.org/syntax/sequenceDiagram.html)
 * will probably need to redo after we fully confirm the things with a proper domain model
-
-<!-- * stub stuffs:
-```mermaid
-sequenceDiagram
-    participant SCENE as Scene
-    participant SUN as Sun
-    participant CLOUDS as Clouds
-    participant MOON as Moon
-    participant TRAFFICCONTROLLER as Traffic Controller
-    participant TRAFFICLIGHT as Traffic Light
-    participant INTERSECTION as Intersection
-    participant DIAGNOSTICSSCREEN as Diagnostic Screen
-    participant LANE as Lane
-    participant SKYDAY as Sky day
-    participant SKYNIGHT as Sky night
-    participant CAR as Car
-    participant WHEEL as Wheel
-    participant CARLIGHTS as Car Lights
-    participant MESH as Mesh
-    participant TERRAIN as Terrain
-    participant BUILDING as Building
-``` -->
 
 ### Sequence diagram [draft 01]
 

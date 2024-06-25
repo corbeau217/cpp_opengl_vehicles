@@ -150,6 +150,7 @@
 [**[Back to Contents]**](#contents)
 
 * lazy draft, half way through we stopped putting the relationships in properly
+
 ```mermaid
 ---
 title: Domain model draft 01
@@ -334,7 +335,6 @@ classDiagram
     class todo
 ```
 
-
 ---
 
 ## Design pattern ideas for concepts
@@ -495,4 +495,369 @@ classDiagram
 
 ---
 
+## Required data for actors/objects
 
+* the required data of our actors and models
+
+### Required data fields [draft 01] : `MainThread`
+
+* aaa
+
+```mermaid
+---
+title: required data - MainThread
+---
+classDiagram
+    class MainThread {
+        Scene scene
+    }
+```
+
+### Required data fields [draft 01] : `DiagnosticsThread`
+
+* aaa
+
+```mermaid
+---
+title: required data - DiagnosticsThread
+---
+classDiagram
+    class DiagnosticsThread {
+        Intersection intersection
+    }
+```
+
+### Required data fields [draft 01] : `ControllerThread`
+
+* aaa
+
+```mermaid
+---
+title: required data - ControllerThread
+---
+classDiagram
+    class ControllerThread {
+        TrafficController trafficController
+        Intersection intersection
+    }
+```
+
+### Required data fields [draft 01] : `LightThread`
+
+* aaa
+
+```mermaid
+---
+title: required data - LightThread
+---
+classDiagram
+    class LightThread {
+        TrafficLight trafficLight
+    }
+```
+
+### Required data fields [draft 01] : `CarThread`
+
+* aaa
+
+```mermaid
+---
+title: required data - CarThread
+---
+classDiagram
+    class CarThread {
+        Car car
+    }
+```
+
+
+### Required data fields [draft 01] : `App`
+
+* aaa
+
+```mermaid
+---
+title: required data - App
+---
+classDiagram
+    class App {
+        Scene scene
+        MainThread mainThread
+        ControllerThread[] controllerThread
+        LightThread[] lightThread
+        CarThread[] carThread
+    }
+```
+
+### Required data fields [draft 01] : `Scene`
+
+* aaa
+
+```mermaid
+---
+title: required data - Scene
+---
+classDiagram
+    class Scene {
+        Terrain terrain
+        DiagnosticScreen diagnosticScreen
+    }
+```
+
+### Required data fields [draft 01] : `Skybox`
+
+* aaa
+
+```mermaid
+---
+title: required data - Skybox
+---
+classDiagram
+    class Skybox {
+        SkyDay skyDay
+        SkyNight skyNight
+        Clouds clouds
+    }
+```
+
+### Required data fields [draft 01] : `Lane`
+
+* aaa
+
+```mermaid
+---
+title: required data - Lane
+---
+classDiagram
+    class Lane {
+        Car[] cars
+        TrafficLight trafficLight
+        LaneBehaviour laneBehaviour
+    }
+```
+
+
+### Required data fields [draft 01] : `SkyDay`
+
+* aaa
+
+```mermaid
+---
+title: required data - SkyDay
+---
+classDiagram
+    class SkyDay {
+        GLuint cubemapTexture
+        Sun sun
+    }
+```
+
+### Required data fields [draft 01] : `SkyNight`
+
+* aaa
+
+```mermaid
+---
+title: required data - SkyNight
+---
+classDiagram
+    class SkyNight {
+        GLuint cubemapTexture
+        Moon moon
+    }
+```
+
+### Required data fields [draft 01] : `Terrain`
+
+* aaa
+
+```mermaid
+---
+title: required data - Terrain
+---
+classDiagram
+    class Terrain {
+        Mesh terrainMesh
+        Intersection intersection
+        Building[] buildings
+
+    }
+```
+
+### Required data fields [draft 01] : `Intersection`
+
+* aaa
+
+```mermaid
+---
+title: required data - Intersection
+---
+classDiagram
+    class Intersection {
+        TrafficLight[] trafflicLights
+        Lane[] lanes
+        DiagnosticScreen diagnosticScreen
+    }
+```
+
+### Required data fields [draft 01] : `DiagnosticScreen`
+
+* aaa
+
+```mermaid
+---
+title: required data - DiagnosticScreen
+---
+classDiagram
+    class DiagnosticScreen {
+        Mesh screenMesh
+        GLuint renderTexture
+    }
+```
+
+### Required data fields [draft 01] : `Car`
+
+* aaa
+
+```mermaid
+---
+title: required data - Car
+---
+classDiagram
+    class Car {
+        Mesh body
+        CarLights carLights
+        Wheel[] wheels
+        Lane lane
+        CarBehaviour behaviour
+    }
+```
+
+
+### Required data fields [draft 01] : `Clouds`
+
+* aaa
+
+```mermaid
+---
+title: required data - Clouds
+---
+classDiagram
+    class Clouds {
+        Mesh perlinMesh
+        GLuint renderBuffer
+
+    }
+```
+
+### Required data fields [draft 01] : `Sun`
+
+* aaa
+
+```mermaid
+---
+title: required data - Sun
+---
+classDiagram
+    class Sun {
+        Vector4f[] vertices
+        float phase
+    }
+```
+
+### Required data fields [draft 01] : `Moon`
+
+* aaa
+
+```mermaid
+---
+title: required data - Moon
+---
+classDiagram
+    class Moon {
+        Vector4f[] vertices
+        float phase
+    }
+```
+
+### Required data fields [draft 01] : `Building`
+
+* aaa
+
+```mermaid
+---
+title: required data - Building
+---
+classDiagram
+    class Building {
+        Mesh mesh
+    }
+```
+
+### Required data fields [draft 01] : `TrafficLight`
+
+* aaa
+
+```mermaid
+---
+title: required data - TrafficLight
+---
+classDiagram
+    class TrafficLight {
+        Mesh mesh
+        TLstate state
+    }
+```
+
+### Required data fields [draft 01] : `Wheel`
+
+* aaa
+
+```mermaid
+---
+title: required data - Wheel
+---
+classDiagram
+    class Wheel {
+        Mesh mesh
+        Vector3f rotation
+    }
+```
+
+### Required data fields [draft 01] : `CarLights`
+
+* aaa
+
+```mermaid
+---
+title: required data - CarLights
+---
+classDiagram
+    class CarLights {
+        %% ..
+    }
+```
+
+### Required data fields [draft 01] : `Mesh`
+
+* aaa
+
+```mermaid
+---
+title: required data - Mesh
+---
+classDiagram
+    class Mesh {
+        Vector4f[] vertices
+        Vector4f[] normals
+        Vector2f[] uvMapping
+        int[] bindings
+        GLuint vertexBuffer
+        GLuint normalBuffer
+        GLuint uvBuffer
+        GLuint bindingBuffer
+    }
+```
+
+
+---
