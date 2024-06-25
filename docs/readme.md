@@ -14,6 +14,7 @@ Documentation page links:
     * [**[docs 01 : conceptual : old conceptual documentation]**](./docs_01_conceptual_suppliment_01.md#doc-links)
 * [**[docs 02 : requirements]**](./docs_02_requirements.md#doc-links)
     * [**[docs 02 : requirements : deadlock suppliment]**](./docs_02_requirements_suppliment_01.md#doc-links)
+    * [**[docs 02 : requirements : model design drafts suppliment]**](./docs_02_requirements_suppliment_02.md#doc-links)
 * [**[docs 03 : designables]**](./docs_03_designables.md#doc-links)
 * [**[docs 04 : developments]**](./docs_04_developments.md#doc-links)
 
@@ -137,6 +138,7 @@ Documentation page links:
 * `25/06/2024` - cleaned up the docs links more
 * `25/06/2024` - added DOCS02:SUPPLIMENT01 for deadlocking details
 * `25/06/2024` - added deadlock avoidance suggestions
+* `25/06/2024` - added model design draft diagrams
 
 ---
 

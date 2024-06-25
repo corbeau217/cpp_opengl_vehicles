@@ -12,6 +12,7 @@ Documentation page links:
     * [**[docs 01 : conceptual : old conceptual documentation]**](./docs_01_conceptual_suppliment_01.md#doc-links)
 * [**[docs 02 : requirements]**](./docs_02_requirements.md#doc-links)
     * [**[docs 02 : requirements : deadlock suppliment]**](./docs_02_requirements_suppliment_01.md#doc-links)
+    * [**[docs 02 : requirements : model design drafts suppliment]**](./docs_02_requirements_suppliment_02.md#doc-links)
 * [***[docs 03 : designables]***](./docs_03_designables.md#doc-links)
 * [**[docs 04 : developments]**](./docs_04_developments.md#doc-links)
 
@@ -57,8 +58,8 @@ Documentation page links:
     * *risk assessment for work required for a thing to function (and how likely to get it working first try) in relation to importance*
 * [x] - `PDDR_09` - ~~checklist table for all the requirements~~
     * *~~somewhere having a checklist for our requirements so we can tick off what's complete~~*
-* [ ] - `PDDR_10` - **concept diagrams of models in documentation**
-    * *adding the various model concept diagram drafts to the documentation*
+* [x] - `PDDR_10` - ~~concept diagrams of models in documentation~~
+    * *~~adding the various model concept diagram drafts to the documentation~~*
 * [ ] - `PDDR_11` - **...**
     * *...*
 
