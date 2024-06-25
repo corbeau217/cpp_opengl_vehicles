@@ -72,6 +72,7 @@ Documentation page links:
 * [***[Requirements mapping]***](#requirement-mapping)
     * [*[Requirements mapping [draft 01]]*](#requirement-mapping-draft-01)
     * [*[Documentation requirement mapping [draft 01]]*](#documentation-requirement-mapping-draft-01)
+    * [*[Documentation requirement mapping [draft 02]]*](#documentation-requirement-mapping-draft-02)
 * [***[Requirements importance mapping]***](#requirements-importance-mapping)
 * [***[Deadlock avoidance suggestions]***](#deadlock-avoidance-suggestions)
 * [***[Model design draft diagrams]***](#model-design-draft-diagrams)
@@ -185,7 +186,8 @@ Documentation page links:
 | `DDR_09` | Detailed deadlock avoidance method | details about how we'll avoid deadlock |
 | `DDR_10` | detailed combined UML diagram | for reference while we work to make sure we're not making something wonky |
 | `DDR_11` | shader behaviour diagrams | diagrams for diffuse/specularity and difference between phong/blinn-phong models |
-| `DDR_12` | ... | ... |
+| `DDR_12` | experimentation suppliments | experiments of mechanics our chosen environment, documented within supplimental files |
+| `DDR_13` | ... | ... |
 
 ## Domain models
 
@@ -941,7 +943,7 @@ flowchart TD
 
 ```mermaid
 ---
-title: documentation requirement mappings
+title: documentation requirement mappings draft 01
 ---
 flowchart LR
     %% ================================================================
@@ -984,17 +986,75 @@ flowchart LR
     DDR_11[DDR_11<br><i>shader behaviour<br>diagrams</i>]
     DDR_01 --> DDR_04
     DDR_02 --> DDR_03
+
+### Documentation requirement mapping [draft 02]
+
+[***[back to Contents]***](#contents)
+
+```mermaid
+---
+title: documentation requirement mappings draft 02
+---
+flowchart LR
+    %% ================================================================
+    %% ================================================================
+    subgraph PDDR_GROUP[Pre-Design Document Requirements]
+    PDDR_01[PDDR_01<br><i>required fields</i>]
+    PDDR_02[PDDR_02<br><i>design pattern<br>suggestions</i>]
+    PDDR_03[PDDR_03<br><i>deadlock mitigation<br>suggestions</i>]
+    PDDR_04[PDDR_04<br><i>simple architectural<br>diagrams</i>]
+    PDDR_05[PDDR_05<br><i>reorganised documentation</i>]
+    PDDR_06[PDDR_06<br><i>requirement dependencies<br>mapping</i>]
+    PDDR_07[PDDR_07<br><i>requirement importance</i>]
+    PDDR_08[PDDR_08<br><i>risk mapping</i>]
+    PDDR_09[PDDR_09<br><i>pre-design<br>requirement checklist</i>]
+    PDDR_10[PDDR_10<br><i>model concept<br>diagrams</i>]
+    PDDR_05 --> PDDR_09
+    PDDR_05 ---> PDDR_10
+    PDDR_05 --> PDDR_06
+    PDDR_01 --> PDDR_02
+    PDDR_06 --> PDDR_07
+    PDDR_07 ----> PDDR_08
+    PDDR_07 --> PDDR_03
+    PDDR_03 --> PDDR_08
+    PDDR_02 --> PDDR_04
+    PDDR_04 --> PDDR_03
+    end
+    %% ================================================================
+    %% ================================================================
+    subgraph DDR_GROUP[Pre-Development document requirements]
+    DDR_01[DDR_01<br><i>C++ linking<br>graph</i>]
+    DDR_02[DDR_02<br><i>OpenGL<br>render pipeline</i>]
+    DDR_03[DDR_03<br><i>Library pipeline</i>]
+    DDR_04[DDR_04<br><i>template<br>control flow</i>]
+    DDR_05[DDR_05<br><i>development<br>pathway</i>]
+    DDR_06[DDR_06<br><i>model diagrams</i>]
+    DDR_07[DDR_07<br><i>actor and object<br>field and method<br>diagrams</i>]
+    DDR_08[DDR_08<br><i>detailed iteration<br>diagrams</i>]
+    DDR_09[DDR_09<br><i>detailed deadlock<br>avoidance</i>]
+    DDR_10[DDR_10<br><i>detailed final<br>UML</i>]
+    DDR_11[DDR_11<br><i>shader behaviour<br>diagrams</i>]
+    DDR_12[DDR_12<br><i>experimentation<br>suppliments</i>]
+    DDR_01 --> DDR_02
     DDR_02 --> DDR_04
+    DDR_01 --> DDR_04
+    DDR_01 --> DDR_07
+    DDR_02 --> DDR_03
     DDR_05 --> DDR_08
     DDR_11 --> DDR_06
+    DDR_07 <-.-> DDR_09
     DDR_07 --> DDR_10
-    DDR_03 ---> DDR_10
-    DDR_04 ---> DDR_10
-    DDR_07 ---> DDR_09
+    DDR_07 <-.-> DDR_12
+    DDR_03 -.-> DDR_12
+    DDR_04 --> DDR_12
     DDR_09 --> DDR_10
+    DDR_12 --> DDR_10
     DDR_10 ---> DDR_05
+    DDR_12 -...-> DDR_05
     DDR_11 ---> DDR_05
     DDR_06 --> DDR_05
+    DDR_12 <-.-> DDR_06
+    DDR_12 <-.-> DDR_11
     end
     %% ================================================================
     %% ================================================================
@@ -1040,6 +1100,7 @@ flowchart LR
     subgraph DEV
     DEVPLAN[DEV-PLAN]
     DEVREFERENCE[DEV-REFERENCE]
+    DEVPROTOTYPE[DEV-PROTOTYPE]
     end
 ```
 
@@ -1313,6 +1374,7 @@ classDiagram
 | DDR_09 | detailed deadlock avoidance methods | DEV-REFERENCE | AWL08 | Moderate | Design | CRITICAL |
 | DDR_10 | detailed combined UML diagram | DEV-PLAN | AWL09 | Major | Design | MEDIUM |
 | DDR_11 | shader behaviour diagrams | DEV-REFERENCE | AWL06 | Medium | Design | MAJOR |
+| DDR_12 | experimentation suppliments | DEV-PROTOTYPE | AWL10 | Massive | Design | CRITICAL |
 
 ---
 
@@ -1415,6 +1477,7 @@ classDiagram
 | DDR_09 | detailed deadlock avoidance methods | AWL08 | Moderate | CRITICAL | modest |
 | DDR_10 | detailed combined UML diagram | AWL09 | Major | MEDIUM | monstrous |
 | DDR_11 | shader behaviour diagrams | AWL06 | Medium | MAJOR | moderate |
+| DDR_12 | experimentation suppliments | AWL10 | Massive | CRITICAL | monstrous |
 
 ---
 

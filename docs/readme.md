@@ -34,6 +34,7 @@ Documentation page links:
     * [`21/06/2024`](#21062024)
     * [`23/06/2024`](#23062024)
     * [`25/06/2024`](#25062024)
+    * [`26/06/2024`](#26062024)
 
 ---
 
@@ -142,6 +143,10 @@ Documentation page links:
 * `25/06/2024` - risk mapping added
 * `25/06/2024` - architectural done!! design document here we come :D
 * `25/06/2024` - compilation linking diagram added
+
+#### `26/06/2024`
+
+* `26/06/2024` - added in the need for experimentation suppliments
 
 ---
 

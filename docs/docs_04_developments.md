@@ -47,9 +47,11 @@ Documentation page links:
 * [ ] - `DDR_10` - **detailed combined UML diagram**
     * *for reference while we work to make sure we're not making something wonky*
 * [ ] - `DDR_11` - **shader behaviour diagrams**
-    * *diagrams for diffuse/specularity and difference between phong/blinn-phong *models
-* [ ] - `DDR_12` - **...**
-    * *...*
+    * *diagrams for diffuse/specularity and difference between phong/blinn-phong models*
+* [ ] - `DDR_12` - **experimentation suppliments**
+    * *experiments of mechanics our chosen environment, documented within supplimental files*
+
+
 
 ---
 
