@@ -139,6 +139,7 @@ Documentation page links:
 * `25/06/2024` - added DOCS02:SUPPLIMENT01 for deadlocking details
 * `25/06/2024` - added deadlock avoidance suggestions
 * `25/06/2024` - added model design draft diagrams
+* `25/06/2024` - risk mapping added
 
 ---
 

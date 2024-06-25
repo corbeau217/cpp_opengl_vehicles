@@ -75,6 +75,8 @@ Documentation page links:
 * [***[Requirements importance mapping]***](#requirements-importance-mapping)
 * [***[Deadlock avoidance suggestions]***](#deadlock-avoidance-suggestions)
 * [***[Model design draft diagrams]***](#model-design-draft-diagrams)
+* [***[Requirement risk mapping]***](#requirement-risk-mapping)
+    * [*[Requirement risk mapping [draft 01]]*](#requirement-risk-mapping-draft-01)
 
 ---
 
@@ -1266,7 +1268,7 @@ classDiagram
 
 #### Requirement importance - mapping table
 
-|  Req. ID  | Req. Brief | Req. type | Req.<br>workload<br>mapping | Req. workload label | Project<br>integration<br>stage | importance |
+|  Req. ID  | Req. Brief | Req. type | Req.<br>workload<br>mapping | Req. workload label | Project<br>integration<br>stage | importance<br>level |
 | --------- | ---------- | --------- | -------- | ------------------- | ----------- | ----- |
 | NFR_DE_01 | MacOS      | ENV-SYS   | PWL00 | No workload | Conceptual | N/A |
 | NFR_DE_02 | VSCode | ENV-SYS | PWL02 | Dev. tools | Conceptual | N/A |
@@ -1351,5 +1353,67 @@ classDiagram
 
 * [***[DOCS 02 : REQUIREMENTS : MODEL DESIGN DRAFTS SUPPLIMENT]***](./docs_02_requirements_suppliment_02.md)
 * refer to the suppliment for the diagrams
+
+---
+
+## Requirement risk mapping
+
+### Requirement risk mapping [draft 01]
+
+[**[Back to Contents]**](#contents)
+
+#### Requirement risk mapping [draft 01] : brief
+
+* based on [***[Requirements importance [draft 01]]***](#requirement-importance---mapping-table)
+* kinda somewhat arbitrary in the decision, but uses the scale we made in importance mapping.
+* should find a way to heatmap table
+
+#### Requirement risk mapping [draft 01] : table
+
+|  Req. ID  | Req. Brief | Req.<br>workload<br>mapping | Req. workload label | importance<br>level | risk<br>level |
+| --------- | ---------- | -------- | ------------------- | ----- | --- |
+| NFR_DE_01 | MacOS      | PWL00 | No workload | N/A | minimal |
+| NFR_DE_02 | VSCode | PWL02 | Dev. tools | N/A | miniscule |
+| NFR_DE_03 | OpenGL | PWL03 | Dev. package | N/A | minimal |
+| NFR_DE_04 | C++ | PWL02 | Dev. tools | N/A | mild |
+| NFR_DE_05 | GLAD | PWL03 | Dev. package | N/A | miniscule |
+| NFR_DE_06 | GLFW | PWL03 | Dev. package | N/A | miniscule |
+| NFR_DE_07 | GLM | PWL03 | Dev. package | N/A | miniscule |
+| NFR_DE_08 | opengl_project_structurings <br>template | PWL04 | Dev. template | HIGH | meager |
+| NFR_M_01 | LHS traffic | AWL02 | Miniscule | MINOR | minimal |
+| NFR_M_02 | Concurrency | AWL07 | Modest | MINOR | massive |
+| NFR_M_03 | Diagnostics screen | AWL08 | Moderate | MAJOR | major |
+| NFR_M_04 | Day night cycles | AWL06 | Medium | MINOR | massive |
+| NFR_M_05 | Moon phases | AWL04 | Minor | MINOR | mild |
+| NFR_PG_01 | procedural cars | AWL08 | Moderate | MINOR | major |
+| NFR_PG_02 | procedural clouds | AWL07 | Modest | MINOR | major |
+| NFR_PG_03 | procedural stars | AWL06 | Medium | MINOR | modest |
+| NFR_PG_04 | procedural buildings | AWL06 | Medium | MINOR | medium |
+| NFR_PG_05 | procedural terrain | AWL08 | Moderate | MINOR | moderate |
+| FR_01 | cars travel on<br>green light | AWL04 | Minor | CRITICAL | CRITICAL |
+| FR_02 | cars wait on<br>red light | AWL04 | Minor | CRITICAL | CRITICAL |
+| FR_03 | cars queue in<br>their lane | AWL04 | Minor | CRITICAL | CRITICAL |
+| FR_04 | cars watch next<br>car to move | AWL04 | Minor | CRITICAL | CRITICAL |
+| PDDR_01 | Required fields | AWL03 | Meager | MAJOR | meager |
+| PDDR_02 | suggested design patterns | AWL03 | Meager | MINOR | mild |
+| PDDR_03 | deadlock avoidance options | AWL07 | Modest | MAJOR | minor |
+| PDDR_04 | architectural diagrams | AWL07 | Modest | HIGH | medium |
+| PDDR_05 | reorganise documentation | AWL06 | Medium | MINOR | miniscule |
+| PDDR_06 | requirement dependency map | AWL05 | Mild | HIGH | meager |
+| PDDR_07 | requirement importance map | AWL08 | Moderate | MAJOR | minor |
+| PDDR_08 | risk mapping | AWL07 | Modest | HIGH | medium |
+| PDDR_09 | pre-doc req. checklist | AWL04 | Minor | MINOR | minor |
+| PDDR_10 | model concept diagrams | AWL05 | Mild | CRITICAL | mild |
+| DDR_01 | C++ linking flowchart | AWL07 | Modest | HIGH | modest |
+| DDR_02 | OpenGL render pipeline | AWL08 | Moderate | HIGH | medium |
+| DDR_03 | library pipeline | AWL08 | Moderate | MINOR | major |
+| DDR_04 | base template control flow | AWL06 | Medium | MEDIUM | medium |
+| DDR_05 | development pathway | AWL07 | Modest | CRITICAL | monstrous |
+| DDR_06 | detailed model diagrams | AWL05 | Mild | CRITICAL | major |
+| DDR_07 | actor/object fields/methods | AWL06 | Medium | MAJOR | massive |
+| DDR_08 | detailed iteration diagrams | AWL08 | Moderate | HIGH | massive |
+| DDR_09 | detailed deadlock avoidance methods | AWL08 | Moderate | CRITICAL | modest |
+| DDR_10 | detailed combined UML diagram | AWL09 | Major | MEDIUM | monstrous |
+| DDR_11 | shader behaviour diagrams | AWL06 | Medium | MAJOR | moderate |
 
 ---
