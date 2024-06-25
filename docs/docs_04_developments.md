@@ -26,8 +26,8 @@ Documentation page links:
 
 ## Pre-Development stage checklist
 
-* [ ] - `DDR_01` - **C++ Compilation/linking**
-    * *the process of compiling and linking in C++*
+* [x] - `DDR_01` - ~~C++ Compilation/linking~~
+    * *~~the process of compiling and linking in C++~~*
 * [x] - `DDR_02` - ~~OpenGL render pipeline~~
     * *~~to explain the stages~~*
 * [ ] - `DDR_03` - ***[semi-optional]* Library pipeline**

@@ -60,8 +60,61 @@ Documentation page links:
     * *~~somewhere having a checklist for our requirements so we can tick off what's complete~~*
 * [x] - `PDDR_10` - ~~concept diagrams of models in documentation~~
     * *~~adding the various model concept diagram drafts to the documentation~~*
-* [ ] - `PDDR_11` - **...**
-    * *...*
+
+---
+
+## C++ compilation and linking
+
+### C++ compilation and linking [draft 01]
+
+[***[back to Contents]***](#contents)
+
+* possibly wrong, may need correcting later
+
+```mermaid
+---
+title: C++ compilation and linking
+---
+flowchart LR
+    subgraph CODE
+    CODECPP[[.cpp File]]
+    CODEC[[.c File]]
+    CODEHPP[[.hpp File]]
+    end
+    
+    CODEHPP --> CODECPP --> CODEC
+
+    subgraph ASSEMBLYCODE
+    ASMFILE[[.asm File]]
+    end
+    
+    subgraph OBJECTCODE
+    OBJFILE[[.o File]]
+    end
+    
+    CODE == translated to ==> ASSEMBLYCODE == translated to ==> OBJECTCODE
+
+    subgraph LIBCODE
+    ARCHIVEFILE[[.a File]]
+    DLLFILE[[.dll File]]
+    end
+
+    subgraph EXECUTABLECODE
+    EXECFILE[[.out file]]
+    end
+
+    ARCHIVER{Archiver}
+    EXECBUILDLINKER{Linker}
+
+    OBJECTCODE == built to architecture ==> EXECBUILDLINKER
+    OBJECTCODE == referenced for ==> ARCHIVER
+    ARCHIVER == generates ==> LIBCODE
+    LIBCODE == used to build ==> EXECBUILDLINKER
+
+    EXECBUILDLINKER == generates ==> EXECUTABLECODE
+
+    LIBCODE -. used to run .-> EXECUTABLECODE
+```
 
 ---
 
