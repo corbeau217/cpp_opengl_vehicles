@@ -3,9 +3,19 @@
 ---
 ---
 
-## About
+## Doc links
 
-[***click here to return to [readme]***](./readme.md)
+Documentation page links:
+* [**[readme]**](./readme.md)
+* [***[docs 00 : overview]***](./docs_00_overview.md)
+* [**[docs 01 : conceptual]**](./docs_01_conceptual.md)
+* [**[docs 02 : requirements]**](./docs_02_requirements.md)
+* [**[docs 03 : designables]**](./docs_03_designables.md)
+* [**[docs 04 : developments]**](./docs_04_developments.md)
+
+---
+
+## About
 
 * this is mostly an overview with details on what the different sections do, it also includes some scope overview stuffs
 

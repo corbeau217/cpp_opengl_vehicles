@@ -3,9 +3,19 @@
 ---
 ---
 
-## About
+## Doc links
 
-* [***click here to return to [overview]***](./docs_00_overview.md#docs-02--requirements-building-the-things-and-interactions)
+Documentation page links:
+* [**[readme]**](./readme.md)
+* [**[docs 00 : overview]**](./docs_00_overview.md#docs-02--requirements-building-the-things-and-interactions)
+* [**[docs 01 : conceptual]**](./docs_01_conceptual.md)
+* [***[docs 02 : requirements]***](./docs_02_requirements.md)
+* [**[docs 03 : designables]**](./docs_03_designables.md)
+* [**[docs 04 : developments]**](./docs_04_developments.md)
+
+---
+
+## About
 
 * this is the requirements mappings page and will be for all the what does the huh where??
 * also will do the domain model
@@ -33,6 +43,32 @@
     * [Design pattern ideas : Cars](#design-pattern-ideas--cars)
     * [Design pattern ideas : Traffic light](#design-pattern-ideas--traffic-light)
 * [***[Notes on design path]***](#notes-on-design-path)
+* [***[Required data for actors/objects]***](#required-data-for-actorsobjects)
+    * [*[Required data fields [draft 01] : `MainThread`]*](#required-data-fields-draft-01--mainthread)
+    * [*[Required data fields [draft 01] : `DiagnosticsThread`]*](#required-data-fields-draft-01--diagnosticsthread)
+    * [*[Required data fields [draft 01] : `ControllerThread`]*](#required-data-fields-draft-01--controllerthread)
+    * [*[Required data fields [draft 01] : `LightThread`]*](#required-data-fields-draft-01--lightthread)
+    * [*[Required data fields [draft 01] : `CarThread`]*](#required-data-fields-draft-01--carthread)
+    * [*[Required data fields [draft 01] : `App`]*](#required-data-fields-draft-01--app)
+    * [*[Required data fields [draft 01] : `Scene`]*](#required-data-fields-draft-01--scene)
+    * [*[Required data fields [draft 01] : `SkyBox`]*](#required-data-fields-draft-01--skybox)
+    * [*[Required data fields [draft 01] : `Lane`]*](#required-data-fields-draft-01--lane)
+    * [*[Required data fields [draft 01] : `SkyDay`]*](#required-data-fields-draft-01--skyday)
+    * [*[Required data fields [draft 01] : `SkyNight`]*](#required-data-fields-draft-01--skynight)
+    * [*[Required data fields [draft 01] : `Intersection`]*](#required-data-fields-draft-01--intersection)
+    * [*[Required data fields [draft 01] : `DiagnosticScreen`]*](#required-data-fields-draft-01--diagnosticscreen)
+    * [*[Required data fields [draft 01] : `Car`]*](#required-data-fields-draft-01--car)
+    * [*[Required data fields [draft 01] : `Clouds`]*](#required-data-fields-draft-01--clouds)
+    * [*[Required data fields [draft 01] : `Sun`]*](#required-data-fields-draft-01--sun)
+    * [*[Required data fields [draft 01] : `Moon`]*](#required-data-fields-draft-01--moon)
+    * [*[Required data fields [draft 01] : `Building`]*](#required-data-fields-draft-01--building)
+    * [*[Required data fields [draft 01] : `TrafficLight`]*](#required-data-fields-draft-01--trafficlight)
+    * [*[Required data fields [draft 01] : `Wheel`]*](#required-data-fields-draft-01--wheel)
+    * [*[Required data fields [draft 01] : `CarLights`]*](#required-data-fields-draft-01--carlights)
+    * [*[Required data fields [draft 01] : `Mesh`]*](#required-data-fields-draft-01--mesh)
+* [***[Requirements mapping]***](#requirement-mapping)
+    * [*[Requirements mapping [draft 01]]*](#requirement-mapping-draft-01)
+    * [*[Documentation requirement mapping [draft 01]]*](#documentation-requirement-mapping-draft-01)
 
 ---
 
@@ -114,13 +150,13 @@
 | `PDDR_02` | suggested design patterns for actors/objects | proposed design patterns |
 | `PDDR_03` | listing deadlock avoidance methods | a list of the deadlock avoidance methods that work for our system |
 | `PDDR_04` | simple architectural diagrams for our system | to show how the actors/object connect to each other and make sure we're not doing spooky design choices sooner rather than later |
-| `PDDR_06` | reorganise documentation | putting things in the correct documentation files |
-| `PDDR_07` | requirement dependency map | mapped out requirement dependencies |
-| `PDDR_08` | importance of requirements | importance of each requirement |
-| `PDDR_09` | risk mapping | risk assessment for work required for a thing to function (and how likely to get it working first try) in relation to importance |
-| `PDDR_10` | checklist table for all the requirements | somewhere having a checklist for our requirements so we can tick off what's complete |
-| `PDDR_11` | concept diagrams of models in documentation | adding the various model concept diagram drafts to the documentation |
-| `PDDR_12` | ... | ... |
+| `PDDR_05` | reorganise documentation | putting things in the correct documentation files |
+| `PDDR_06` | requirement dependency map | mapped out requirement dependencies |
+| `PDDR_07` | importance of requirements | importance of each requirement |
+| `PDDR_08` | risk mapping | risk assessment for work required for a thing to function (and how likely to get it working first try) in relation to importance |
+| `PDDR_09` | checklist table for all the requirements | somewhere having a checklist for our requirements so we can tick off what's complete |
+| `PDDR_10` | concept diagrams of models in documentation | adding the various model concept diagram drafts to the documentation |
+| `PDDR_11` | ... | ... |
 
 ---
 
@@ -501,8 +537,6 @@ classDiagram
 
 ### Required data fields [draft 01] : `MainThread`
 
-* aaa
-
 ```mermaid
 ---
 title: required data - MainThread
@@ -515,8 +549,6 @@ classDiagram
 
 ### Required data fields [draft 01] : `DiagnosticsThread`
 
-* aaa
-
 ```mermaid
 ---
 title: required data - DiagnosticsThread
@@ -528,8 +560,6 @@ classDiagram
 ```
 
 ### Required data fields [draft 01] : `ControllerThread`
-
-* aaa
 
 ```mermaid
 ---
@@ -544,8 +574,6 @@ classDiagram
 
 ### Required data fields [draft 01] : `LightThread`
 
-* aaa
-
 ```mermaid
 ---
 title: required data - LightThread
@@ -558,8 +586,6 @@ classDiagram
 
 ### Required data fields [draft 01] : `CarThread`
 
-* aaa
-
 ```mermaid
 ---
 title: required data - CarThread
@@ -570,10 +596,7 @@ classDiagram
     }
 ```
 
-
 ### Required data fields [draft 01] : `App`
-
-* aaa
 
 ```mermaid
 ---
@@ -591,8 +614,6 @@ classDiagram
 
 ### Required data fields [draft 01] : `Scene`
 
-* aaa
-
 ```mermaid
 ---
 title: required data - Scene
@@ -605,8 +626,6 @@ classDiagram
 ```
 
 ### Required data fields [draft 01] : `Skybox`
-
-* aaa
 
 ```mermaid
 ---
@@ -622,8 +641,6 @@ classDiagram
 
 ### Required data fields [draft 01] : `Lane`
 
-* aaa
-
 ```mermaid
 ---
 title: required data - Lane
@@ -636,10 +653,7 @@ classDiagram
     }
 ```
 
-
 ### Required data fields [draft 01] : `SkyDay`
-
-* aaa
 
 ```mermaid
 ---
@@ -654,8 +668,6 @@ classDiagram
 
 ### Required data fields [draft 01] : `SkyNight`
 
-* aaa
-
 ```mermaid
 ---
 title: required data - SkyNight
@@ -668,8 +680,6 @@ classDiagram
 ```
 
 ### Required data fields [draft 01] : `Terrain`
-
-* aaa
 
 ```mermaid
 ---
@@ -686,8 +696,6 @@ classDiagram
 
 ### Required data fields [draft 01] : `Intersection`
 
-* aaa
-
 ```mermaid
 ---
 title: required data - Intersection
@@ -702,8 +710,6 @@ classDiagram
 
 ### Required data fields [draft 01] : `DiagnosticScreen`
 
-* aaa
-
 ```mermaid
 ---
 title: required data - DiagnosticScreen
@@ -716,8 +722,6 @@ classDiagram
 ```
 
 ### Required data fields [draft 01] : `Car`
-
-* aaa
 
 ```mermaid
 ---
@@ -736,8 +740,6 @@ classDiagram
 
 ### Required data fields [draft 01] : `Clouds`
 
-* aaa
-
 ```mermaid
 ---
 title: required data - Clouds
@@ -752,8 +754,6 @@ classDiagram
 
 ### Required data fields [draft 01] : `Sun`
 
-* aaa
-
 ```mermaid
 ---
 title: required data - Sun
@@ -766,8 +766,6 @@ classDiagram
 ```
 
 ### Required data fields [draft 01] : `Moon`
-
-* aaa
 
 ```mermaid
 ---
@@ -782,8 +780,6 @@ classDiagram
 
 ### Required data fields [draft 01] : `Building`
 
-* aaa
-
 ```mermaid
 ---
 title: required data - Building
@@ -795,8 +791,6 @@ classDiagram
 ```
 
 ### Required data fields [draft 01] : `TrafficLight`
-
-* aaa
 
 ```mermaid
 ---
@@ -811,8 +805,6 @@ classDiagram
 
 ### Required data fields [draft 01] : `Wheel`
 
-* aaa
-
 ```mermaid
 ---
 title: required data - Wheel
@@ -826,8 +818,6 @@ classDiagram
 
 ### Required data fields [draft 01] : `CarLights`
 
-* aaa
-
 ```mermaid
 ---
 title: required data - CarLights
@@ -839,8 +829,6 @@ classDiagram
 ```
 
 ### Required data fields [draft 01] : `Mesh`
-
-* aaa
 
 ```mermaid
 ---
@@ -859,5 +847,155 @@ classDiagram
     }
 ```
 
+---
+
+## Requirement mapping
+
+### Requirement mapping [draft 01]
+
+[***[back to Contents]***](#contents)
+
+```mermaid
+---
+title: basic requirement mapping - draft 01
+---
+flowchart TD
+    %% ================================================================
+    %% ================================================================
+    subgraph Nonfunctional requirements - develement environment
+    NFR_DE_01{{NFR_DE_0<br><i>macOS env</i>}}
+    NFR_DE_02{{NFR_DE_02<br><i>vscode env</i>}}
+    NFR_DE_03{{NFR_DE_03<br><i>Lib: OpenGL</i>}}
+    NFR_DE_04[NFR_DE_04<br><i>Lang: C++</i>]
+    NFR_DE_05[NFR_DE_05<br><i>Lib: GLAD</i>]
+    NFR_DE_06[NFR_DE_06<br><i>Lib: GLFW</i>]
+    NFR_DE_07[NFR_DE_07<br><i>Lib: GLM</i>]
+    NFR_DE_08[NFR_DE_08<br><i>Tmplt: opengl_project_structurings</i>]
+
+    NFR_DE_03 --> NFR_DE_05
+    NFR_DE_03 --> NFR_DE_06
+    NFR_DE_03 --> NFR_DE_07
+
+    NFR_DE_04 ---> NFR_DE_08
+    NFR_DE_02 ----> NFR_DE_08
+    NFR_DE_05 --> NFR_DE_08
+    NFR_DE_06 --> NFR_DE_08
+    NFR_DE_07 --> NFR_DE_08
+    end
+    %% ================================================================
+    %% ================================================================
+    subgraph Nonfunctional requirements - Miscellaneous
+    NFR_M_01{{NFR_M_01<br><i>left hand traffic</i>}}
+    NFR_M_02{{NFR_M_02<br><i>concurrency</i>}}
+    NFR_M_03[NFR_M_03<br><i>diagnostic display</i>]
+    NFR_M_04{{NFR_M_04<br><i>day night cycles</i>}}
+    NFR_M_05{{NFR_M_05<br><i>moon phases</i>}}
+
+    NFR_DE_04 ----> NFR_M_02
+    NFR_M_02 --> NFR_M_03
+    end
+    %% ================================================================
+    %% ================================================================
+    subgraph Nonfunctional requirements - Procedural gen
+    NFR_PG_01[NFR_PG_01<br><i>gen: cars</i>]
+    NFR_PG_02[NFR_PG_02<br><i>gen: clouds</i>]
+    NFR_PG_03[NFR_PG_03<br><i>gen: stars</i>]
+    NFR_PG_04[NFR_PG_04<br><i>gen: buildings</i>]
+    NFR_PG_05[NFR_PG_05<br><i>gen: terrain</i>]
+
+    NFR_DE_07 ------> NFR_PG_01
+    NFR_DE_07 ------> NFR_PG_02
+    NFR_DE_07 ------> NFR_PG_03
+    NFR_DE_07 ------> NFR_PG_04
+    NFR_DE_07 ------> NFR_PG_05
+    end
+    %% ================================================================
+    %% ================================================================
+    subgraph Functional requirements
+    FR_01[FR_01<br><i>green light travel</i>]
+    FR_02[FR_02<br><i>red light wait</i>]
+    FR_03[FR_03<br><i>lane queueing</i>]
+    FR_04[FR_04<br><i>move when leading<br>car does</i>]
+    NFR_M_02 ----> FR_01
+    NFR_M_02 ----> FR_02
+    NFR_M_02 ----> FR_03
+    NFR_M_01 ----> FR_04
+    NFR_M_02 ----> FR_04
+    NFR_DE_08 ---> NFR_M_03
+    end
+    %% ================================================================
+    %% ================================================================
+```
+
+### Documentation requirement mapping [draft 01]
+
+[***[back to Contents]***](#contents)
+
+```mermaid
+---
+title: documentation requirement mappings
+---
+flowchart LR
+    %% ================================================================
+    %% ================================================================
+    subgraph PDDR_GROUP[Pre-Design Document Requirements]
+    PDDR_01[PDDR_01<br><i>required fields</i>]
+    PDDR_02[PDDR_02<br><i>design pattern<br>suggestions</i>]
+    PDDR_03[PDDR_03<br><i>deadlock mitigation<br>suggestions</i>]
+    PDDR_04[PDDR_04<br><i>simple architectural<br>diagrams</i>]
+    PDDR_05[PDDR_05<br><i>reorganised documentation</i>]
+    PDDR_06[PDDR_06<br><i>requirement dependencies<br>mapping</i>]
+    PDDR_07[PDDR_07<br><i>requirement importance</i>]
+    PDDR_08[PDDR_08<br><i>risk mapping</i>]
+    PDDR_09[PDDR_09<br><i>pre-design<br>requirement checklist</i>]
+    PDDR_10[PDDR_10<br><i>model concept<br>diagrams</i>]
+    PDDR_05 --> PDDR_09
+    PDDR_05 ---> PDDR_10
+    PDDR_05 --> PDDR_06
+    PDDR_01 --> PDDR_02
+    PDDR_06 --> PDDR_07
+    PDDR_07 ----> PDDR_08
+    PDDR_07 --> PDDR_03
+    PDDR_03 --> PDDR_08
+    PDDR_02 --> PDDR_04
+    PDDR_04 --> PDDR_03
+    end
+    %% ================================================================
+    %% ================================================================
+    subgraph DDR_GROUP[Pre-Development document requirements]
+    DDR_01[DDR_01<br><i>C++ linking<br>graph</i>]
+    DDR_02[DDR_02<br><i>OpenGL<br>render pipeline</i>]
+    DDR_03[DDR_03<br><i>Library pipeline</i>]
+    DDR_04[DDR_04<br><i>template<br>control flow</i>]
+    DDR_05[DDR_05<br><i>development<br>pathway</i>]
+    DDR_06[DDR_06<br><i>model diagrams</i>]
+    DDR_07[DDR_07<br><i>actor and object<br>field and method<br>diagrams</i>]
+    DDR_08[DDR_08<br><i>detailed iteration<br>diagrams</i>]
+    DDR_09[DDR_09<br><i>detailed deadlock<br>avoidance</i>]
+    DDR_10[DDR_10<br><i>detailed final<br>UML</i>]
+    DDR_11[DDR_11<br><i>shader behaviour<br>diagrams</i>]
+    DDR_01 --> DDR_04
+    DDR_02 --> DDR_03
+    DDR_02 --> DDR_04
+    DDR_05 --> DDR_08
+    DDR_11 --> DDR_06
+    DDR_07 --> DDR_10
+    DDR_03 ---> DDR_10
+    DDR_04 ---> DDR_10
+    DDR_07 ---> DDR_09
+    DDR_09 --> DDR_10
+    DDR_10 ---> DDR_05
+    DDR_11 ---> DDR_05
+    DDR_06 --> DDR_05
+    end
+    %% ================================================================
+    %% ================================================================
+    DESIGNDOCUMENT[[Design document]]
+    DEVELOPMENTDOCUMENT[[Development document]]
+    PDDR_GROUP ==> DESIGNDOCUMENT
+    DESIGNDOCUMENT ==> DDR_GROUP ==> DEVELOPMENTDOCUMENT
+    %% ================================================================
+    %% ================================================================
+```
 
 ---

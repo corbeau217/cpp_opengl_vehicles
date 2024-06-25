@@ -3,9 +3,19 @@
 ---
 ---
 
-## About
+## Doc links
 
-* [***click here to return to [overview]***](./docs_00_overview.md#docs-04--make-the-things)
+Documentation page links:
+* [**[readme]**](./readme.md)
+* [**[docs 00 : overview]**](./docs_00_overview.md#docs-04--make-the-things)
+* [**[docs 01 : conceptual]**](./docs_01_conceptual.md)
+* [**[docs 02 : requirements]**](./docs_02_requirements.md)
+* [**[docs 03 : designables]**](./docs_03_designables.md)
+* [***[docs 04 : developments]***](./docs_04_developments.md)
+
+---
+
+## About
 
 * yes, the developable happenings here
 

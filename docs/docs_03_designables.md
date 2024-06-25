@@ -3,10 +3,19 @@
 ---
 ---
 
+## Doc links
+
+Documentation page links:
+* [**[readme]**](./readme.md)
+* [**[docs 00 : overview]**](./docs_00_overview.md#docs-03--detailed-designs-etc)
+* [**[docs 01 : conceptual]**](./docs_01_conceptual.md)
+* [**[docs 02 : requirements]**](./docs_02_requirements.md)
+* [***[docs 03 : designables]***](./docs_03_designables.md)
+* [**[docs 04 : developments]**](./docs_04_developments.md)
+
+---
 
 ## About
-
-* [***click here to return to [overview]***](./docs_00_overview.md#docs-03--detailed-designs-etc)
 
 * much detail will happen
 * will include the full uml hopefully
@@ -28,27 +37,27 @@
 
 ## Pre-design stage checklist
 
-* [ ] - `PDDR_01` - **Required fields**
-    * *Required data held by our objects*
-* [x] - `PDDR_02` - ~~**suggested design patterns for actors/objects**~~
+* [x] - `PDDR_01` - ~~Required fields~~
+    * *~~Required data held by our objects~~*
+* [x] - `PDDR_02` - ~~suggested design patterns for actors/objects~~
     * *~~proposed design patterns~~*
 * [ ] - `PDDR_03` - **listing deadlock avoidance methods**
     * *a list of the deadlock avoidance methods that work for our system*
 * [ ] - `PDDR_04` - **simple architectural diagrams for our system**
     * *to show how the actors/object connect to each other and make sure we're not doing spooky design choices sooner rather than later*
-* [x] - `PDDR_06` - ~~reorganise documentation~~
+* [x] - `PDDR_05` - ~~reorganise documentation~~
     * *~~putting things in the correct documentation files~~*
-* [ ] - `PDDR_07` - **requirement dependency map**
-    * *mapped out requirement dependencies*
-* [ ] - `PDDR_08` - **importance of requirements**
+* [x] - `PDDR_06` - ~~requirement dependency map~~
+    * *~~mapped out requirement dependencies~~*
+* [ ] - `PDDR_07` - **importance of requirements**
     * *importance of each requirement*
-* [ ] - `PDDR_09` - **risk mapping**
+* [ ] - `PDDR_08` - **risk mapping**
     * *risk assessment for work required for a thing to function (and how likely to get it working first try) in relation to importance*
-* [x] - `PDDR_10` - ~~checklist table for all the requirements~~
+* [x] - `PDDR_09` - ~~checklist table for all the requirements~~
     * *~~somewhere having a checklist for our requirements so we can tick off what's complete~~*
-* [ ] - `PDDR_11` - **concept diagrams of models in documentation**
+* [ ] - `PDDR_10` - **concept diagrams of models in documentation**
     * *adding the various model concept diagram drafts to the documentation*
-* [ ] - `PDDR_12` - **...**
+* [ ] - `PDDR_11` - **...**
     * *...*
 
 ---
