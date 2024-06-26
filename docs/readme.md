@@ -147,6 +147,7 @@ Documentation page links:
 #### `26/06/2024`
 
 * `26/06/2024` - added in the need for experimentation suppliments
+* `26/06/2024` - cleaned up the pipeline diagrams
 
 ---
 

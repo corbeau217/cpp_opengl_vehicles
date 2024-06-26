@@ -63,6 +63,51 @@ Documentation page links:
 
 ---
 
+## Compilation pipeline
+
+[***[back to Contents]***](#contents)
+
+* pipeline for compilation
+
+```mermaid
+---
+title: compilation pipeline
+---
+flowchart LR
+    subgraph FRONTEND
+    LEXER --> PARSER --> TYPECHECKER
+    end
+    subgraph BACKEND
+    ANALYSIS --> OPTIMIZATION --> CODEGEN
+    end
+    FRONTEND ==> BACKEND
+    TYPECHECKER -.-> ANALYSIS
+```
+```mermaid
+---
+title: compilation pipeline
+---
+flowchart 
+    SOURCECODE{{Input Source Code}}
+    SOURCECODE --> LEXICALANALYZER
+    subgraph ANALYSIS[Source . . . Analysis]
+    LEXICALANALYZER[Lexical Analyzer]
+    SYNTAXANALYZER[Syntax Analyzer]
+    SEMANTICANALYZER[Semantic Analyzer]
+    LEXICALANALYZER ==> SYNTAXANALYZER ==> SEMANTICANALYZER
+    end
+    subgraph SYNTHESIS[Output . . . Synthesis]
+    INTERMEDIATECODEGEN[Intermediate Code Generator]
+    CODEOPTIMIZATION[Code Optimizer]
+    TARGETCODEGEN[Target Code Generator]
+    INTERMEDIATECODEGEN ==> CODEOPTIMIZATION ==> TARGETCODEGEN
+    end
+    TARGETCODE{{Target Code Output}}
+    SEMANTICANALYZER ==> INTERMEDIATECODEGEN
+    TARGETCODEGEN --> TARGETCODE
+```
+
+
 ## C++ compilation and linking
 
 ### C++ compilation and linking [draft 01]
@@ -73,7 +118,7 @@ Documentation page links:
 
 ```mermaid
 ---
-title: C++ compilation and linking
+title: C++ compilation and linking draft 01
 ---
 flowchart LR
     subgraph CODE
@@ -114,6 +159,137 @@ flowchart LR
     EXECBUILDLINKER == generates ==> EXECUTABLECODE
 
     LIBCODE -. used to run .-> EXECUTABLECODE
+```
+
+### C++ compilation and linking [draft 02]
+
+[***[back to Contents]***](#contents)
+
+* version 2, idk
+
+```mermaid
+---
+title: C++ compilation and linking draft 02
+---
+flowchart LR
+    SOURCEFILE{{<i>Source File</i><br><b><code>.c</code>, <code>.cpp</code>, <code>.h</code>, <code>.hpp</code></b>}}
+    PREPROCESSOR[<i>Pre-Processor</i><br><b><code>cpp</code></b>]
+    PREPROCESSEDFILE[/<i>Preprocessed File</i><br><b><code>.i</code>, <code>.ii</code></b>/]
+    COMPILER[<i>Compiler</i><br><b><code>gcc</code>, <code>g++</code></b>]
+    ASSEMBLYFILE[/<i>Assembly File</i><br><b><code>.s</code></b>/]
+    ASSEMBLER[<i>Assembler</i><br><b><code>as</code></b>]
+    OBJECTFILE[/<i>Object File</i><br><b><code>.o</code></b>/]
+    LINKER[<i>Linker</i><br><b><code>ld</code></b>]
+    STATICLIBRARY{{<i>Static Library</i><br><b><code>.lib</code>, <code>.a</code></b>}}
+    EXECUTABLEFILE{{<i>Executable File</i><br><b><code>.exe</code>, <code>.out</code></b>}}
+
+    SOURCEFILE -.-> PREPROCESSOR ==> PREPROCESSEDFILE -.-> COMPILER
+    COMPILER ==> ASSEMBLYFILE -.-> ASSEMBLER ==> OBJECTFILE -.-> LINKER
+    STATICLIBRARY -.-> LINKER ==> EXECUTABLEFILE
+```
+
+### C++ compilation and linking [draft 03]
+
+[***[back to Contents]***](#contents)
+
+* version 3, idk
+
+```mermaid
+---
+title: C++ compilation and linking draft 03
+---
+flowchart
+    subgraph CODE
+    SOURCECODE{{Source code<br><code>.c</code> file}}
+    ASSEMBLYCODE{{Assembly code}}
+    OBJECTCODE{{Object code}}
+    end
+    subgraph COMPILATION
+    PREPROCESSOR[[Preprocessor]]
+    COMPILER[[Compiler]]
+    ASSEMBLER[[Assembler]]
+    LINKER[[Linker]]
+    end
+    subgraph LIBRARY
+    LIBRARIES{{Libraries}}
+    end
+
+    SOURCECODE --> PREPROCESSOR
+    PREPROCESSOR --> COMPILER
+    COMPILER --> ASSEMBLYCODE --> ASSEMBLER
+    LIBRARIES --> LINKER
+    ASSEMBLER --> OBJECTCODE --> LINKER
+```
+
+### C++ compilation and linking [draft 04]
+
+[***[back to Contents]***](#contents)
+
+* version 4, idk
+
+```mermaid
+---
+title: C++ compilation and linking draft 04
+---
+flowchart LR
+    subgraph SOURCECODE
+    HEADERFILE01{{<code>.h</code>}}
+    HEADERFILE02{{<code>.hpp</code>}}
+    SOURCEFILE01{{<code>.cpp</code>}}
+    SOURCEFILE02{{<code>.cpp</code>}}
+    HEADERFILE03{{<code>.h</code>}}
+    SOURCEFILE03{{<code>.cpp</code>}}
+    end
+    PREPROCESSOR01((Pre-processor))
+    PREPROCESSOR02((Pre-processor))
+    PREPROCESSOR03((Pre-processor))
+    subgraph MERGEDCODE
+    MERGEDTEMPFILE01[Temp file<br><b>.ii</b>]
+    MERGEDTEMPFILE02[Temp file<br><b>.ii</b>]
+    MERGEDTEMPFILE03[Temp file<br><b>.ii</b>]
+    end
+    COMPILER01((Compiler))
+    COMPILER02((Compiler))
+    COMPILER03((Compiler))
+    subgraph ASSEMBLYCODE
+    ASSEMBLYCODE01[Assembly code<br><b>.s</b>]
+    ASSEMBLYCODE02[Assembly code<br><b>.s</b>]
+    ASSEMBLYCODE03[Assembly code<br><b>.s</b>]
+    end
+    ASSEMBLER01((Assembler))
+    ASSEMBLER02((Assembler))
+    ASSEMBLER03((Assembler))
+    subgraph MACHINECODE
+    OBJECTFILE01[Object file<br><b>.o</b>]
+    OBJECTFILE02[Object file<br><b>.o</b>]
+    OBJECTFILE03[Object file<br><b>.o</b>]
+    end
+    subgraph ENVFILES
+    DYNAMICRUNTIMELIB01[Runtime lib]
+    STATICLINKINGLIB01[static lib]
+    STATICLINKINGLIB02[static lib]
+    end
+    subgraph LINKING
+    LINKER((Linker))
+    end
+    subgraph PROGRAM
+    EXEFILE[<b>exe</b>]
+    end
+
+    HEADERFILE01 --> PREPROCESSOR01
+    HEADERFILE02 --> PREPROCESSOR01
+    HEADERFILE03 --> PREPROCESSOR03
+    SOURCEFILE01 --> PREPROCESSOR01 --> MERGEDTEMPFILE01 --> COMPILER01 --> ASSEMBLYCODE01 --> ASSEMBLER01 --> OBJECTFILE01 -----> LINKER
+    SOURCEFILE02 --> PREPROCESSOR02 --> MERGEDTEMPFILE02 --> COMPILER02 --> ASSEMBLYCODE02 --> ASSEMBLER02 --> OBJECTFILE02 -----> LINKER
+    SOURCEFILE03 --> PREPROCESSOR03 --> MERGEDTEMPFILE03 --> COMPILER03 --> ASSEMBLYCODE03 --> ASSEMBLER03 --> OBJECTFILE03 -----> LINKER
+
+    DYNAMICRUNTIMELIB01 -..-> EXEFILE
+    DYNAMICRUNTIMELIB01 --> LINKER
+    STATICLINKINGLIB01 --> LINKER
+    STATICLINKINGLIB02 --> LINKER
+    LINKER --> EXEFILE
+
+
 ```
 
 ---
