@@ -16,6 +16,7 @@ Documentation page links:
     * [**[docs 02 : requirements : deadlock suppliment]**](./docs_02_requirements_suppliment_01.md#doc-links)
     * [**[docs 02 : requirements : model design drafts suppliment]**](./docs_02_requirements_suppliment_02.md#doc-links)
 * [**[docs 03 : designables]**](./docs_03_designables.md#doc-links)
+    * [**[docs 03 : designables : render texture experimenting]**](./docs_03_designables_experiments_01.md#doc-links)
 * [**[docs 04 : developments]**](./docs_04_developments.md#doc-links)
 
 ---
@@ -35,6 +36,7 @@ Documentation page links:
     * [`23/06/2024`](#23062024)
     * [`25/06/2024`](#25062024)
     * [`26/06/2024`](#26062024)
+    * [`27/06/2024`](#27062024)
 
 ---
 
@@ -148,6 +150,11 @@ Documentation page links:
 
 * `26/06/2024` - added in the need for experimentation suppliments
 * `26/06/2024` - cleaned up the pipeline diagrams
+
+#### `27/06/2024`
+
+* `27/06/2024` - added details about the render texture experiments
+* `27/06/2024` - changed the suppliment links to only have suppliment links for the current document stage outside of readme/overview
 
 ---
 

@@ -9,7 +9,6 @@ Documentation page links:
 * [**[readme]**](./readme.md#doc-links)
 * [**[docs 00 : overview]**](./docs_00_overview.md#doc-links)
 * [**[docs 01 : conceptual]**](./docs_01_conceptual.md#doc-links)
-    * [**[docs 01 : conceptual : old conceptual documentation]**](./docs_01_conceptual_suppliment_01.md#doc-links)
 * [**[docs 02 : requirements]**](./docs_02_requirements.md#doc-links)
     * [**[docs 02 : requirements : deadlock suppliment]**](./docs_02_requirements_suppliment_01.md#doc-links)
     * [***[docs 02 : requirements : model design drafts suppliment]***](./docs_02_requirements_suppliment_02.md#doc-links)
