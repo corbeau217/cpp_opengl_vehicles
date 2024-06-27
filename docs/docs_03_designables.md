@@ -341,6 +341,15 @@ flowchart LR
 
 * this is where we put the diagrams for building the model
 
+### Model diagrams : Vehicles
+
+* Vehicle diagrams
+
+#### Model diagrams : Vehicles : Notes
+
+* something to note is that they should be made from squishing a sphere and flattening one for the most part
+
+
 ---
 
 ## Library documentation
