@@ -477,6 +477,520 @@ flowchart LR
 [***[back to Contents]***](#contents)
 
 * [Refactoring guru design patterns catalogue](https://refactoring.guru/design-patterns/catalog)
+* the design patterns suggested in requirements:
+    * [adapter pattern](https://refactoring.guru/design-patterns/adapter)
+    * [command pattern](https://refactoring.guru/design-patterns/command)
+    * [facade pattern](https://refactoring.guru/design-patterns/facade)
+    * [mediator pattern](https://refactoring.guru/design-patterns/mediator)
+    * [observer pattern](https://refactoring.guru/design-patterns/observer)
+    * [state pattern](https://refactoring.guru/design-patterns/state)
+    * [strategy pattern](https://refactoring.guru/design-patterns/strategy)
+
+#### Design patterns : adapter pattern
+
+<table>
+<!-- =================================== -->
+<!-- ----------------------------------- -->
+<tr>
+<th></th>
+<th><a href="https://refactoring.guru/design-patterns/adapter">[refactoring.guru] adapter pattern</a></th>
+</tr>
+<tr>
+<td><b>Also known as:</b></td>
+<td><i>Wrapper</i></td>
+</tr>
+<!-- ----------------------------------- -->
+<tr>
+<td>Intent</td>
+<td><b>Adapter</b> is a structural design pattern that allows objects with incompatible interfaces to collaborate
+</td>
+</tr>
+<!-- ----------------------------------- -->
+<tr>
+<td></td>
+<td align="center">
+<img src="https://refactoring.guru/images/patterns/content/adapter/adapter-en-2x.png?id=e0ab0f6103b0b7b0648a8fda592ffab8" alt="metaphor" width="60%" /></td>
+</tr>
+<!-- ----------------------------------- -->
+<tr>
+<td>Diagram</td>
+<td align="center">
+
+```mermaid
+flowchart TB
+    NOTE02["<b><i><code>2.</code></i></b> The <b>Client Interface</b> describes a\nprotocol that other classes must\nfollow to be able to collaborate\nwith the client code"]
+    NOTE03["<b><i><code>3.</code></i></b> The <b>Service</b> is some useful\nclass (usually 3rd-party or\nlegacy). The client can't use\nthis class directly because it\nhas an incompatible interface."]
+```
+```mermaid
+classDiagram
+    direction LR
+    note "<b><i><code>1.</code></i></b> The <b>Client</b> is a class\nthat contains the\nexisting business\nlogic of the program"
+
+    class Client
+    class ClientInterface["Client Interface"]{
+        <<interface>>
+        +method(data)
+    }
+    class Adapter{
+        -adaptee Service
+        +method(data)
+    }
+    note for Adapter "specialData = convertToServiceFormat(data)\n<b>return</b> adaptee.serviceMethod(specialData)"
+    class Service{
+        ...
+        +serviceMethod(specialData)
+    }
+    Client --> ClientInterface
+    Adapter ..|> ClientInterface
+    Adapter --> Service
+```
+```mermaid
+flowchart TB
+    NOTE05["<b><i><code>5.</code></i></b> The client code doesn't get\ncoupled to the concrete adapter\nclass as long as it works with the\nadapter via the client interface.\nThanks to this, you can introduce\nnew types of adapters into the\nprogram without breaking the\nexisting client code. This can be\nuseful when the interface of the\nservice class gets changed or\nreplaced: you can just create a\nnew adapter class without\nchanging the client code."]
+    NOTE04["<b><i><code>4.</code></i></b> The <b>Adapter</b> is a class that's able to work with both the client\nand the service: it implements the client interface, while\nwrapping the service object. The adapter receives calls from the\nclient via the client interface and translates them into calls to\nthe wrapped service object in a format it can understand."]
+```
+</td>
+</tr>
+<!-- ----------------------------------- -->
+<tr>
+<td></td>
+<td></td>
+</tr>
+<!-- ----------------------------------- -->
+<!-- =================================== -->
+</table>
+
+#### Design patterns : command pattern
+
+
+<table>
+<!-- =================================== -->
+<!-- ----------------------------------- -->
+<tr>
+<th></th>
+<th><a href="https://refactoring.guru/design-patterns/command">[refactoring.guru] command pattern</a></th>
+</tr>
+<tr>
+<td><b>Also known as:</b></td>
+<td><i>Action, Transaction</i></td>
+</tr>
+<!-- ----------------------------------- -->
+<tr>
+<td>Intent</td>
+<td><b>Command</b> is a behavioural design pattern that turns a request into a stand-alone object that contains all information about the request. This transformation lets you pass requests as a method arguments, delay or queue a request's execution and support undoable operations.
+</td>
+</tr>
+<!-- ----------------------------------- -->
+<tr>
+<td></td>
+<td align="center">
+<img src="https://refactoring.guru/images/patterns/content/command/command-en-2x.png?id=6149af804cbbbd5cb18595c30b856d89" alt="metaphor" width="60%" /></td>
+</tr>
+<!-- ----------------------------------- -->
+<tr>
+<td>Diagram</td>
+<td align="center">
+
+```mermaid
+flowchart TB
+    NOTE02["<b><i><code>1.</code></i></b> "]
+    NOTE03["<b><i><code>2.</code></i></b> "]
+```
+```mermaid
+classDiagram
+    direction LR
+    note "<b><i><code>5.</code></i></b> "
+
+    class Client
+    class Invoker{
+        -command
+        +setCommand(command)
+        +executeCommand()
+    }
+    class Command{
+        +execute()
+    }
+    class ConcreteCommand1{
+        -receiver
+        -params
+        +Command1(receiver,params)
+        +execute()
+    }
+    class ConcreteCommand2{
+        +execute()
+    }
+    class Receiver {
+        ...
+        +operation(a,b,c)
+    }
+    Client --> Receiver
+    Command <|.. ConcreteCommand1
+    Command <|.. ConcreteCommand2
+    Client ..> ConcreteCommand1
+    Receiver --> ConcreteCommand1 :  aaa
+    Client --> Invoker
+    Invoker --> Command
+
+    note "<b><i><code>3.</code></i></b> "
+```
+```mermaid
+flowchart TB
+    NOTE05["<b><i><code>4.</code></i></b> "]
+```
+</td>
+</tr>
+<!-- ----------------------------------- -->
+<tr>
+<td></td>
+<td></td>
+</tr>
+<!-- ----------------------------------- -->
+<!-- =================================== -->
+</table>
+
+#### Design patterns : facade pattern
+
+<table>
+<!-- =================================== -->
+<!-- ----------------------------------- -->
+<tr>
+<th></th>
+<th><a href="https://refactoring.guru/design-patterns/abcd">[refactoring.guru] abcd pattern</a></th>
+</tr>
+<tr>
+<td><b>Also known as:</b></td>
+<td><i></i></td>
+</tr>
+<!-- ----------------------------------- -->
+<tr>
+<td>Intent</td>
+<td><b></b> is a 
+</td>
+</tr>
+<!-- ----------------------------------- -->
+<tr>
+<td></td>
+<td align="center">
+<img src="" alt="metaphor" width="60%" /></td>
+</tr>
+<!-- ----------------------------------- -->
+<tr>
+<td>Diagram</td>
+<td align="center">
+
+```mermaid
+flowchart TB
+    NOTE02["<b><i><code>2.</code></i></b> "]
+    NOTE03["<b><i><code>3.</code></i></b> "]
+```
+```mermaid
+classDiagram
+    direction LR
+    note "<b><i><code>1.</code></i></b> "
+
+    class Client
+```
+```mermaid
+flowchart TB
+    NOTE05["<b><i><code>5.</code></i></b> "]
+```
+</td>
+</tr>
+<!-- ----------------------------------- -->
+<tr>
+<td></td>
+<td></td>
+</tr>
+<!-- ----------------------------------- -->
+<!-- =================================== -->
+</table>
+
+#### Design patterns : mediator pattern
+
+<table>
+<!-- =================================== -->
+<!-- ----------------------------------- -->
+<tr>
+<th></th>
+<th><a href="https://refactoring.guru/design-patterns/abcd">[refactoring.guru] abcd pattern</a></th>
+</tr>
+<tr>
+<td><b>Also known as:</b></td>
+<td><i></i></td>
+</tr>
+<!-- ----------------------------------- -->
+<tr>
+<td>Intent</td>
+<td><b></b> is a 
+</td>
+</tr>
+<!-- ----------------------------------- -->
+<tr>
+<td></td>
+<td align="center">
+<img src="" alt="metaphor" width="60%" /></td>
+</tr>
+<!-- ----------------------------------- -->
+<tr>
+<td>Diagram</td>
+<td align="center">
+
+```mermaid
+flowchart TB
+    NOTE02["<b><i><code>2.</code></i></b> "]
+    NOTE03["<b><i><code>3.</code></i></b> "]
+```
+```mermaid
+classDiagram
+    direction LR
+    note "<b><i><code>1.</code></i></b> "
+
+    class Client
+```
+```mermaid
+flowchart TB
+    NOTE05["<b><i><code>5.</code></i></b> "]
+```
+</td>
+</tr>
+<!-- ----------------------------------- -->
+<tr>
+<td></td>
+<td></td>
+</tr>
+<!-- ----------------------------------- -->
+<!-- =================================== -->
+</table>
+
+#### Design patterns : observer pattern
+
+<table>
+<!-- =================================== -->
+<!-- ----------------------------------- -->
+<tr>
+<th></th>
+<th><a href="https://refactoring.guru/design-patterns/abcd">[refactoring.guru] abcd pattern</a></th>
+</tr>
+<tr>
+<td><b>Also known as:</b></td>
+<td><i></i></td>
+</tr>
+<!-- ----------------------------------- -->
+<tr>
+<td>Intent</td>
+<td><b></b> is a 
+</td>
+</tr>
+<!-- ----------------------------------- -->
+<tr>
+<td></td>
+<td align="center">
+<img src="" alt="metaphor" width="60%" /></td>
+</tr>
+<!-- ----------------------------------- -->
+<tr>
+<td>Diagram</td>
+<td align="center">
+
+```mermaid
+flowchart TB
+    NOTE02["<b><i><code>2.</code></i></b> "]
+    NOTE03["<b><i><code>3.</code></i></b> "]
+```
+```mermaid
+classDiagram
+    direction LR
+    note "<b><i><code>1.</code></i></b> "
+
+    class Client
+```
+```mermaid
+flowchart TB
+    NOTE05["<b><i><code>5.</code></i></b> "]
+```
+</td>
+</tr>
+<!-- ----------------------------------- -->
+<tr>
+<td></td>
+<td></td>
+</tr>
+<!-- ----------------------------------- -->
+<!-- =================================== -->
+</table>
+
+#### Design patterns : state pattern
+
+<table>
+<!-- =================================== -->
+<!-- ----------------------------------- -->
+<tr>
+<th></th>
+<th><a href="https://refactoring.guru/design-patterns/abcd">[refactoring.guru] abcd pattern</a></th>
+</tr>
+<tr>
+<td><b>Also known as:</b></td>
+<td><i></i></td>
+</tr>
+<!-- ----------------------------------- -->
+<tr>
+<td>Intent</td>
+<td><b></b> is a 
+</td>
+</tr>
+<!-- ----------------------------------- -->
+<tr>
+<td></td>
+<td align="center">
+<img src="" alt="metaphor" width="60%" /></td>
+</tr>
+<!-- ----------------------------------- -->
+<tr>
+<td>Diagram</td>
+<td align="center">
+
+```mermaid
+flowchart TB
+    NOTE02["<b><i><code>2.</code></i></b> "]
+    NOTE03["<b><i><code>3.</code></i></b> "]
+```
+```mermaid
+classDiagram
+    direction LR
+    note "<b><i><code>1.</code></i></b> "
+
+    class Client
+```
+```mermaid
+flowchart TB
+    NOTE05["<b><i><code>5.</code></i></b> "]
+```
+</td>
+</tr>
+<!-- ----------------------------------- -->
+<tr>
+<td></td>
+<td></td>
+</tr>
+<!-- ----------------------------------- -->
+<!-- =================================== -->
+</table>
+
+#### Design patterns : singleton pattern
+
+<table>
+<!-- =================================== -->
+<!-- ----------------------------------- -->
+<tr>
+<th></th>
+<th><a href="https://refactoring.guru/design-patterns/singleton">[refactoring.guru] singleton pattern</a></th>
+</tr>
+<!-- ----------------------------------- -->
+<tr>
+<td>Intent</td>
+<td><b>Singleton</b> is a creational design pattern that lets you ensure that a class has only one instance, while providing a global access point to this instance.
+</td>
+</tr>
+<!-- ----------------------------------- -->
+<tr>
+<td></td>
+<td align="center"><img src="https://refactoring.guru/images/patterns/content/singleton/singleton-2x.png?id=accb2cc7594f7a491ce01dddf0d2f876" alt="metaphor" width="60%" /></td>
+</tr>
+<!-- ----------------------------------- -->
+<tr>
+<td>Diagram</td>
+<td align="center">
+
+```mermaid
+classDiagram
+    direction TB
+    class Client
+    class Singleton{
+        -instance Singleton$
+        -Singleton()
+        +getInstance() Singleton$
+    }
+    Singleton --> Singleton
+    Client --> Singleton 
+    
+    note for Singleton "<b>if</b>(instance == <b>null</b>){\n// Note: if you're creating an app with\n// multithreading support, you should\n// place a thread lock here\ninstance = <b>new</b> Singleton()\n}\n<b>return</b> instance"
+
+    note "<b><i><code>1.</code></i></b> The <b>Singleton</b> class declares the static method\n<code>getInstance</code> that returns the same instance\nof its own class\n\n\nThe Singleton's constructor should be hidden\nfrom the client code. Calling the\n<code>getInstance</code> method should be the only way\nof getting the Singleton object"
+    
+```
+</td>
+</tr>
+<!-- ----------------------------------- -->
+<tr>
+<td></td>
+<td></td>
+</tr>
+<!-- ----------------------------------- -->
+<!-- =================================== -->
+</table>
+
+#### Design patterns : strategy pattern
+
+<table>
+<!-- =================================== -->
+<!-- ----------------------------------- -->
+<tr>
+<th></th>
+<th><a href="https://refactoring.guru/design-patterns/abcd">[refactoring.guru] abcd pattern</a></th>
+</tr>
+<tr>
+<td><b>Also known as:</b></td>
+<td><i></i></td>
+</tr>
+<!-- ----------------------------------- -->
+<tr>
+<td>Intent</td>
+<td><b></b> is a 
+</td>
+</tr>
+<!-- ----------------------------------- -->
+<tr>
+<td></td>
+<td align="center">
+<img src="" alt="metaphor" width="60%" /></td>
+</tr>
+<!-- ----------------------------------- -->
+<tr>
+<td>Diagram</td>
+<td align="center">
+
+```mermaid
+flowchart TB
+    NOTE02["<b><i><code>2.</code></i></b> "]
+    NOTE03["<b><i><code>3.</code></i></b> "]
+```
+```mermaid
+classDiagram
+    direction LR
+    note "<b><i><code>1.</code></i></b> "
+
+    class Client
+```
+```mermaid
+flowchart TB
+    NOTE05["<b><i><code>5.</code></i></b> "]
+```
+</td>
+</tr>
+<!-- ----------------------------------- -->
+<tr>
+<td></td>
+<td></td>
+</tr>
+<!-- ----------------------------------- -->
+<!-- =================================== -->
+</table>
+
+
+
+
+
+
 
 ### Graphics pipeline stuffs
 

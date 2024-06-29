@@ -156,5 +156,9 @@ Documentation page links:
 * `27/06/2024` - added details about the render texture experiments
 * `27/06/2024` - changed the suppliment links to only have suppliment links for the current document stage outside of readme/overview
 
+#### `29/06/2024`
+
+* `29/06/2024` - started some of the design pattern uml's
+
 ---
 
