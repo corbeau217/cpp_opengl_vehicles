@@ -495,6 +495,7 @@ flowchart LR
 <th></th>
 <th><a href="https://refactoring.guru/design-patterns/adapter">[refactoring.guru] adapter pattern</a></th>
 </tr>
+<!-- ----------------------------------- -->
 <tr>
 <td><b>Also known as:</b></td>
 <td><i>Wrapper</i></td>
@@ -570,6 +571,7 @@ flowchart TB
 <th></th>
 <th><a href="https://refactoring.guru/design-patterns/command">[refactoring.guru] command pattern</a></th>
 </tr>
+<!-- ----------------------------------- -->
 <tr>
 <td><b>Also known as:</b></td>
 <td><i>Action, Transaction</i></td>
@@ -592,15 +594,8 @@ flowchart TB
 <td align="center">
 
 ```mermaid
-flowchart TB
-    NOTE02["<b><i><code>1.</code></i></b> "]
-    NOTE03["<b><i><code>2.</code></i></b> "]
-```
-```mermaid
 classDiagram
-    direction LR
-    note "<b><i><code>5.</code></i></b> "
-
+    direction TB
     class Client
     class Invoker{
         -command
@@ -608,7 +603,12 @@ classDiagram
         +executeCommand()
     }
     class Command{
+        <<interface>>
         +execute()
+    }
+    class Receiver {
+        ...
+        +operation(a,b,c)
     }
     class ConcreteCommand1{
         -receiver
@@ -619,23 +619,14 @@ classDiagram
     class ConcreteCommand2{
         +execute()
     }
-    class Receiver {
-        ...
-        +operation(a,b,c)
-    }
-    Client --> Receiver
     Command <|.. ConcreteCommand1
     Command <|.. ConcreteCommand2
     Client ..> ConcreteCommand1
+    Client --> Receiver
     Receiver --> ConcreteCommand1 :  aaa
     Client --> Invoker
     Invoker --> Command
 
-    note "<b><i><code>3.</code></i></b> "
-```
-```mermaid
-flowchart TB
-    NOTE05["<b><i><code>4.</code></i></b> "]
 ```
 </td>
 </tr>
@@ -655,23 +646,18 @@ flowchart TB
 <!-- ----------------------------------- -->
 <tr>
 <th></th>
-<th><a href="https://refactoring.guru/design-patterns/abcd">[refactoring.guru] abcd pattern</a></th>
+<th><a href="https://refactoring.guru/design-patterns/facade">[refactoring.guru] facade pattern</a></th>
 </tr>
-<tr>
-<td><b>Also known as:</b></td>
-<td><i></i></td>
-</tr>
-<!-- ----------------------------------- -->
 <tr>
 <td>Intent</td>
-<td><b></b> is a 
+<td><b>Facade</b> is a structural design pattern that provides a simplified interface to a library, a framework, or any other complex set of classes
 </td>
 </tr>
 <!-- ----------------------------------- -->
 <tr>
 <td></td>
 <td align="center">
-<img src="" alt="metaphor" width="60%" /></td>
+<img src="https://refactoring.guru/images/patterns/content/facade/facade-2x.png?id=b69fce5943703f5f07c0ba38e3baaed0" alt="metaphor" width="60%" /></td>
 </tr>
 <!-- ----------------------------------- -->
 <tr>
@@ -679,20 +665,9 @@ flowchart TB
 <td align="center">
 
 ```mermaid
-flowchart TB
-    NOTE02["<b><i><code>2.</code></i></b> "]
-    NOTE03["<b><i><code>3.</code></i></b> "]
-```
-```mermaid
 classDiagram
     direction LR
-    note "<b><i><code>1.</code></i></b> "
-
     class Client
-```
-```mermaid
-flowchart TB
-    NOTE05["<b><i><code>5.</code></i></b> "]
 ```
 </td>
 </tr>
@@ -712,23 +687,24 @@ flowchart TB
 <!-- ----------------------------------- -->
 <tr>
 <th></th>
-<th><a href="https://refactoring.guru/design-patterns/abcd">[refactoring.guru] abcd pattern</a></th>
+<th><a href="https://refactoring.guru/design-patterns/mediator">[refactoring.guru] mediator pattern</a></th>
 </tr>
+<!-- ----------------------------------- -->
 <tr>
 <td><b>Also known as:</b></td>
-<td><i></i></td>
+<td><i>Intermediary, Controller</i></td>
 </tr>
 <!-- ----------------------------------- -->
 <tr>
 <td>Intent</td>
-<td><b></b> is a 
+<td><b>Mediator</b> is a behavioral design pattern that lets you reduce chaotic dependencies between objects. The pattern restricts direct communications between the objects and forces them to collaborate only via a mediator object.
 </td>
 </tr>
 <!-- ----------------------------------- -->
 <tr>
 <td></td>
 <td align="center">
-<img src="" alt="metaphor" width="60%" /></td>
+<img src="https://refactoring.guru/images/patterns/content/mediator/mediator-2x.png?id=250c2bf72ca1fdee2e6d97ed5a4765f2" alt="metaphor" width="60%" /></td>
 </tr>
 <!-- ----------------------------------- -->
 <tr>
@@ -736,20 +712,29 @@ flowchart TB
 <td align="center">
 
 ```mermaid
-flowchart TB
-    NOTE02["<b><i><code>2.</code></i></b> "]
-    NOTE03["<b><i><code>3.</code></i></b> "]
-```
-```mermaid
 classDiagram
-    direction LR
-    note "<b><i><code>1.</code></i></b> "
+    direction TB
 
-    class Client
-```
-```mermaid
-flowchart TB
-    NOTE05["<b><i><code>5.</code></i></b> "]
+    class ComponentC
+    class ComponentA
+    class ConcreteMediator
+    class Mediator{
+        <<interface>>
+    }
+    class ComponentB
+    class ComponentD
+
+    ComponentC --> Mediator
+    ComponentA --> Mediator
+    ConcreteMediator *--> ComponentC
+    ConcreteMediator *--> ComponentA
+    ConcreteMediator ..|> Mediator
+    ConcreteMediator *--> ComponentB
+    ConcreteMediator *--> ComponentD
+    ComponentB --> Mediator
+    ComponentD --> Mediator
+    
+
 ```
 </td>
 </tr>
@@ -769,23 +754,24 @@ flowchart TB
 <!-- ----------------------------------- -->
 <tr>
 <th></th>
-<th><a href="https://refactoring.guru/design-patterns/abcd">[refactoring.guru] abcd pattern</a></th>
+<th><a href="https://refactoring.guru/design-patterns/observer">[refactoring.guru] observer pattern</a></th>
 </tr>
+<!-- ----------------------------------- -->
 <tr>
 <td><b>Also known as:</b></td>
-<td><i></i></td>
+<td><i>Event-Subscriber, Listener</i></td>
 </tr>
 <!-- ----------------------------------- -->
 <tr>
 <td>Intent</td>
-<td><b></b> is a 
+<td><b>Observer</b> is a behavioral design pattern that lets you define a subscription mechanism to notify multiple objects about any events that happen to the object they're observing.
 </td>
 </tr>
 <!-- ----------------------------------- -->
 <tr>
 <td></td>
 <td align="center">
-<img src="" alt="metaphor" width="60%" /></td>
+<img src="https://refactoring.guru/images/patterns/content/observer/observer-2x.png?id=d5a83e115528e9fd633f04ad2650f1db" alt="metaphor" width="60%" /></td>
 </tr>
 <!-- ----------------------------------- -->
 <tr>
@@ -793,77 +779,20 @@ flowchart TB
 <td align="center">
 
 ```mermaid
-flowchart TB
-    NOTE02["<b><i><code>2.</code></i></b> "]
-    NOTE03["<b><i><code>3.</code></i></b> "]
-```
-```mermaid
 classDiagram
-    direction LR
-    note "<b><i><code>1.</code></i></b> "
+    direction BT
 
     class Client
-```
-```mermaid
-flowchart TB
-    NOTE05["<b><i><code>5.</code></i></b> "]
-```
-</td>
-</tr>
-<!-- ----------------------------------- -->
-<tr>
-<td></td>
-<td></td>
-</tr>
-<!-- ----------------------------------- -->
-<!-- =================================== -->
-</table>
+    class Publisher
+    class Subscriber{
+        <<interface>>
+    }
+    class ConcreteSubscribers
 
-#### Design patterns : state pattern
-
-<table>
-<!-- =================================== -->
-<!-- ----------------------------------- -->
-<tr>
-<th></th>
-<th><a href="https://refactoring.guru/design-patterns/abcd">[refactoring.guru] abcd pattern</a></th>
-</tr>
-<tr>
-<td><b>Also known as:</b></td>
-<td><i></i></td>
-</tr>
-<!-- ----------------------------------- -->
-<tr>
-<td>Intent</td>
-<td><b></b> is a 
-</td>
-</tr>
-<!-- ----------------------------------- -->
-<tr>
-<td></td>
-<td align="center">
-<img src="" alt="metaphor" width="60%" /></td>
-</tr>
-<!-- ----------------------------------- -->
-<tr>
-<td>Diagram</td>
-<td align="center">
-
-```mermaid
-flowchart TB
-    NOTE02["<b><i><code>2.</code></i></b> "]
-    NOTE03["<b><i><code>3.</code></i></b> "]
-```
-```mermaid
-classDiagram
-    direction LR
-    note "<b><i><code>1.</code></i></b> "
-
-    class Client
-```
-```mermaid
-flowchart TB
-    NOTE05["<b><i><code>5.</code></i></b> "]
+    Client --> Publisher
+    Client ..> ConcreteSubscribers
+    Publisher o--> Subscriber
+    ConcreteSubscribers ..|> Subscriber
 ```
 </td>
 </tr>
@@ -929,30 +858,26 @@ classDiagram
 <!-- =================================== -->
 </table>
 
-#### Design patterns : strategy pattern
+#### Design patterns : state pattern
 
 <table>
 <!-- =================================== -->
 <!-- ----------------------------------- -->
 <tr>
 <th></th>
-<th><a href="https://refactoring.guru/design-patterns/abcd">[refactoring.guru] abcd pattern</a></th>
-</tr>
-<tr>
-<td><b>Also known as:</b></td>
-<td><i></i></td>
+<th><a href="https://refactoring.guru/design-patterns/state">[refactoring.guru] state pattern</a></th>
 </tr>
 <!-- ----------------------------------- -->
 <tr>
 <td>Intent</td>
-<td><b></b> is a 
+<td><b>State</b> is a behavioural design pattern that lets an object alter its behaviour when its internal state changes. it appears as if the object changed its class
 </td>
 </tr>
 <!-- ----------------------------------- -->
 <tr>
 <td></td>
 <td align="center">
-<img src="" alt="metaphor" width="60%" /></td>
+<img src="https://refactoring.guru/images/patterns/content/state/state-en-2x.png?id=dfd427a938223ae880291c2850f3e34a" alt="metaphor" width="60%" /></td>
 </tr>
 <!-- ----------------------------------- -->
 <tr>
@@ -960,20 +885,74 @@ classDiagram
 <td align="center">
 
 ```mermaid
-flowchart TB
-    NOTE02["<b><i><code>2.</code></i></b> "]
-    NOTE03["<b><i><code>3.</code></i></b> "]
-```
-```mermaid
 classDiagram
-    direction LR
-    note "<b><i><code>1.</code></i></b> "
+    direction BT
 
     class Client
+    class ConcreteStates
+    class Context
+    class State{
+        <<interface>>
+    }
+
+    Client ..> ConcreteStates
+    Client --> Context
+    Context o--> State
+    ConcreteStates ..|> State
+    ConcreteStates --> Context
 ```
+</td>
+</tr>
+<!-- ----------------------------------- -->
+<tr>
+<td></td>
+<td></td>
+</tr>
+<!-- ----------------------------------- -->
+<!-- =================================== -->
+</table>
+
+#### Design patterns : strategy pattern
+
+<table>
+<!-- =================================== -->
+<!-- ----------------------------------- -->
+<tr>
+<th></th>
+<th><a href="https://refactoring.guru/design-patterns/stategy">[refactoring.guru] stategy pattern</a></th>
+</tr>
+<!-- ----------------------------------- -->
+<tr>
+<td>Intent</td>
+<td><b>Stategy</b> is a behavioural design pattern that lets you define a family of algorithms, put each of them into a separate class, and make their objects interchangeable.
+</td>
+</tr>
+<!-- ----------------------------------- -->
+<tr>
+<td></td>
+<td align="center">
+<img src="https://refactoring.guru/images/patterns/content/strategy/strategy-2x.png?id=1cee47d05a76fddf07dce9c67b700748" alt="metaphor" width="60%" /></td>
+</tr>
+<!-- ----------------------------------- -->
+<tr>
+<td>Diagram</td>
+<td align="center">
+
 ```mermaid
-flowchart TB
-    NOTE05["<b><i><code>5.</code></i></b> "]
+classDiagram
+    direction BT
+
+    class Client
+    class ConcreteStrategies
+    class Context
+    class Strategy{
+        <<interface>>
+    }
+
+    Client ..> ConcreteStrategies
+    Client --> Context
+    Context o--> Strategy
+    ConcreteStrategies ..|> Strategy
 ```
 </td>
 </tr>

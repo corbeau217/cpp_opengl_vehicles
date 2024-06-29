@@ -159,6 +159,7 @@ Documentation page links:
 #### `29/06/2024`
 
 * `29/06/2024` - started some of the design pattern uml's
+* `29/06/2024` - minimalist did the rest of them so we have something at all
 
 ---
 
