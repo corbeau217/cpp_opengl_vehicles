@@ -35,12 +35,14 @@ Documentation page links:
 * [***[Project render flow]***](#project-render-flow)
     * [*[Project render flow [draft 01]]*](#project-render-flow-draft-01)
 * [***[Model diagrams]***](#model-diagrams)
+* [***[OpenGL documentation]***](#opengl-documentation)
+    * [*[OpenGL documentation : pipeline [draft 01]]*](#opengl-documentation--pipeline-draft-01)
+    * [*[OpenGL documentation : pipeline [draft 02]]*](#opengl-documentation--pipeline-draft-02)
 * [***[Library documentation]***](#library-documentation)
     * [*[Library references : Github repos]*](#library-references--github-repos)
     * [*[Library references : GLFW]*](#library-references--glfw)
     * [*[Library references : GLAD]*](#library-references--glad)
     * [*[Library references : GLM]*](#library-references--glm)
-    * [*[Library references : OpenGL pipeline [draft 01]]*](#library-references--opengl-pipeline-draft-01)
     * [*[Library references : template repo structure [draft 01]]*](#library-references--template-repo-structure-draft-01)
 * [***[General references]***](#general-references)
     * [*[General references : Markdown badges]*](#general-references--markdown-badges)
@@ -366,6 +368,73 @@ flowchart LR
 
 ---
 
+## OpenGL documentation
+
+* [openglbook](https://openglbook.com/)
+    * lots of graphics and details
+* [docs.gl](https://docs.gl/)
+* [khronos wiki](https://www.khronos.org/opengl/wiki/Main_Page)
+    * [khronos getting started](https://www.khronos.org/opengl/wiki/Getting_Started)
+    * [khronos page for the rendering pipeline](https://www.khronos.org/opengl/wiki/Rendering_Pipeline_Overview)
+* [this github pages page seems useful](https://kenny-designs.github.io/zim-websites/opengl/Shaders_and_the_Rendering_Pipeline.html)
+* something to note is the [opengl pipeline documentation](https://www.opengl.org/img/uploads/pipeline/pipeline_004.pdf)
+    * especially page 7 what da henk
+* [core specification document ogl4.1](https://registry.khronos.org/OpenGL/specs/gl/glspec41.core.pdf)
+    * has block diagram of the data [pg17](https://registry.khronos.org/OpenGL/specs/gl/glspec41.core.pdf#page=34)
+    * primitives and vertices [pg20](https://registry.khronos.org/OpenGL/specs/gl/glspec41.core.pdf#page=37)
+    * tessellation details [pg112](https://registry.khronos.org/OpenGL/specs/gl/glspec41.core.pdf#page=120)
+    * geometry shaders [pg127](https://registry.khronos.org/OpenGL/specs/gl/glspec41.core.pdf#page=144)
+    * rasterisation [pg156](https://registry.khronos.org/OpenGL/specs/gl/glspec41.core.pdf#page=173)
+    * per fragment operations [pg253](https://registry.khronos.org/OpenGL/specs/gl/glspec41.core.pdf#page=270)
+* [GLSL shader language documentation](https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.10.pdf)
+    * preprocessor [pg14](https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.10.pdf#page=14)
+    * literally has the grammar at the end omg
+* [opengl reference cards](https://www.khronos.org/files/opengl41-quick-reference-card.pdf)
+
+
+### OpenGL documentation : pipeline [draft 01]
+
+[***[back to Contents]***](#contents)
+
+* minimalist diagram to illustrate the pipeline process
+
+```mermaid
+flowchart TB
+    %% ==============================
+    APP[Application<br><i>Vertex specification</i>]
+    %% ------------------------
+    VERTEXSHADER(<i>-programmable-</i><br>Vertex Shader)
+    RASTERISATION{{Rasterisation}}
+    FRAGMENTSHADER(<i>-programmable-</i><br>Fragment Shader)
+    FRAMEBUFFEROPERATIONS{{Frame buffer operations}}
+    %% ------------------------
+    DISPLAY[Display]
+    %% ==============================
+    APP --> VERTEXSHADER --> RASTERISATION --> FRAGMENTSHADER --> FRAMEBUFFEROPERATIONS --> DISPLAY
+    %% ==============================
+```
+
+### OpenGL documentation : pipeline [draft 02]
+
+[***[back to Contents]***](#contents)
+
+```mermaid
+flowchart TB
+    VERTEXDATA[["Vertex Data[]"]]
+    VERTEXSHADER{{Vertex Shader}}
+    GEOMETRYSHADER{{Geometry Shader}}
+    SHAPEASSEMBLY(Shape Assembly)
+    RASTERISATION(Rasterisation)
+    FRAGMENTSHADER{{Fragment Shader}}
+    TESTSANDBLENDING(Tests and Blending)
+    OUTPUTDISPLAY[[Output Display]]
+    
+    VERTEXDATA --> VERTEXSHADER --> GEOMETRYSHADER --> SHAPEASSEMBLY --> RASTERISATION --> FRAGMENTSHADER --> TESTSANDBLENDING --> OUTPUTDISPLAY
+    
+```
+
+---
+
 ## Library documentation
 
 ### Library references : Github repos
@@ -413,29 +482,6 @@ flowchart LR
 
 * lorem ipsum
 
-### Library references : OpenGL pipeline [draft 01]
-
-[***[back to Contents]***](#contents)
-
-* minimalist diagram to illustrate the pipeline process
-* [khronos page for the rendering pipeline](https://www.khronos.org/opengl/wiki/Rendering_Pipeline_Overview)
-* [this github pages page seems useful](https://kenny-designs.github.io/zim-websites/opengl/Shaders_and_the_Rendering_Pipeline.html)
-
-```mermaid
-flowchart TB
-    %% ==============================
-    APP[Application<br><i>Vertex specification</i>]
-    %% ------------------------
-    VERTEXSHADER(<i>-programmable-</i><br>Vertex Shader)
-    RASTERISATION{{Rasterisation}}
-    FRAGMENTSHADER(<i>-programmable-</i><br>Fragment Shader)
-    FRAMEBUFFEROPERATIONS{{Frame buffer operations}}
-    %% ------------------------
-    DISPLAY[Display]
-    %% ==============================
-    APP --> VERTEXSHADER --> RASTERISATION --> FRAGMENTSHADER --> FRAMEBUFFEROPERATIONS --> DISPLAY
-    %% ==============================
-```
 
 ### Library references : template repo structure [draft 01]
 
