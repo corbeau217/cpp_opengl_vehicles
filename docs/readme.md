@@ -2,6 +2,11 @@
 
 ![wakatime](https://wakatime.com/badge/user/018b08ae-3eb8-4326-bd58-0017702d0437/project/333f6d7f-2e73-4013-8acb-32604da642ed.svg?style=for-the-badge&color=f05e16&labelColor=f05e16)
 
+![OPENGL badge](https://img.shields.io/badge/OpenGL-f05e16?style=for-the-badge&logo=opengl&logoColor=ffffff)
+![C++ badge](https://img.shields.io/badge/C%2B%2B-f05e16?style=for-the-badge&logo=c%2B%2B&logoColor=white&logoColor=ffffff)
+
+<!-- ![CMAKE badge](https://img.shields.io/badge/CMake-f05e16?style=for-the-badge&logo=cmake&logoColor=white&logoColor=ffffff) -->
+
 ---
 ---
 
@@ -37,6 +42,8 @@ Documentation page links:
     * [`25/06/2024`](#25062024)
     * [`26/06/2024`](#26062024)
     * [`27/06/2024`](#27062024)
+    * [`29/06/2024`](#29062024)
+    * [`30/06/2024`](#30062024)
 
 ---
 
@@ -160,6 +167,13 @@ Documentation page links:
 
 * `29/06/2024` - started some of the design pattern uml's
 * `29/06/2024` - minimalist did the rest of them so we have something at all
+
+#### `30/06/2024`
+
+* `30/06/2024` - added badges to the readme page
+* `30/06/2024` - added references for the libraries including details about cmake building
+* `30/06/2024` - stubs for library api
+* `30/06/2024` - mild restructuring of the design documentation
 
 ---
 

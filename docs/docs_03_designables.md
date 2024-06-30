@@ -36,9 +36,23 @@ Documentation page links:
     * [*[Project render flow [draft 01]]*](#project-render-flow-draft-01)
 * [***[Model diagrams]***](#model-diagrams)
 * [***[Library documentation]***](#library-documentation)
-    * [*[Graphics pipeline [draft 01]]*](#graphics-pipeline-draft-01)
-    * [*[Base code flow [draft 01]]*](#base-code-flow-draft-01)
-* [***[References]***](#references)
+    * [*[Library references : Github repos]*](#library-references--github-repos)
+    * [*[Library references : GLFW]*](#library-references--glfw)
+    * [*[Library references : GLAD]*](#library-references--glad)
+    * [*[Library references : GLM]*](#library-references--glm)
+    * [*[Library references : OpenGL pipeline [draft 01]]*](#library-references--opengl-pipeline-draft-01)
+    * [*[Library references : template repo structure [draft 01]]*](#library-references--template-repo-structure-draft-01)
+* [***[General references]***](#general-references)
+    * [*[General references : Markdown badges]*](#general-references--markdown-badges)
+    * [*[General references : Design patterns]*](#general-references--design-patterns)
+        * [[General references : Design patterns : adapter pattern]](#general-references--design-patterns--adapter-pattern)
+        * [[General references : Design patterns : command pattern]](#general-references--design-patterns--command-pattern)
+        * [[General references : Design patterns : facade pattern]](#general-references--design-patterns--facade-pattern)
+        * [[General references : Design patterns : mediator pattern]](#general-references--design-patterns--mediator-pattern)
+        * [[General references : Design patterns : observer pattern]](#general-references--design-patterns--observer-pattern)
+        * [[General references : Design patterns : singleton pattern]](#general-references--design-patterns--singleton-pattern)
+        * [[General references : Design patterns : state pattern]](#general-references--design-patterns--state-pattern)
+        * [[General references : Design patterns : strategy pattern]](#general-references--design-patterns--strategy-pattern)
 
 ---
 
@@ -354,11 +368,58 @@ flowchart LR
 
 ## Library documentation
 
-### Graphics pipeline [draft 01]
+### Library references : Github repos
+
+[***[back to Contents]***](#contents)
+
+* [![GLAD GITHUB REPO](https://img.shields.io/badge/GITHUB-100000?style=for-the-badge&logo=github&logoColor=white&label=GLAD)](https://github.com/Dav1dde/glad)
+    * text heavy documentation in wiki sub section
+    * [main documentation page](https://github.com/Dav1dde/glad/wiki/C)
+    * [cmake building from source](https://github.com/Dav1dde/glad/wiki/C#cmake)
+
+* [![GLFW GITHUB REPO](https://img.shields.io/badge/GITHUB-100000?style=for-the-badge&logo=github&logoColor=white&label=GLFW)](https://github.com/glfw/glfw)
+    * has links to extensive documentation with graphics
+    * [notes about `glfwCreateWindow` on MacOS X 10.7 and later](https://www.glfw.org/docs/latest/compat_guide.html#compat_osx)
+    * [compiling and building documentation reference](https://www.glfw.org/docs/latest/compile_guide.html)
+        * [cmake building and linking from source](https://www.glfw.org/docs/latest/build_guide.html#build_link_cmake_source)
+
+* [![GLM GITHUB REPO](https://img.shields.io/badge/GITHUB-100000?style=for-the-badge&logo=github&logoColor=white&label=GLM)](https://github.com/g-truc/glm)
+    * has information on the cmake building
+    * documentation is very text / code heavy
+    * documentation uses doxygen
+
+### Library references : GLFW
+
+[***[back to Contents]***](#contents)
+
+* [[GLFW quick guide]](https://www.glfw.org/docs/latest/quick_guide.html)
+* [[GLFW intro to API]](https://www.glfw.org/docs/latest/intro_guide.html)
+    * [[GLFW window guide]](https://www.glfw.org/docs/latest/window_guide.html)
+    * [[GLFW context guide]](https://www.glfw.org/docs/latest/context_guide.html)
+    * [[GLFW monitor guide]](https://www.glfw.org/docs/latest/monitor_guide.html)
+    * [[GLFW input guide]](https://www.glfw.org/docs/latest/input_guide.html)
+    * [[GLFW compile guide]](https://www.glfw.org/docs/latest/compile_guide.html)
+    * [[GLFW build guide]](https://www.glfw.org/docs/latest/build_guide.html)
+
+### Library references : GLAD
+
+[***[back to Contents]***](#contents)
+
+* lorem ipsum
+
+### Library references : GLM 
+
+[***[back to Contents]***](#contents)
+
+* lorem ipsum
+
+### Library references : OpenGL pipeline [draft 01]
 
 [***[back to Contents]***](#contents)
 
 * minimalist diagram to illustrate the pipeline process
+* [khronos page for the rendering pipeline](https://www.khronos.org/opengl/wiki/Rendering_Pipeline_Overview)
+* [this github pages page seems useful](https://kenny-designs.github.io/zim-websites/opengl/Shaders_and_the_Rendering_Pipeline.html)
 
 ```mermaid
 flowchart TB
@@ -376,7 +437,7 @@ flowchart TB
     %% ==============================
 ```
 
-### base code flow [draft 01]
+### Library references : template repo structure [draft 01]
 
 [***[back to Contents]***](#contents)
 
@@ -470,11 +531,16 @@ flowchart LR
 
 ---
 
-## references
+## General references
 
-### Design patterns
+### General references : Markdown badges
 
 [***[back to Contents]***](#contents)
+
+* [repo with a list of the badge sources](https://github.com/alexandresanlim/Badges4-README.md-Profile)
+* [page with details about parameters](https://shields.io/badges/static-badge)
+
+### General references : Design patterns
 
 * [Refactoring guru design patterns catalogue](https://refactoring.guru/design-patterns/catalog)
 * the design patterns suggested in requirements:
@@ -486,7 +552,9 @@ flowchart LR
     * [state pattern](https://refactoring.guru/design-patterns/state)
     * [strategy pattern](https://refactoring.guru/design-patterns/strategy)
 
-#### Design patterns : adapter pattern
+#### General references : Design patterns : adapter pattern
+
+[***[back to Contents]***](#contents)
 
 <table>
 <!-- =================================== -->
@@ -561,8 +629,9 @@ flowchart TB
 <!-- =================================== -->
 </table>
 
-#### Design patterns : command pattern
+#### General references : Design patterns : command pattern
 
+[***[back to Contents]***](#contents)
 
 <table>
 <!-- =================================== -->
@@ -639,7 +708,9 @@ classDiagram
 <!-- =================================== -->
 </table>
 
-#### Design patterns : facade pattern
+#### General references : Design patterns : facade pattern
+
+[***[back to Contents]***](#contents)
 
 <table>
 <!-- =================================== -->
@@ -680,7 +751,9 @@ classDiagram
 <!-- =================================== -->
 </table>
 
-#### Design patterns : mediator pattern
+#### General references : Design patterns : mediator pattern
+
+[***[back to Contents]***](#contents)
 
 <table>
 <!-- =================================== -->
@@ -747,7 +820,9 @@ classDiagram
 <!-- =================================== -->
 </table>
 
-#### Design patterns : observer pattern
+#### General references : Design patterns : observer pattern
+
+[***[back to Contents]***](#contents)
 
 <table>
 <!-- =================================== -->
@@ -805,7 +880,9 @@ classDiagram
 <!-- =================================== -->
 </table>
 
-#### Design patterns : singleton pattern
+#### General references : Design patterns : singleton pattern
+
+[***[back to Contents]***](#contents)
 
 <table>
 <!-- =================================== -->
@@ -858,7 +935,9 @@ classDiagram
 <!-- =================================== -->
 </table>
 
-#### Design patterns : state pattern
+#### General references : Design patterns : state pattern
+
+[***[back to Contents]***](#contents)
 
 <table>
 <!-- =================================== -->
@@ -912,7 +991,9 @@ classDiagram
 <!-- =================================== -->
 </table>
 
-#### Design patterns : strategy pattern
+#### General references : Design patterns : strategy pattern
+
+[***[back to Contents]***](#contents)
 
 <table>
 <!-- =================================== -->
@@ -965,15 +1046,5 @@ classDiagram
 <!-- =================================== -->
 </table>
 
+---
 
-
-
-
-
-
-### Graphics pipeline stuffs
-
-[***[back to Contents]***](#contents)
-
-* [khronos page for the rendering pipeline](https://www.khronos.org/opengl/wiki/Rendering_Pipeline_Overview)
-* [this github pages page seems useful](https://kenny-designs.github.io/zim-websites/opengl/Shaders_and_the_Rendering_Pipeline.html)
