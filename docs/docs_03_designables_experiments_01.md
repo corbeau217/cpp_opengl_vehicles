@@ -1,4 +1,4 @@
-# DOCS 02 : requirements : SUPPLIMENT 01 : DEADLOCKS
+# DOCS 03 : Designables : experiments 01 : Render texture experimenting
 
 ---
 ---
@@ -11,7 +11,8 @@ Documentation page links:
 * [**[docs 01 : conceptual]**](./docs_01_conceptual.md#doc-links)
 * [**[docs 02 : requirements]**](./docs_02_requirements.md#doc-links)
 * [**[docs 03 : designables]**](./docs_03_designables.md#doc-links)
-    * [***[docs 03 : designables : render texture experimenting]***](./docs_03_designables_experiments_01.md#doc-links)
+    * [***[docs 03 : designables : experiments 01 : render texture experimenting]***](./docs_03_designables_experiments_01.md#doc-links)
+    * [**[docs 03 : designables : suppliments 01 : design pattern diagrams]**](./docs_03_designables_suppliment_01.md#doc-links)
 * [**[docs 04 : developments]**](./docs_04_developments.md#doc-links)
 
 ---

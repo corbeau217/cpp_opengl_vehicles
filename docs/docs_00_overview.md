@@ -14,7 +14,8 @@ Documentation page links:
     * [**[docs 02 : requirements : deadlock suppliment]**](./docs_02_requirements_suppliment_01.md#doc-links)
     * [**[docs 02 : requirements : model design drafts suppliment]**](./docs_02_requirements_suppliment_02.md#doc-links)
 * [**[docs 03 : designables]**](./docs_03_designables.md#doc-links)
-    * [**[docs 03 : designables : render texture experimenting]**](./docs_03_designables_experiments_01.md#doc-links)
+    * [**[docs 03 : designables : experiments 01 : render texture experimenting]**](./docs_03_designables_experiments_01.md#doc-links)
+    * [**[docs 03 : designables : suppliments 01 : design pattern diagrams]**](./docs_03_designables_suppliment_01.md#doc-links)
 * [**[docs 04 : developments]**](./docs_04_developments.md#doc-links)
 
 ---
