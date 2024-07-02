@@ -433,26 +433,39 @@ flowchart TB
 
 [***[back to Contents]***](#contents)
 
-* [![GLAD GITHUB REPO](https://img.shields.io/badge/GITHUB-100000?style=for-the-badge&logo=github&logoColor=white&label=GLAD)](https://github.com/Dav1dde/glad)
+* [![GLAD1 GITHUB REPO](https://img.shields.io/badge/GITHUB-100000?style=for-the-badge&logo=github&logoColor=white&label=GLAD1)](https://github.com/Dav1dde/glad/tree/master)
+    * GLAD [doesnt include vulkan?]
+* [![GLAD2 GITHUB REPO](https://img.shields.io/badge/GITHUB-100000?style=for-the-badge&logo=github&logoColor=white&label=GLAD2)](https://github.com/Dav1dde/glad)
     * text heavy documentation in wiki sub section
-    * [main documentation page](https://github.com/Dav1dde/glad/wiki/C)
-    * [cmake building from source](https://github.com/Dav1dde/glad/wiki/C#cmake)
+    * as per the github readme, it's "pretty stable" and suggested to use now
 
 * [![GLFW GITHUB REPO](https://img.shields.io/badge/GITHUB-100000?style=for-the-badge&logo=github&logoColor=white&label=GLFW)](https://github.com/glfw/glfw)
     * has links to extensive documentation with graphics
-    * [notes about `glfwCreateWindow` on MacOS X 10.7 and later](https://www.glfw.org/docs/latest/compat_guide.html#compat_osx)
-    * [compiling and building documentation reference](https://www.glfw.org/docs/latest/compile_guide.html)
-        * [cmake building and linking from source](https://www.glfw.org/docs/latest/build_guide.html#build_link_cmake_source)
 
 * [![GLM GITHUB REPO](https://img.shields.io/badge/GITHUB-100000?style=for-the-badge&logo=github&logoColor=white&label=GLM)](https://github.com/g-truc/glm)
     * has information on the cmake building
     * documentation is very text / code heavy
     * documentation uses doxygen
 
+### Library references : GLAD
+
+[***[back to Contents]***](#contents)
+
+* [[main documentation for using GLAD with C]](https://github.com/Dav1dde/glad/wiki/C)
+* [[documentation for building with CMAKE]](https://github.com/Dav1dde/glad/wiki/C#cmake)
+
+| version | generator link | github repo | wiki / documentation |
+| ------- | -------------- | ----------- | -------------------- |
+| GLAD 1  | [generator](https://glad.dav1d.de/) | [repo](https://github.com/Dav1dde/glad/tree/master) | [repo readme](https://github.com/Dav1dde/glad/tree/master?tab=readme-ov-file#glad) |
+| GLAD 2  | [generator](https://gen.glad.sh/) | [repo](https://github.com/Dav1dde/glad) | [github repo wiki](https://github.com/Dav1dde/glad/wiki/C) |
+
+
+
 ### Library references : GLFW
 
 [***[back to Contents]***](#contents)
 
+* [notes about `glfwCreateWindow` on MacOS X 10.7 and later](https://www.glfw.org/docs/latest/compat_guide.html#compat_osx)
 * [[GLFW quick guide]](https://www.glfw.org/docs/latest/quick_guide.html)
 * [[GLFW intro to API]](https://www.glfw.org/docs/latest/intro_guide.html)
     * [[GLFW window guide]](https://www.glfw.org/docs/latest/window_guide.html)
@@ -461,23 +474,28 @@ flowchart TB
     * [[GLFW input guide]](https://www.glfw.org/docs/latest/input_guide.html)
     * [[GLFW compile guide]](https://www.glfw.org/docs/latest/compile_guide.html)
     * [[GLFW build guide]](https://www.glfw.org/docs/latest/build_guide.html)
-
-### Library references : GLAD
-
-[***[back to Contents]***](#contents)
-
-* lorem ipsum
+        * [cmake building and linking from source](https://www.glfw.org/docs/latest/build_guide.html#build_link_cmake_source)
 
 ### Library references : GLM 
 
 [***[back to Contents]***](#contents)
 
-* lorem ipsum
+* [[GLM API documentation link]](http://glm.g-truc.net/0.9.9/api/modules.html)
+* [[manual link on github]](https://github.com/g-truc/glm/blob/master/manual.md)
+    * [depenencies](https://github.com/g-truc/glm/blob/master/manual.md#section1_4)
+        * according to the above link, it doesnt depend on anything
+    * [finding GLM with CMAKE](https://github.com/g-truc/glm/blob/master/manual.md#section1_5)
+* repo readme references:
+    * [[cmake building and installing]](https://github.com/g-truc/glm?tab=readme-ov-file#build-and-install)
+    * [[cmake using `FetchContent`]](https://github.com/g-truc/glm?tab=readme-ov-file#cmake-using-fetchcontent)
 
 
 ### Library references : template repo structure [draft 01]
 
 [***[back to Contents]***](#contents)
+
+* template will end up not being used very much as we need to remake the shader handling code
+* also need to mess with vertex/frame buffer stuff
 
 ```mermaid
 ---

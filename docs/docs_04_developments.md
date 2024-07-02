@@ -27,8 +27,8 @@ Documentation page links:
     * *~~the process of compiling and linking in C++~~*
 * [x] - `DDR_02` - ~~OpenGL render pipeline~~
     * *~~to explain the stages~~*
-* [ ] - `DDR_03` - ***[semi-optional]* Library pipeline**
-    * *pipeline of the libraries we use. This is more important if we use extra libraries*
+* [x] - `DDR_03` - ~~*[semi-optional]* Library pipeline~~
+    * *~~pipeline of the libraries we use. This is more important if we use extra libraries~~*
 * [x] - `DDR_04` - ~~Base template control flow~~
     * *~~explaination of the base project structure we're using for OpenGL~~*
 * [x] - `DDR_05` - ~~Development pathway~~

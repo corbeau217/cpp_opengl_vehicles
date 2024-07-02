@@ -181,6 +181,7 @@ Documentation page links:
 
 * `02/07/2024` - moved design patterns to suppliment file
 * `02/07/2024` - found that there isnt really a need for flow diagrams for the libraries, so will focus on references
+* `02/07/2024` - cleaned up the library references
 
 ---
 
