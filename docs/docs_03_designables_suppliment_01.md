@@ -65,13 +65,13 @@ Documentation page links:
 <!-- ----------------------------------- -->
 <tr>
 <td></td>
-<td align="center">
+<td>
 <img src="https://refactoring.guru/images/patterns/content/adapter/adapter-en-2x.png?id=e0ab0f6103b0b7b0648a8fda592ffab8" alt="metaphor" width="60%" /></td>
 </tr>
 <!-- ----------------------------------- -->
 <tr>
 <td>Diagram</td>
-<td align="center">
+<td>
 
 ```mermaid
 flowchart TB
@@ -86,6 +86,7 @@ classDiagram
     class Client
     class ClientInterface["Client Interface"]{
         <<interface>>
+        ...
         +method(data)
     }
     class Adapter{
@@ -142,13 +143,13 @@ flowchart TB
 <!-- ----------------------------------- -->
 <tr>
 <td></td>
-<td align="center">
+<td>
 <img src="https://refactoring.guru/images/patterns/content/command/command-en-2x.png?id=6149af804cbbbd5cb18595c30b856d89" alt="metaphor" width="60%" /></td>
 </tr>
 <!-- ----------------------------------- -->
 <tr>
 <td>Diagram</td>
-<td align="center">
+<td>
 
 ```mermaid
 classDiagram
@@ -161,6 +162,7 @@ classDiagram
     }
     class Command{
         <<interface>>
+        ...
         +execute()
     }
     class Receiver {
@@ -174,6 +176,7 @@ classDiagram
         +execute()
     }
     class ConcreteCommand2{
+        ...
         +execute()
     }
     Command <|.. ConcreteCommand1
@@ -215,18 +218,63 @@ classDiagram
 <!-- ----------------------------------- -->
 <tr>
 <td></td>
-<td align="center">
+<td>
 <img src="https://refactoring.guru/images/patterns/content/facade/facade-2x.png?id=b69fce5943703f5f07c0ba38e3baaed0" alt="metaphor" width="60%" /></td>
 </tr>
 <!-- ----------------------------------- -->
 <tr>
 <td>Diagram</td>
-<td align="center">
+<td>
 
 ```mermaid
 classDiagram
-    direction LR
+    direction TB
+    namespace FacadePattern {
     class Client
+    class Facade {
+        -linksToSubsystemObjects
+        -optionalAdditionalFacade
+        +subsystemOperation()
+    }
+    class AdditionalFacade{
+        ...
+        +anotherOperation()
+    }
+    }
+    namespace Complex_Subsystems{
+    class SubSystem01
+    class SubSystem02
+    class SubSystem03
+    class SubSystem04
+    }
+
+    %% make some spaghetti
+    SubSystem02 --> SubSystem01
+    SubSystem01 --> SubSystem01    
+    SubSystem01 --> SubSystem02
+    SubSystem01 --> SubSystem03
+    SubSystem01 --> SubSystem04
+    SubSystem02 <--> SubSystem03
+    SubSystem01 --> SubSystem04
+    SubSystem01 --> SubSystem02
+    SubSystem03 --> SubSystem02
+    SubSystem03 <--> SubSystem02
+    SubSystem01 --> SubSystem02
+    SubSystem03 <--> SubSystem03
+    SubSystem03 --> SubSystem04
+    SubSystem03 --> SubSystem02
+
+    %% client use
+    Client --> Facade
+    %% point to stuff in it
+    Facade ..> SubSystem01
+    Facade ..> SubSystem02
+    Facade ..> SubSystem03
+    %% next
+    Facade --> AdditionalFacade
+    %% point to stuff in it
+    AdditionalFacade ..> SubSystem03
+    AdditionalFacade ..> SubSystem04
 ```
 </td>
 </tr>
@@ -264,26 +312,52 @@ classDiagram
 <!-- ----------------------------------- -->
 <tr>
 <td></td>
-<td align="center">
+<td>
 <img src="https://refactoring.guru/images/patterns/content/mediator/mediator-2x.png?id=250c2bf72ca1fdee2e6d97ed5a4765f2" alt="metaphor" width="60%" /></td>
 </tr>
 <!-- ----------------------------------- -->
 <tr>
 <td>Diagram</td>
-<td align="center">
+<td>
 
 ```mermaid
 classDiagram
-    direction TB
+    direction BT
 
-    class ComponentC
-    class ComponentA
-    class ConcreteMediator
+    class ComponentC{
+        -m: Mediator
+        +operationC()
+    }
+    class ComponentA{
+        -m: Mediator
+        +operationA()
+    }
+    class ConcreteMediator{
+        -componentA
+        -componentB
+        -componentC
+        -componentD
+        +notify(sender)
+        +reactOnA()
+        +reactOnB()
+        +reactOnC()
+        +reactOnD()
+    }
+    note for ConcreteMediator "// notify(sender)\n<b>if</b>(sender == componentA)\n  reactOnA()"
     class Mediator{
         <<interface>>
+        ...
+        +notify(sender)
     }
-    class ComponentB
-    class ComponentD
+    class ComponentB{
+        -m: Mediator
+        +operationB()
+    }
+    class ComponentD{
+        -m: Mediator
+        +operationD()
+    }
+    note for ComponentD "// operationD()\nm.notify(<b>this</b>)"
 
     ComponentC --> Mediator
     ComponentA --> Mediator
@@ -333,24 +407,39 @@ classDiagram
 <!-- ----------------------------------- -->
 <tr>
 <td></td>
-<td align="center">
+<td>
 <img src="https://refactoring.guru/images/patterns/content/observer/observer-2x.png?id=d5a83e115528e9fd633f04ad2650f1db" alt="metaphor" width="60%" /></td>
 </tr>
 <!-- ----------------------------------- -->
 <tr>
 <td>Diagram</td>
-<td align="center">
+<td>
 
 ```mermaid
 classDiagram
     direction BT
 
     class Client
-    class Publisher
+    note for Client "s = <b>new</b> ConcreteSubscriber()\npublisher.subscribe(s)"
+    class Publisher{
+        -subscribers: Subscriber[]
+        -mainState
+        +subscribe(s: Subscriber)
+        +unsubscribe(s: Subscriber)
+        +notifySubscribers()
+        +mainBusinessLogic()
+    }
+    note for Publisher "// notifySubscribers()\n<b>foreach</b>(s <b>in</b> subscribers)\ns.update(<b>this</b>)"
+    note for Publisher "// mainBusinessLogic()\nmainState = newState\nnotifySubscribers()"
     class Subscriber{
         <<interface>>
+        ...
+        +update(context)
     }
-    class ConcreteSubscribers
+    class ConcreteSubscribers{
+        ...
+        +update(context)
+    }
 
     Client --> Publisher
     Client ..> ConcreteSubscribers
@@ -388,12 +477,12 @@ classDiagram
 <!-- ----------------------------------- -->
 <tr>
 <td></td>
-<td align="center"><img src="https://refactoring.guru/images/patterns/content/singleton/singleton-2x.png?id=accb2cc7594f7a491ce01dddf0d2f876" alt="metaphor" width="60%" /></td>
+<td><img src="https://refactoring.guru/images/patterns/content/singleton/singleton-2x.png?id=accb2cc7594f7a491ce01dddf0d2f876" alt="metaphor" width="60%" /></td>
 </tr>
 <!-- ----------------------------------- -->
 <tr>
 <td>Diagram</td>
-<td align="center">
+<td>
 
 ```mermaid
 classDiagram
@@ -443,23 +532,41 @@ classDiagram
 <!-- ----------------------------------- -->
 <tr>
 <td></td>
-<td align="center">
+<td>
 <img src="https://refactoring.guru/images/patterns/content/state/state-en-2x.png?id=dfd427a938223ae880291c2850f3e34a" alt="metaphor" width="60%" /></td>
 </tr>
 <!-- ----------------------------------- -->
 <tr>
 <td>Diagram</td>
-<td align="center">
+<td>
 
 ```mermaid
 classDiagram
     direction BT
 
     class Client
-    class ConcreteStates
-    class Context
+    note for Client "intialState = <b>new</b> ConcreteState()\ncontext = <b>new</b> Context(initialState)\ncontext.doThis()\n// Current state may have been\n// changed by context or the state\n// object itself."
+    class ConcreteStates{
+        -context
+        +setContext(context)
+        +doThis()
+        +doThat()
+    }
+    note for ConcreteStates "// A state may issue state\n// transition in context.\nstate = <b>new</b> OtherState()\ncontext.changeState(state)"
+    class Context{
+        -state
+        +Context(initialState)
+        +changeState(state)
+        +doThis()
+        +doThat()
+    }
+    note for Context "// Context(initialState)\n<b>this</b>.state = state\nstate.setContext(<b>this</b>)"
+    note for Context "// doThis()\n<b>state</b>.doThis()"
     class State{
         <<interface>>
+        ...
+        +doThis()
+        +doThat()
     }
 
     Client ..> ConcreteStates
@@ -488,7 +595,7 @@ classDiagram
 <!-- ----------------------------------- -->
 <tr>
 <th></th>
-<th><a href="https://refactoring.guru/design-patterns/stategy">[refactoring.guru] stategy pattern</a></th>
+<th><a href="https://refactoring.guru/design-patterns/strategy">[refactoring.guru] strategy pattern</a></th>
 </tr>
 <!-- ----------------------------------- -->
 <tr>
@@ -499,24 +606,33 @@ classDiagram
 <!-- ----------------------------------- -->
 <tr>
 <td></td>
-<td align="center">
+<td>
 <img src="https://refactoring.guru/images/patterns/content/strategy/strategy-2x.png?id=1cee47d05a76fddf07dce9c67b700748" alt="metaphor" width="60%" /></td>
 </tr>
 <!-- ----------------------------------- -->
 <tr>
 <td>Diagram</td>
-<td align="center">
+<td>
 
 ```mermaid
 classDiagram
     direction BT
 
     class Client
-    class ConcreteStrategies
-    class Context
+    class ConcreteStrategies {
+        +execute(data)
+    }
+    class Context {
+        -strategy
+        +setStrategy(strategy)
+        +doSomething()
+    }
     class Strategy{
         <<interface>>
+        +execute(data)
     }
+    note for Context "//doSomething()\nstrategy.execute()"
+    note for Client "str = <b>new</b> SomeStratgey()\ncontext.setStrategy(str)\ncontext.doSomething()\n// ...\nother = <b>new</b> OtherStrategy()\ncontext.setStrategy(other)\ncontext.doSomething()"
 
     Client ..> ConcreteStrategies
     Client --> Context
