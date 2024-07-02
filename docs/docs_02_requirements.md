@@ -77,6 +77,8 @@ Documentation page links:
 * [***[Model design draft diagrams]***](#model-design-draft-diagrams)
 * [***[Requirement risk mapping]***](#requirement-risk-mapping)
     * [*[Requirement risk mapping [draft 01]]*](#requirement-risk-mapping-draft-01)
+* [***[Architectural Diagram]***](#architectural-diagram)
+    * [*[Architectural Diagram [draft 01]]*](#architectural-diagram--draft-01)
 
 ---
 
@@ -1505,6 +1507,8 @@ classDiagram
 
 ### Architectural Diagram : [draft 01]
 
+[**[Back to Contents]**](#contents)
+
 * simple architecture with just two lanes and two lights
 * probably not quite in the spirit of what it's meant to be
 * think of it as suggesting the "repository" architecture
@@ -1555,5 +1559,120 @@ classDiagram
     INTERSECTIONOBJ --* TRAFFICLIGHT02 : owned by
     INTERSECTIONOBJ <|.. TRAFFICLIGHT02 : reports to
 ```
+
+---
+
+## Requirements Diagram
+
+### Requirements Diagram [draft 01]
+
+[**[Back to Contents]**](#contents)
+
+* real requirements diagram
+* [documentations](https://mermaid.js.org/syntax/requirementDiagram.html)
+
+```mermaid
+---
+title: Requirements diagram - draft 01 - pre-development documentation
+---
+requirementDiagram
+    requirement DDR_01{
+        id: DDR_01
+        text: C++ linking flowchart
+        %% workload: Modest
+        %% priority: HIGH
+        risk: medium
+    }
+    requirement DDR_02{
+        id: DDR_02
+        text: OpenGL render pipeline
+        %% workload: Moderate
+        %% priority: HIGH
+        risk: medium
+    }
+    requirement DDR_03{
+        id: DDR_03
+        text: library pipeline
+        %% workload: Moderate
+        %% priority: MINOR
+        risk: high
+    }
+    requirement DDR_04{
+        id: DDR_04
+        text: base template control flow
+        %% workload: Medium
+        %% priority: MEDIUM
+        risk: medium
+    }
+    requirement DDR_05{
+        id: DDR_05
+        text: development pathway
+        %% workload: Modest
+        %% priority: CRITICAL
+        risk: high
+    }
+    requirement DDR_06{
+        id: DDR_06
+        text: detailed model diagrams
+        %% workload: Mild
+        %% priority: CRITICAL
+        risk: high
+    }
+    requirement DDR_07{
+        id: DDR_07
+        text: actor/object fields/methods
+        %% workload: Medium
+        %% priority: MAJOR
+        risk: high
+    }
+    requirement DDR_08{
+        id: DDR_08
+        text: detailed iteration diagrams
+        %% workload: Moderate
+        %% priority: HIGH
+        risk: high
+    }
+    requirement DDR_09{
+        id: DDR_09
+        text: detailed deadlock avoidance methods
+        %% workload: Moderate
+        %% priority: CRITICAL
+        risk: medium
+    }
+    requirement DDR_10{
+        id: DDR_10
+        text: detailed combined UML diagram
+        %% workload: Major
+        %% priority: MEDIUM
+        risk: high
+    }
+    requirement DDR_11{
+        id: DDR_11
+        text: shader behaviour diagrams
+        %% workload: Medium
+        %% priority: MAJOR
+        risk: medium
+    }
+    requirement DDR_12{
+        id: DDR_12
+        text: experimentation suppliments
+        %% workload: Massive
+        %% priority: CRITICAL
+        risk: high
+    }
+
+    DDR_01 -- 
+```
+
+A relationship type can be one of
+* contains
+* copies
+* derives
+* satisfies
+* verifies
+* refines
+* traces
+
+not right now tbh
 
 ---
