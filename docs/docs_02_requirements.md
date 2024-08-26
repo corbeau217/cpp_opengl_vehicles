@@ -1661,7 +1661,27 @@ requirementDiagram
         risk: high
     }
 
-    DDR_01 -- 
+    DDR_01 - satisfies -> DDR_02
+    DDR_02 - satisfies -> DDR_04
+    DDR_01 - satisfies -> DDR_04
+    DDR_01 - satisfies -> DDR_07
+    DDR_02 - satisfies -> DDR_03
+    DDR_05 - refines -> DDR_08
+    DDR_11 - satisfies -> DDR_06
+    DDR_07 - satisfies -> DDR_09
+    DDR_07 - satisfies -> DDR_10
+    DDR_07 - satisfies -> DDR_12
+    DDR_03 - satisfies -> DDR_12
+    DDR_04 - satisfies -> DDR_12
+    DDR_09 - satisfies -> DDR_10
+    DDR_12 - satisfies -> DDR_10
+    DDR_10 - satisfies -> DDR_05
+    DDR_12 - satisfies -> DDR_05
+    DDR_11 - satisfies -> DDR_05
+    DDR_06 - satisfies -> DDR_05
+    DDR_12 - satisfies -> DDR_06
+    DDR_12 - satisfies -> DDR_11
+    
 ```
 
 A relationship type can be one of
@@ -1673,6 +1693,8 @@ A relationship type can be one of
 * refines
 * traces
 
-not right now tbh
+not right now tbh 
+
+we fix the error but come back to this during the semester break
 
 ---
